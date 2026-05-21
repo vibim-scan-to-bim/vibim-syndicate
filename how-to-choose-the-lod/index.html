@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>How To Choose The Lod</title>
+<meta name="description" content="# LOD Selection Guide for Scan to BIM: Technical Reference  ## Table of Contents  - [LOD Overview](#lod-overview) - [LOD Levels at a Glance](#lod-levels-at-a-gl">
+</head>
+<body>
+<h1>How To Choose The Lod</h1>
+<h1>LOD Selection Guide for Scan to BIM: Technical Reference</h1>
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#lod-overview">LOD Overview</a></li>
+<li><a href="#lod-levels-at-a-glance">LOD Levels at a Glance</a></li>
+<li><a href="#selection-criteria-by-use-case">Selection Criteria by Use Case</a></li>
+<li><a href="#selection-criteria-by-user-type">Selection Criteria by User Type</a></li>
+<li><a href="#selection-criteria-by-space-complexity">Selection Criteria by Space Complexity</a></li>
+<li><a href="#scan-quality-constraints">Scan Quality Constraints</a></li>
+<li><a href="#documentation-requirements">Documentation Requirements</a></li>
+<li><a href="#lod-decision-matrix">LOD Decision Matrix</a></li>
+</ul>
+<hr />
+<h2>LOD Overview</h2>
+<p>Level of Development (LOD) defines the precision and reliability of a BIM model element — covering both geometry and non-geometric data attributes. In scan to BIM projects, LOD selection determines what the converted model can be used for, how much processing the point cloud data requires, and how much the modeling work will cost.</p>
+<p>The American Institute of Architects (AIA) and BIMForum's LOD Specification define six primary stages. Industry standards including ISO 19650 and PAS 1192 establish frameworks for LOD specification and compliance documentation.</p>
+<hr />
+<h2>LOD Levels at a Glance</h2>
+<table>
+<thead>
+<tr>
+<th>LOD</th>
+<th>Name</th>
+<th>Geometry</th>
+<th>Data</th>
+<th>Primary Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>Conceptual</td>
+<td>Approximate massing/blocks</td>
+<td>Minimal</td>
+<td>Space planning, zoning</td>
+</tr>
+<tr>
+<td>200</td>
+<td>Schematic</td>
+<td>Generic systems, rough size/shape</td>
+<td>Basic</td>
+<td>Early design, budgeting</td>
+</tr>
+<tr>
+<td>300</td>
+<td>Design Development</td>
+<td>Accurate dimensions, coordination-ready</td>
+<td>Moderate</td>
+<td>Renovation, layout design</td>
+</tr>
+<tr>
+<td>350</td>
+<td>Construction Detailing</td>
+<td>Connections, interfaces, supports</td>
+<td>Moderate+</td>
+<td>Clash detection, documentation</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Fabrication</td>
+<td>Component-level, shop drawing precision</td>
+<td>Detailed</td>
+<td>Off-site manufacturing, installation</td>
+</tr>
+<tr>
+<td>500</td>
+<td>As-Built / Operational</td>
+<td>Field-verified, installed conditions</td>
+<td>Full O&amp;M</td>
+<td>Facility management, digital twin</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Selection Criteria by Use Case</h2>
+<table>
+<thead>
+<tr>
+<th>Project Purpose</th>
+<th>Recommended LOD</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concept design / space planning</td>
+<td>100–200</td>
+<td>Approximate geometry sufficient; smaller files</td>
+</tr>
+<tr>
+<td>Renovation planning</td>
+<td>300</td>
+<td>Accurate spatial layout without excessive detail</td>
+</tr>
+<tr>
+<td>Structural documentation</td>
+<td>300–350</td>
+<td>Precise dimensions + connection points</td>
+</tr>
+<tr>
+<td>Clash detection (multi-discipline)</td>
+<td>350</td>
+<td>Interfaces and supports required</td>
+</tr>
+<tr>
+<td>Fabrication / prefabrication</td>
+<td>400</td>
+<td>Shop drawing accuracy needed</td>
+</tr>
+<tr>
+<td>Asset / facility management</td>
+<td>500</td>
+<td>Full metadata + verified as-built conditions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Selection Criteria by User Type</h2>
+<table>
+<thead>
+<tr>
+<th>Primary User</th>
+<th>Recommended LOD</th>
+<th>Key Requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Architects</td>
+<td>300–350</td>
+<td>Spatial validation, layout coordination</td>
+</tr>
+<tr>
+<td>Structural engineers</td>
+<td>300–350</td>
+<td>Load analysis, connection documentation</td>
+</tr>
+<tr>
+<td>MEP engineers</td>
+<td>350–400</td>
+<td>Routing coordination, clash clearance</td>
+</tr>
+<tr>
+<td>Contractors</td>
+<td>400</td>
+<td>Buildable geometry, installation tolerances</td>
+</tr>
+<tr>
+<td>Fabricators</td>
+<td>400</td>
+<td>Component specs, dimensional precision</td>
+</tr>
+<tr>
+<td>Facility managers</td>
+<td>500</td>
+<td>Equipment metadata, maintenance schedules, serial numbers</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Selection Criteria by Space Complexity</h2>
+<table>
+<thead>
+<tr>
+<th>Building / Space Type</th>
+<th>Recommended LOD</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residential, small commercial</td>
+<td>200–300</td>
+<td>Moderate detail sufficient for design and permitting</td>
+</tr>
+<tr>
+<td>Large office, retail</td>
+<td>300</td>
+<td>Standard coordination requirement</td>
+</tr>
+<tr>
+<td>Hospitals, data centers</td>
+<td>350–400</td>
+<td>Dense MEP systems require interface precision</td>
+</tr>
+<tr>
+<td>Industrial / manufacturing</td>
+<td>400</td>
+<td>Process equipment and structural steel at fabrication accuracy</td>
+</tr>
+<tr>
+<td>Heritage / listed buildings</td>
+<td>300–350</td>
+<td>Laser scan accuracy often limits achievable LOD</td>
+</tr>
+<tr>
+<td>FM-ready public facilities</td>
+<td>500</td>
+<td>Lifecycle and compliance data required</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Scan Quality Constraints</h2>
+<p>Point cloud resolution and registration accuracy set a hard ceiling on achievable LOD.</p>
+<table>
+<thead>
+<tr>
+<th>Scan Quality</th>
+<th>Achievable LOD</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low-resolution / single-scan</td>
+<td>200–300</td>
+<td>Insufficient density for MEP routing, connections, or as-built verification</td>
+</tr>
+<tr>
+<td>Mid-resolution, standard registration</td>
+<td>300–350</td>
+<td>Suitable for most architectural and structural applications</td>
+</tr>
+<tr>
+<td>High-resolution, well-registered</td>
+<td>400–500</td>
+<td>Supports fabrication accuracy and verified as-built documentation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important:</strong> Attempting LOD 400+ from low-quality scans produces models with spatial errors that may not surface until fabrication or installation. Specify scan requirements (resolution, scan spacing, registration tolerance) before fieldwork.</p>
+<hr />
+<h2>Documentation Requirements</h2>
+<p>LOD specifications must be formally documented in the BIM Execution Plan (BEP) before modeling begins:</p>
+<ol>
+<li><strong>LOD per discipline</strong> — Architecture, Structural, MEP specified separately</li>
+<li><strong>Element-level examples</strong> — Geometry and data expectations for representative components at each LOD</li>
+<li><strong>Metadata requirements</strong> — Material, manufacturer, performance specs per element type</li>
+<li><strong>File naming and deliverable format</strong> — Naming conventions, file formats, handover schedule</li>
+<li><strong>LOD compliance matrix</strong> — Assigned responsibilities per discipline, compliance checkpoints</li>
+<li><strong>Modeling intent and constraints</strong> — What is modeled, who uses it, accuracy required, known limitations</li>
+</ol>
+<hr />
+<h2>LOD Decision Matrix</h2>
+<p>Use this decision flow before committing to a LOD specification:</p>
+<pre><code>1. What is the model's primary purpose?
+   └── Concept / budget          → LOD 200
+   └── Design / renovation       → LOD 300
+   └── Clash detection           → LOD 350
+   └── Fabrication               → LOD 400
+   └── FM / as-built             → LOD 500
+
+2. Who are the primary users?
+   └── Architects / Engineers    → 300–350
+   └── Contractors               → 400
+   └── Facility Managers         → 500
+
+3. What is the scan resolution?
+   └── Low                       → cap at 300
+   └── Medium                    → up to 350
+   └── High, well-registered     → up to 500
+
+4. What does the budget support?
+   └── Apply high LOD selectively to the disciplines that require it
+   └── Default structural/architectural to LOD 300
+   └── Elevate MEP to LOD 350–400 only where clash or fabrication demands it
+
+5. Document in BEP → proceed to modeling
+</code></pre>
+<p>Applying this sequence before fieldwork prevents the most common scan to BIM failure mode: discovering a LOD mismatch after the point cloud has been captured and modeling has begun.</p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/05/21/how-to-choose-the-lod/">https://vibim.wordpress.com/2026/05/21/how-to-choose-the-lod/</a></li>
+<li><a href="https://vibim-scan-to-bim.blogspot.com/2026/05/how-to-choose-lod.html">https://vibim-scan-to-bim.blogspot.com/2026/05/how-to-choose-lod.html</a></li>
+<li><a href="https://vibim.tumblr.com/post/817187765662973952">https://vibim.tumblr.com/post/817187765662973952</a></li>
+<li><a href="https://vibimglobal.com/blog/how-to-choose-the-lod/">https://vibimglobal.com/blog/how-to-choose-the-lod/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th Floor, CIT Building, No. 6, Alley 15, Duy Tan Street, Dich Vong Hau Ward, Cau Giay District, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
