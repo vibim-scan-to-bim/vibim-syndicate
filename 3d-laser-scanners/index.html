@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D Laser Scanners for Scan to BIM: Technical Reference</title>
+<meta name="description" content="## Scanner Categories  ### Terrestrial LiDAR (Tripod-Mounted)  Static scanners capturing full 360° point clouds from fixed positions. Register multiple scans to">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>3D Laser Scanners for Scan to BIM: Technical Reference</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/10/handheld-3d-scanners.jpg" alt="3D laser scanner used in Scan to BIM workflow" style="width:100%;max-height:420px;object-fit:cover;">
+<h2>Scanner Categories</h2>
+<h3>Terrestrial LiDAR (Tripod-Mounted)</h3>
+<p>Static scanners capturing full 360° point clouds from fixed positions. Register multiple scans together for complete coverage. Highest accuracy class for AEC applications.</p>
+<table>
+<thead>
+<tr>
+<th>Scanner</th>
+<th>Max Range</th>
+<th>Scan Rate</th>
+<th>Accuracy</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leica ScanStation P50</td>
+<td>&gt;1,000 m</td>
+<td>1,000,000 pts/sec</td>
+<td>&lt;1 mm</td>
+<td>Long-range infrastructure, high-rises</td>
+</tr>
+<tr>
+<td>FARO Focus Premium</td>
+<td>350 m</td>
+<td>2,000,000 pts/sec</td>
+<td>1–3 mm</td>
+<td>As-built documentation, renovation</td>
+</tr>
+<tr>
+<td>Trimble X9</td>
+<td>150 m</td>
+<td>1,000,000 pts/sec</td>
+<td>&lt;1.5 mm</td>
+<td>Surveying, construction QC</td>
+</tr>
+<tr>
+<td>Artec Ray II</td>
+<td>130 m</td>
+<td>2,000,000 pts/sec</td>
+<td>1.9 mm @ 10 m</td>
+<td>Large objects, infrastructure</td>
+</tr>
+<tr>
+<td>API HemiScan</td>
+<td>70 m</td>
+<td>1,200,000 pts/sec</td>
+<td>Sub-mm</td>
+<td>Architectural detail, BIM, inspection</td>
+</tr>
+<tr>
+<td>Topcon GLS-2000</td>
+<td>500 m</td>
+<td>120,000 pts/sec</td>
+<td>&lt;3.5 mm</td>
+<td>Mining, infrastructure, color capture</td>
+</tr>
+</tbody>
+</table>
+<h3>Handheld Scanners</h3>
+<p>Operator-carried devices using SLAM or structured light. Cover irregular geometry and confined spaces inaccessible to tripod setups.</p>
+<table>
+<thead>
+<tr>
+<th>Scanner</th>
+<th>Range</th>
+<th>Scan Rate</th>
+<th>Accuracy</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FARO Freestyle 2</td>
+<td>0.4–5 m (10 m reduced)</td>
+<td>220,000 pts/sec</td>
+<td>0.5 mm</td>
+<td>MEP systems, complex interiors</td>
+</tr>
+<tr>
+<td>Dotproduct DPI-10</td>
+<td>0.6–3.7 m</td>
+<td>Real-time SLAM</td>
+<td>N/A (relative)</td>
+<td>On-site registration, confined spaces</td>
+</tr>
+<tr>
+<td>Intel RealSense D455</td>
+<td>0.6–6 m</td>
+<td>90 fps</td>
+<td>Developer grade</td>
+<td>Robotics, close-range AR/VR</td>
+</tr>
+</tbody>
+</table>
+<h3>Mobile LiDAR (Walk-Through Systems)</h3>
+<p>Wearable or cart-mounted systems capturing data in continuous motion. Prioritize speed and coverage over maximum point density.</p>
+<table>
+<thead>
+<tr>
+<th>Scanner</th>
+<th>Effective Range</th>
+<th>Accuracy</th>
+<th>Points/sec</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NavVis VLX</td>
+<td>200 m</td>
+<td>5 mm</td>
+<td>1,280,000 (dual sensor)</td>
+<td>Large indoor environments, facility management</td>
+</tr>
+<tr>
+<td>FARO Orbis</td>
+<td>120 m</td>
+<td>2–5 mm</td>
+<td>2,000,000</td>
+<td>Construction sites, outdoor mapping</td>
+</tr>
+<tr>
+<td>ZEB Horizon</td>
+<td>100 m</td>
+<td>6 mm</td>
+<td>300,000</td>
+<td>Multi-mounting: backpack, drone, vehicle</td>
+</tr>
+</tbody>
+</table>
+<h2>LOD Capability by Scanner Class</h2>
+<table>
+<thead>
+<tr>
+<th>Target LOD</th>
+<th>Recommended Scanner Class</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOD 100–200</td>
+<td>Any</td>
+<td>Approximate geometry only</td>
+</tr>
+<tr>
+<td>LOD 300</td>
+<td>Terrestrial or Mobile LiDAR</td>
+<td>Standard coordination work</td>
+</tr>
+<tr>
+<td>LOD 350</td>
+<td>High-res Terrestrial</td>
+<td>Interface and connection documentation</td>
+</tr>
+<tr>
+<td>LOD 400</td>
+<td>High-res Terrestrial (≤2 mm)</td>
+<td>Fabrication accuracy required</td>
+</tr>
+<tr>
+<td>LOD 500</td>
+<td>High-res Terrestrial + field verification</td>
+<td>As-built with metadata</td>
+</tr>
+</tbody>
+</table>
+<h2>Key Performance Specifications</h2>
+<p><strong>Accuracy</strong> — proximity of measurements to true dimensions; measured in mm at a stated distance. Critical for LOD 350+ targets.</p>
+<p><strong>Range</strong> — maximum effective capture distance. Long-range scanners reduce required scan positions on large sites.</p>
+<p><strong>Scan rate (pts/sec)</strong> — determines on-site time per scan position. Higher rate supports faster coverage.</p>
+<p><strong>Field of view</strong> — most terrestrial scanners offer 360° horizontal; vertical FOV varies (270–360°).</p>
+<p><strong>Environmental rating</strong> — IP42–IP54 range for construction sites. Check before deploying in rain or dusty conditions.</p>
+<p><strong>Software ecosystem</strong> — output formats (E57, LAS, PTS, XYZ, RCP) and native compatibility with registration software (FARO SCENE, Trimble RealWorks, Leica Cyclone, NavVis IVION).</p>
+<h2>Software Pipeline for Scan to BIM</h2>
+<pre><code>Field capture (scanner) 
+  → Registration software (align + clean point cloud)
+  → Autodesk ReCap / Trimble RealWorks
+  → BIM authoring (Autodesk Revit)
+  → Deliverable model (LOD per BEP specification)
+</code></pre>
+<p>Confirm scanner export formats are compatible at each pipeline stage before fieldwork begins.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/3d-laser-scanners/">https://vibimglobal.com/blog/3d-laser-scanners/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim-scan-to-bim.blogspot.com/2026/05/3d-laser-scanners-for-scan-to-bim-your.html">https://vibim-scan-to-bim.blogspot.com/2026/05/3d-laser-scanners-for-scan-to-bim-your.html</a></li>
+<li><a href="https://vibim.tumblr.com/post/817382853887279104">https://vibim.tumblr.com/post/817382853887279104</a></li>
+<li><a href="https://vibim.wordpress.com/2026/05/23/3d-laser-scanners/">https://vibim.wordpress.com/2026/05/23/3d-laser-scanners/</a></li>
+<li><a href="https://vibimscantobim.weebly.com/blog/3d-laser-scanners">https://vibimscantobim.weebly.com/blog/3d-laser-scanners</a></li>
+<li><a href="https://sites.google.com/vibim.com.vn/vibimglobal/blog/3d-laser-scanners">https://sites.google.com/vibim.com.vn/vibimglobal/blog/3d-laser-scanners</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th Floor, CIT Building, No. 6, Alley 15, Duy Tan Street, Dich Vong Hau Ward, Cau Giay District, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
