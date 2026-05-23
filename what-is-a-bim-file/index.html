@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIM File Formats: Technical Reference for AEC Workflows</title>
+<meta name="description" content="This reference documents the BIM file formats encountered in production AEC workflows: their file extensions, the software that reads and writes them, the use c">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>BIM File Formats: Technical Reference for AEC Workflows</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/12/what-is-a-bim-file.jpg" alt="What is a BIM file" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference documents the BIM file formats encountered in production AEC workflows: their file extensions, the software that reads and writes them, the use case they serve, and the technical notes worth knowing before working with them.</p>
+<h2>Native (proprietary) authoring formats</h2>
+<h3>.rvt — Autodesk Revit Project File</h3>
+<p>Binary project file containing model elements, families, views, sheets, schedules, and worksharing metadata. Read and written by Autodesk Revit only. Version-locked: a 2024 file cannot be opened in 2022 Revit. Companion files include .rfa (family files), .rte (project templates), and .rvs (Revit Server). The format dominates AEC BIM authoring in North America.</p>
+<h3>.pln — Graphisoft ArchiCAD Project File</h3>
+<p>Single-file project format storing model, layouts, libraries, and views. Read and written by Graphisoft ArchiCAD. Companion formats: .pla (archived project including library), .tpl (template). Strong in European architectural markets and in studios prioritizing macOS workflows.</p>
+<h3>.nwf — Autodesk Navisworks File Set</h3>
+<p>Reference file pointing to multiple source files (RVT, IFC, DWG, etc) federated into a single coordination view. Lightweight: it stores references, not geometry. Each referenced file generates a .nwc cache.</p>
+<h3>.nwc — Navisworks Cache File</h3>
+<p>Compiled geometry cache exported from a source authoring tool (Revit, ArchiCAD, MicroStation). Read by Navisworks; not edited directly. Each .nwc represents one source file in the federated model.</p>
+<h3>.nwd — Navisworks Document</h3>
+<p>Published static federated model. All source geometry baked into a single file. Read by Navisworks Freedom (free viewer) without needing the source files. Used for issuing federated models to consultants, clients, and field teams.</p>
+<h3>.dgn — Bentley MicroStation Design File</h3>
+<p>Native format for Bentley MicroStation and the broader Bentley OpenBuildings / AECOsim ecosystem. Dominant in infrastructure, transportation, and process industry projects. Includes 2D, 3D, and BIM authoring capabilities depending on the Bentley product variant.</p>
+<h2>Open (non-proprietary) exchange formats</h2>
+<h3>.ifc — Industry Foundation Classes</h3>
+<p>The cornerstone of OpenBIM exchange. Defined by the IFC schema from buildingSMART. ASCII or compressed binary (.ifczip). Current version IFC 4 (ISO 16739:2018), with IFC 4x3 adding infrastructure entities. Every major BIM authoring tool supports IFC export and import. Tradeoffs: large file size, some loss of authoring fidelity (parametric families flattened to generic geometry), but universal compatibility for cross-tool federation and long-term archival.</p>
+<h3>.bcf — BIM Collaboration Format</h3>
+<p>Zipped XML files carrying issue tickets, viewpoints, screenshots, and comment threads tied to model elements. Does not carry geometry. Used to route clash detection issues, design review comments, and coordination questions between tools (Navisworks, Solibri, BIMcollab, Autodesk Construction Cloud).</p>
+<h3>.ids — Information Delivery Specification</h3>
+<p>XML specification defining the information requirements for a BIM deliverable. Used to validate models against client information requirements under ISO 19650 workflows. Newer format, increasing in adoption among public infrastructure clients in Europe and the UK.</p>
+<h3>.xlsx (COBie) — Construction Operation Building Information Exchange</h3>
+<p>Spreadsheet-format deliverable carrying asset data for facility management. Standardized worksheet structure (Contact, Facility, Floor, Space, Type, Component, System, Assembly, etc). Extracted from BIM authoring tools or coordination platforms at handover. Required deliverable on many public sector projects.</p>
+<h3>.dwg — AutoCAD Drawing File (legacy bridge)</h3>
+<p>Originally a CAD format, but widely used as a 2D documentation deliverable from BIM workflows. Most BIM authoring tools export construction documents to DWG. Not a BIM format itself: a DWG carries lines, layers, and text, not parametric objects or property data.</p>
+<h3>.gbxml — Green Building XML</h3>
+<p>XML schema for exchanging building geometry and energy analysis data between BIM authoring tools and energy modeling software (IES Virtual Environment, EnergyPlus, OpenStudio). Used in sustainability and performance analysis workflows.</p>
+<h2>Software-to-format compatibility matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Authoring Format</th>
+<th>IFC Import</th>
+<th>IFC Export</th>
+<th>BCF</th>
+<th>COBie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autodesk Revit</td>
+<td>.rvt</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Plugin</td>
+<td>Plugin</td>
+</tr>
+<tr>
+<td>Graphisoft ArchiCAD</td>
+<td>.pln</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Native</td>
+<td>Native</td>
+</tr>
+<tr>
+<td>Bentley AECOsim</td>
+<td>.dgn</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Vectorworks Architect</td>
+<td>.vwx</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Limited</td>
+</tr>
+<tr>
+<td>Tekla Structures</td>
+<td>.db1</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Limited</td>
+</tr>
+<tr>
+<td>Allplan</td>
+<td>.ndw</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Limited</td>
+</tr>
+<tr>
+<td>Autodesk Navisworks</td>
+<td>.nwf / .nwd / .nwc</td>
+<td>Yes</td>
+<td>Limited</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Solibri Office</td>
+<td>(reads IFC)</td>
+<td>Yes</td>
+<td>No</td>
+<td>Native</td>
+<td>Native</td>
+</tr>
+<tr>
+<td>ACC Model Coordination</td>
+<td>(cloud)</td>
+<td>Yes</td>
+<td>No</td>
+<td>Native</td>
+<td>Limited</td>
+</tr>
+</tbody>
+</table>
+<h2>Workflow patterns</h2>
+<p><strong>Pattern 1: Single-tool team, single-discipline project</strong></p>
+<p>Authoring in native format (.rvt or .pln). No IFC needed for internal coordination. IFC and COBie exported only for client deliverables and archival.</p>
+<p><strong>Pattern 2: Multi-tool team, federated coordination</strong></p>
+<p>Each discipline authors in their native format. IFC exports at regular coordination intervals (typically weekly). Federation in Navisworks or Solibri. Issues routed via BCF. Final deliverable as IFC plus COBie.</p>
+<p><strong>Pattern 3: ISO 19650 / public sector contract</strong></p>
+<p>Client provides an IDS file defining the information requirements. Models validated against the IDS at each milestone. Deliverables packaged as IFC plus BCF plus COBie. CDE (Common Data Environment) governs file exchange between parties.</p>
+<p><strong>Pattern 4: Scan to BIM</strong></p>
+<p>Source data is a point cloud (.e57, .rcp, .rcs, .pts). Registration and processing in Recap, Cyclone, or similar. Modeling in Revit, ArchiCAD, or equivalent, outputting native format. Client deliverable typically IFC plus a registered point cloud reference.</p>
+<h2>Practical notes</h2>
+<ul>
+<li>IFC version matters. IFC 2x3 is older but widely supported. IFC 4 is current and required by most modern OpenBIM workflows. IFC 4x3 adds infrastructure coverage and is gaining adoption in 2026.</li>
+<li>Coordinate system alignment is the most common cross-format issue. Define a shared coordinate system at project kickoff and apply it consistently in every authoring tool.</li>
+<li>IFC export settings vary significantly between tools. Document the export profile in the BIM Execution Plan to ensure consistent output from all team members.</li>
+<li>Native formats are version-locked. Plan for archival migration to IFC when the authoring software version reaches end-of-support.</li>
+</ul>
+<p>Reference: <a href="https://vibimglobal.com/blog/what-is-a-bim-file/">https://vibimglobal.com/blog/what-is-a-bim-file/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim-scan-to-bim.blogspot.com/2026/05/bim-file-101-whats-actually-inside-it.html">https://vibim-scan-to-bim.blogspot.com/2026/05/bim-file-101-whats-actually-inside-it.html</a></li>
+<li><a href="https://vibim.tumblr.com/post/817397071261974528">https://vibim.tumblr.com/post/817397071261974528</a></li>
+<li><a href="https://vibim.wordpress.com/2026/05/23/what-is-a-bim-file/">https://vibim.wordpress.com/2026/05/23/what-is-a-bim-file/</a></li>
+<li><a href="https://vibimscantobim.weebly.com/blog/what-is-a-bim-file">https://vibimscantobim.weebly.com/blog/what-is-a-bim-file</a></li>
+<li><a href="https://sites.google.com/vibim.com.vn/vibimglobal/blog/what-is-a-bim-file">https://sites.google.com/vibim.com.vn/vibimglobal/blog/what-is-a-bim-file</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th Floor, CIT Building, No. 6, Alley 15, Duy Tan Street, Dich Vong Hau Ward, Cau Giay District, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
