@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Structural BIM: A Technical Reference for Engineering Teams</title>
+<meta name="description" content="This is a reference sheet for structural BIM — the model components, the data exchange behavior, the software stack, and the LOD progression. It assumes familia">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Structural BIM: A Technical Reference for Engineering Teams</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2026/02/revit-structural-modeling-tutorial.jpg" alt="BIM for structural engineering 3D model with intelligent parametric beams and columns" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This is a reference sheet for structural BIM — the model components, the data exchange behavior, the software stack, and the LOD progression. It assumes familiarity with structural engineering and focuses on how the digital workflow is actually built.</p>
+<h2>Model Definition</h2>
+<p>A structural BIM model is a parametric representation of a building's load-bearing system. Elements are not drawn; they are instantiated as objects carrying geometric and non-geometric data: section dimensions, material grade, load capacity, and fabrication specifications.</p>
+<p>The model maintains two synchronized representations:</p>
+<ul>
+<li><strong>Physical model</strong> — the geometry used for documentation, coordination, and visualization.</li>
+<li><strong>Analytical model</strong> — a simplified abstraction of nodes, members, supports, and loads, consumed by finite element analysis engines.</li>
+</ul>
+<p>Round-trip interoperability links the two. Changes to the physical model update analytical properties and vice versa. Transferred data includes section sizes, material strengths, and member connectivity. Parameters requiring manual verification after exchange: load combinations, mesh settings, and boundary conditions.</p>
+<h2>Core Components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Contents</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intelligent elements</td>
+<td>Parametric beams, columns, slabs, trusses</td>
+<td>Geometry that adapts to defined rules</td>
+</tr>
+<tr>
+<td>Analytical data</td>
+<td>Loads, boundary conditions, material properties</td>
+<td>Input for FEA</td>
+</tr>
+<tr>
+<td>Documentation data</td>
+<td>Tags, dimensions, schedules</td>
+<td>Auto-linked 2D output</td>
+</tr>
+<tr>
+<td>Fabrication detail</td>
+<td>Connections, bolts, rebar (LOD 400)</td>
+<td>Shop drawing and CNC input</td>
+</tr>
+</tbody>
+</table>
+<h2>LOD Progression</h2>
+<p>Structural elements advance through Levels of Development as the project matures:</p>
+<ul>
+<li><strong>LOD 200</strong> — generic geometry, approximate size and location.</li>
+<li><strong>LOD 300</strong> — specific geometry with accurate dimensions and orientation.</li>
+<li><strong>LOD 400</strong> — fabrication-ready: connection plates, bolt patterns, weld specs, rebar bending shapes.</li>
+<li><strong>LOD 500</strong> — field-verified as-built condition.</li>
+</ul>
+<p>Quantity takeoffs become reliable once the model is built to an agreed LOD and modeled consistently.</p>
+<h2>Software Stack</h2>
+<ul>
+<li><strong>Autodesk Revit</strong> — multidisciplinary authoring, documentation, analysis integration.</li>
+<li><strong>Tekla Structures</strong> — detailed steel and concrete at fabrication level; drives CNC and shop drawings. Pairs with Tekla Structural Designer for code-based member sizing.</li>
+<li><strong>Robot Structural Analysis Professional</strong> — advanced analysis, bidirectional Revit link.</li>
+<li><strong>OpenBuildings Designer</strong> — infrastructure and civil-oriented parametric modeling.</li>
+<li><strong>Navisworks</strong> — clash detection and coordination review across federated models.</li>
+</ul>
+<h2>Workflow Phases</h2>
+<ol>
+<li><strong>Conceptual design</strong> — massing models for framing-system optioneering based on volume and cost.</li>
+<li><strong>Design development</strong> — analytical model exported for FEA; optimized sizing synced back to the central model.</li>
+<li><strong>Construction documentation</strong> — associative 2D views extracted from 3D geometry; changes propagate automatically.</li>
+<li><strong>Fabrication support</strong> — LOD 400 detail feeds CNC machinery; 4D sequencing for erection logistics.</li>
+</ol>
+<h2>Clash Detection Notes</h2>
+<p>Automated interference detection distinguishes two clash types:</p>
+<ul>
+<li><strong>Hard clash</strong> — physical intersection (e.g., steel beam through HVAC duct).</li>
+<li><strong>Soft clash</strong> — clearance or tolerance violation (e.g., equipment access zone encroachment).</li>
+</ul>
+<p>Resolving clashes in the model validates structural geometry for manufacturing and erection, reducing field rework and RFIs.</p>
+<h2>Implementation Constraints</h2>
+<p>Document these before starting:</p>
+<ul>
+<li><strong>BIM Execution Plan</strong> — naming conventions, coordinate systems, LOD requirements; align to ISO 19650.</li>
+<li><strong>Infrastructure</strong> — high-performance workstations for parametric models and FEA; cloud Common Data Environment for version control.</li>
+<li><strong>Known risks</strong> — IFC round-trip data loss, productivity dip during training, BIM-skilled engineer shortage.</li>
+</ul>
+<h2>Scan to BIM for Existing Structures</h2>
+<p>For existing buildings, laser scan data converts into accurate structural Revit models. Captured at millimeter accuracy, existing beams, columns, and trusses provide reliable input for retrofit and assessment work. ViBIM specializes in this conversion — point cloud to intelligent structural model — alongside parametric structural family creation (LOD 200–500), serving AEC teams across the US, UK, Canada, and Australia with over eleven years of Scan to BIM experience.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/bim-for-structural/">https://vibimglobal.com/blog/bim-for-structural/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim-scan-to-bim.blogspot.com/2026/05/bim-for-structural-engineering.html">https://vibim-scan-to-bim.blogspot.com/2026/05/bim-for-structural-engineering.html</a></li>
+<li><a href="https://vibim.tumblr.com/post/817943399770537984">https://vibim.tumblr.com/post/817943399770537984</a></li>
+<li><a href="https://vibim.wordpress.com/2026/05/29/bim-for-structural/">https://vibim.wordpress.com/2026/05/29/bim-for-structural/</a></li>
+<li><a href="https://vibimscantobim.weebly.com/blog/bim-for-structural">https://vibimscantobim.weebly.com/blog/bim-for-structural</a></li>
+<li><a href="https://sites.google.com/vibim.com.vn/vibimglobal/blog/bim-for-structural">https://sites.google.com/vibim.com.vn/vibimglobal/blog/bim-for-structural</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th Floor, CIT Building, No. 6, Alley 15, Duy Tan Street, Dich Vong Hau Ward, Cau Giay District, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
