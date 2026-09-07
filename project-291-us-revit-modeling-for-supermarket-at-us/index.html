@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Notes from a 14,500 m² Supermarket BIM Model</title>
+<meta name="description" content="Project 291.US was a Scan-to-BIM delivery for a large single-story supermarket in the United States. The facility covered approximately 14,500 m². Over a ten-mo">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Technical Notes from a 14,500 m² Supermarket BIM Model</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/09/291_03-scaled.jpg" alt="Scan-to-BIM model for a US supermarket" style="width:100%;max-height:420px;object-fit:cover;">
+<p>Project 291.US was a Scan-to-BIM delivery for a large single-story supermarket in the United States. The facility covered approximately 14,500 m². Over a ten-month period from October 2021 to July 2022, ViBIM developed coordinated architectural, structural, and MEP models in Autodesk Revit to LOD 300.</p>
+<p>The input set combined high-density point cloud data and existing 2D drawings. The site was managed in seven volumes, creating a practical structure for handling a large model while maintaining consistency between locations and disciplines.</p>
+<h2>Input model: point cloud plus drawings</h2>
+<p>The project did not treat either data source as a complete answer. Point cloud data represented the observed building condition and supplied the strongest basis for physical geometry. Existing drawings carried technical information and helped define elements that were concealed, partially captured, or otherwise difficult to interpret from scan data alone.</p>
+<p>That combination is important for as-built work. Site conditions can differ from historical drawings because of construction deviations, later modifications, or incomplete record updates. A model team needs a documented data-priority method so that conflicts are resolved consistently instead of being addressed differently in every area.</p>
+<h2>Modeling logic for conflicting evidence</h2>
+<p>Where both point cloud and drawings were available, geometry followed the scan while technical specifications could be derived from the drawing set. Where a scan showed a condition without a complete matching drawing, the model could use observed geometry together with adjacent building context and structural logic.</p>
+<p>This method limits unsupported inference. It also helps preserve a model that users can understand and trust when reviewing design changes or facility information later.</p>
+<h2>Coordination scope</h2>
+<p>The delivery included three core model disciplines:</p>
+<ul>
+<li>Architecture: principal layout, building envelope, openings, and spatial conditions.</li>
+<li>Structure: components that support the building, including elements not always visible in scan coverage.</li>
+<li>MEP: mechanical, electrical, and plumbing systems that require coordinated routes and clear spatial relationships.</li>
+</ul>
+<p>The LOD 300 target established a useful level of model definition. Elements were represented with coordinated size, shape, quantity, location, and orientation data. This is sufficient for design coordination, planning, and operational reference without overstating fabrication detail.</p>
+<h2>Why volume management matters</h2>
+<p>A 14,500 m² retail facility can become difficult to navigate and review if modeled as an undifferentiated whole. The seven-volume organization allowed the work to be managed in meaningful sections while preserving the cross-volume relationships needed for a coherent asset model.</p>
+<h2>Practical use of the completed model</h2>
+<p>The final Revit model can support renovation studies, space reconfiguration, future MEP installation planning, and facility-management activities. Its value comes from combining observed conditions with structured BIM information, giving stakeholders a usable digital representation of the supermarket rather than a static set of legacy drawings.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-supermarket-at-us/">https://vibimglobal.com/projects/revit-modeling-for-supermarket-at-us/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim-scan-to-bim.blogspot.com/2026/09/scan-to-bim-modeling-for-14500-m-us.html">https://vibim-scan-to-bim.blogspot.com/2026/09/scan-to-bim-modeling-for-14500-m-us.html</a></li>
+<li><a href="https://vibim.tumblr.com/post/827113876166508544">https://vibim.tumblr.com/post/827113876166508544</a></li>
+<li><a href="https://vibim.wordpress.com/2026/09/07/project-291-us-revit-modeling-for-supermarket-at-us/">https://vibim.wordpress.com/2026/09/07/project-291-us-revit-modeling-for-supermarket-at-us/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th Floor, CIT Building, No. 6, Alley 15, Duy Tan Street, Dich Vong Hau Ward, Cau Giay District, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
