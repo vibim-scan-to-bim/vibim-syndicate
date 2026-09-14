@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Reference: Data Priority Protocol for Conflicting Scan and Drawing Sources</title>
+<meta name="description" content="## Context  Project 291.US required modeling a 14,500m² US supermarket from two overlapping data sources: high-density point cloud and 2D technical drawings. Th">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Technical Reference: Data Priority Protocol for Conflicting Scan and Drawing Sources</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/09/291_03-scaled.jpg" alt="Revit modeling for 14500sqm US supermarket - architecture structure MEP LOD300" style="width:100%;max-height:420px;object-fit:cover;">
+<h2>Context</h2>
+<p>Project 291.US required modeling a 14,500m² US supermarket from two overlapping data sources: high-density point cloud and 2D technical drawings. The two sources frequently disagreed — a consequence of on-site construction deviations and post-occupancy modifications not captured in the original drawings.</p>
+<h2>Protocol</h2>
+<p>When point cloud and drawing data conflict within the same spatial region, apply the following ordered rules:</p>
+<h3>Rule 1: Both Sources Available</h3>
+<ul>
+<li><strong>Geometry</strong>: Derive from point cloud (reflects as-built reality)</li>
+<li><strong>Technical parameters</strong>: Derive from drawings (reflects design intent and specifications)</li>
+<li>Example: A wall modeled at the scan-measured thickness of 300mm, with its fire-rating and material composition taken from the drawing schedule.</li>
+</ul>
+<h3>Rule 2: Drawings Only (No Scan Coverage)</h3>
+<ul>
+<li><strong>All attributes</strong>: Position, dimensions, and technical parameters follow the drawings exactly</li>
+<li>Applies to: objects inside walls, under-slab plumbing, foundation systems where scanning is impossible</li>
+</ul>
+<h3>Rule 3: Scan Only (No Drawing Coverage)</h3>
+<ul>
+<li><strong>Geometry</strong>: Derive from point cloud</li>
+<li><strong>Technical parameters</strong>: Infer from adjacent objects and structural logic of the building</li>
+<li>Applies to: undocumented modifications, ad-hoc installations added during the building's operational life</li>
+</ul>
+<h2>Family Library Workflow</h2>
+<p>The client required use of pre-established Revit families. When a required family did not exist or did not match scan geometry:</p>
+<ol>
+<li>Search the categorized family inventory (organized by discipline → sub-group)</li>
+<li>If no match: submit a family creation request to the client</li>
+<li>If the client cannot deliver within the schedule window: ViBIM develops the family in-house</li>
+<li>New families are added to the categorized inventory for reuse across the project series</li>
+</ol>
+<h2>Multi-Volume Coordination</h2>
+<p>The supermarket spans seven distinct site volumes. Modeling workflow:</p>
+<ul>
+<li>Volume segmentation → Parallel discipline modeling per volume</li>
+<li>Merge into federated Revit model → Clash detection</li>
+<li>QA/QC via Autodesk Construction Cloud</li>
+</ul>
+<p>Team members were assigned exclusive work zones to prevent ownership conflicts during simultaneous ACC sessions. Time-zone offset (Vietnam ↔ US) was managed through asynchronous handoffs with documented change logs.</p>
+<h2>Technical Specifications</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Building type</td>
+<td>Commercial (supermarket)</td>
+</tr>
+<tr>
+<td>Area</td>
+<td>14,500 m²</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>1</td>
+</tr>
+<tr>
+<td>LOD</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Input formats</td>
+<td>Point cloud (high-density), 2D CAD/PDF</td>
+</tr>
+<tr>
+<td>Output format</td>
+<td>Autodesk Revit (.rvt)</td>
+</tr>
+<tr>
+<td>Software stack</td>
+<td>Revit, Navisworks, internal QA tools</td>
+</tr>
+<tr>
+<td>Collaboration platform</td>
+<td>Autodesk Construction Cloud (ACC)</td>
+</tr>
+<tr>
+<td>Disciplines delivered</td>
+<td>Architecture, Structure, MEP</td>
+</tr>
+</tbody>
+</table>
+<p>https://vibimglobal.com/projects/revit-modeling-for-supermarket-at-us/</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-supermarket-at-us/">https://vibimglobal.com/projects/revit-modeling-for-supermarket-at-us/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.tumblr.com/post/827723023330246656">https://vibim.tumblr.com/post/827723023330246656</a></li>
+<li><a href="https://vibim.wordpress.com/2026/09/14/revit-modeling-for-supermarket-at-us/">https://vibim.wordpress.com/2026/09/14/revit-modeling-for-supermarket-at-us/</a></li>
+<li><a href="https://vibim-scan-to-bim.blogspot.com/2026/09/revit-modeling-for-supermarket-at-us.html">https://vibim-scan-to-bim.blogspot.com/2026/09/revit-modeling-for-supermarket-at-us.html</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th Floor, CIT Building, No. 6, Alley 15, Duy Tan Street, Dich Vong Hau Ward, Cau Giay District, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
