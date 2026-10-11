@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>282.UK School Renovation: Revit Modeling Technical Reference</title>
+<meta name="description" content="This page records the specification, workflow and decisions of the 282.UK Revit modeling project for a school in the United Kingdom.  ## Specification  | Item |">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>282.UK School Renovation: Revit Modeling Technical Reference</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/bim-modelling-services-for-school-refurbishment-uk-scaled.jpg" alt="Revit modeling for a UK school renovation" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page records the specification, workflow and decisions of the 282.UK Revit modeling project for a school in the United Kingdom.</p>
+<h2>Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project code</td>
+<td>282.UK</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>United Kingdom</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>School</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>September 2021 to November 2021</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>12,000 m²</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>2 ground floors, 5 upper floors</td>
+</tr>
+<tr>
+<td>Disciplines</td>
+<td>Architecture, structure, topography</td>
+</tr>
+<tr>
+<td>LOD</td>
+<td>LOD 300 (architecture, structure); LOD 400 (topography)</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, 2D CAD</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit model</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Team</td>
+<td>17 members</td>
+</tr>
+<tr>
+<td>Volumes</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>Point cloud:</strong> a set of measured 3D points that records the surface of an existing building.</li>
+<li><strong>As-built survey model:</strong> a BIM model that represents current site conditions, not the design intent.</li>
+<li><strong>LOD:</strong> level of detail of the model elements. LOD 300 was used for architecture and structure, LOD 400 for topography.</li>
+<li><strong>Volume:</strong> one separately modeled part of the building. The project had eight.</li>
+<li><strong>Void geometry:</strong> a solid used to cut a shape out of a host element.</li>
+</ul>
+<h2>Objectives</h2>
+<ol>
+<li>Produce a detailed 3D model with scan to BIM services for renovation.</li>
+<li>Digitize the existing structure for storage and retrieval in place of 2D drawings.</li>
+<li>Provide a base for renovation design options, space reconfiguration and new MEP system installations.</li>
+</ol>
+<h2>Workflow for the volume split</h2>
+<ol>
+<li>Assign a separate team to each volume.</li>
+<li>Hold regular meetings between team leaders about the interface zones.</li>
+<li>Update linked Revit files during the point cloud modeling workflow so that boundary changes are tracked.</li>
+<li>Link files selectively and temporarily, only while an interface is resolved, to avoid performance issues from many links.</li>
+<li>Run clash detection with Navisworks and internal tools and resolve conflicts in the linked files.</li>
+</ol>
+<h2>Window modeling decision</h2>
+<p>The client's standard requires two window types in one opening for windows that open inward and outward.</p>
+<table>
+<thead>
+<tr>
+<th>Window</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary</td>
+<td>Modeled conventionally, hosted in the wall with an opening</td>
+</tr>
+<tr>
+<td>Secondary</td>
+<td>Cannot be an opening; void geometry carves out the position</td>
+</tr>
+</tbody>
+</table>
+<p>The method follows the client's modeling requirements.</p>
+<h2>Use of the model</h2>
+<p>The as-built model supports renovation planning, identification of repair areas and material quantity calculation. It also gives existing-condition data to BIM workflows across the building lifecycle.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-services-for-school-renovation-in-uk/">https://vibimglobal.com/projects/revit-modeling-services-for-school-renovation-in-uk/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/11/revit-modeling-services-for-school-renovation-in-uk/">https://vibim.wordpress.com/2026/10/11/revit-modeling-services-for-school-renovation-in-uk/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th Floor, CIT Building, No. 6, Alley 15, Duy Tan Street, Dich Vong Hau Ward, Cau Giay District, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
