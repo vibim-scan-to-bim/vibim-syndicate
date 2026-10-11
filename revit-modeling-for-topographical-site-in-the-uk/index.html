@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 385.UK: Technical Reference for a Large-Site Topographic BIM Model</title>
+<meta name="description" content="This page records the technical parameters of Project 385.UK in a form that is easy to scan and cite.  ## Specification  | Parameter | Value | |---|---| | Proje">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Project 385.UK: Technical Reference for a Large-Site Topographic BIM Model</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/09/385_01-scaled.jpg" alt="Revit modeling for topographical site in the UK, Project 385.UK" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page records the technical parameters of Project 385.UK in a form that is easy to scan and cite.</p>
+<h2>Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project ID</td>
+<td>385.UK</td>
+</tr>
+<tr>
+<td>Country</td>
+<td>United Kingdom</td>
+</tr>
+<tr>
+<td>Discipline focus</td>
+<td>Topography</td>
+</tr>
+<tr>
+<td>Site area</td>
+<td>43,000 m²</td>
+</tr>
+<tr>
+<td>Number of floors</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Input data</td>
+<td>Point cloud, 2D drawings</td>
+</tr>
+<tr>
+<td>LOD, architecture and structure</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>LOD, MEP</td>
+<td>LOD 200</td>
+</tr>
+<tr>
+<td>Modeling tolerance</td>
+<td>±25 mm</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Timeline</td>
+<td>June to September 2022 (three months)</td>
+</tr>
+<tr>
+<td>Client</td>
+<td>Confidential</td>
+</tr>
+</tbody>
+</table>
+<h2>Modeled elements</h2>
+<ul>
+<li>Roadways and sidewalks</li>
+<li>Lamp posts and signage</li>
+<li>Drainage systems</li>
+<li>Road markings and directional arrows</li>
+<li>Parking areas and surrounding terrain as one topographic surface</li>
+<li>Architecture, structure and MEP systems</li>
+</ul>
+<h2>Method notes</h2>
+<p><strong>Terrain segmentation.</strong> The site was split into independent sections. Each was modeled separately and joined into a single surface. This keeps individual file size manageable on a dataset of this scale.</p>
+<p><strong>Family automation.</strong> A proprietary tool loads multiple custom Revit families in one operation. The project required many distinct object types, so batch loading removed a repeated manual step.</p>
+<p><strong>Verification.</strong> The model was compared directly with the source point cloud using deviation analysis. Structural composition was verified with detailed cross-sections inside the model and with component inspection software.</p>
+<p><strong>Appearance and material data.</strong> Color and placement of markings came from the point cloud, TrueView imagery and satellite maps combined. Material assignment used client-provided photographs and Google Maps. Distinct materials on pavements and terrain support quantity takeoff.</p>
+<h2>Intended use</h2>
+<p>The model serves as as-built information for future design, renovation, repair and asset management on the site.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-topographical-site-in-the-uk/">https://vibimglobal.com/projects/revit-modeling-for-topographical-site-in-the-uk/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/11/revit-modeling-for-topographical-site-in-the-uk/">https://vibim.wordpress.com/2026/10/11/revit-modeling-for-topographical-site-in-the-uk/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th Floor, CIT Building, No. 6, Alley 15, Duy Tan Street, Dich Vong Hau Ward, Cau Giay District, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
