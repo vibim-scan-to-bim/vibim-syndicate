@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scan to BIM Quality Control: A Technical Reference</title>
+<meta name="description" content="This reference summarizes how quality control is organized when a laser scan is converted into a Revit model. It is written as a lookup sheet: definitions first">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Scan to BIM Quality Control: A Technical Reference</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/point-cloud-to-bim-quality-control.jpg" alt="Scan to BIM quality control: point cloud checked against a Revit model" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes how quality control is organized when a laser scan is converted into a Revit model. It is written as a lookup sheet: definitions first, then the three phases, then the checks and tools that belong to each.</p>
+<h2>Definition</h2>
+<p>Scan to BIM quality control is the set of checks that confirms a 3D building model matches the point cloud it was built from. It covers geometry, coordinates, object classification and attached data. The goal is to catch errors before the model reaches design, construction or facility management teams.</p>
+<h2>Where errors come from</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>What happens</th>
+<th>Typical symptom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registration drift</td>
+<td>Individual scans are stitched together with a small misalignment</td>
+<td>Ghosting, doubled walls, shifted dimensions</td>
+</tr>
+<tr>
+<td>Scan shadows</td>
+<td>Columns, furniture or equipment block the scanner</td>
+<td>Voids that the modeler must interpret</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>Dust, people or reflections leave stray points</td>
+<td>Wrong pipe diameters, phantom objects</td>
+</tr>
+<tr>
+<td>Interpretation</td>
+<td>A person converts points into objects</td>
+<td>Wrong LOD, unmarked assumptions</td>
+</tr>
+<tr>
+<td>Data transfer</td>
+<td>Files move between registration, authoring and checking software</td>
+<td>Lost or corrupted information</td>
+</tr>
+</tbody>
+</table>
+<h2>Phase 1: before conversion</h2>
+<ol>
+<li>Read the registration report and look for high mean error values.</li>
+<li>Inspect the cloud visually for ghosting and stitching faults.</li>
+<li>Remove noise with despeckle filters and segment out moving objects.</li>
+<li>Confirm the Survey Point and Project Base Point match the surveyor's grid or GPS data.</li>
+</ol>
+<h2>Phase 2: during conversion</h2>
+<ul>
+<li><strong>Section boxes:</strong> cut thin slices through model and cloud together, then confirm walls, slabs and beams sit flush against the points.</li>
+<li><strong>Orthogonality and verticality:</strong> keep walls vertical and floors horizontal, but compare with the scan so real structural lean is not erased as noise.</li>
+<li><strong>View range isolation:</strong> limit View Depth and Top Plane to the active level so modelers do not trace the floor above or below.</li>
+</ul>
+<h2>Phase 3: after conversion</h2>
+<ul>
+<li><strong>Ground truth check:</strong> compare model coordinates with survey control points.</li>
+<li><strong>Semantic validation:</strong> confirm a floor is a Floor and a door is a door. Rule-based checkers such as Solibri help here.</li>
+<li><strong>Deviation analysis:</strong> tools such as CloudCompare or Verity measure the distance from model surfaces to the cloud and draw a heat map. Green means within tolerance, red means outside it.</li>
+<li><strong>Clash detection:</strong> run hard and clearance tests in Navisworks or ACC.</li>
+<li><strong>Schedule checks:</strong> use Revit schedules to find empty parameters and duplicate elements.</li>
+</ul>
+<h2>Tolerance</h2>
+<p>Tolerance is set per project in the scope of work before modeling starts. Heritage and high-precision industrial work normally uses tighter limits than general architecture. A model should never be checked against a tolerance nobody agreed on.</p>
+<h2>Frequent mistakes</h2>
+<ul>
+<li>Trusting auto-extraction without human review.</li>
+<li>Modeling from noisy points without checking panoramic photos.</li>
+<li>Starting with the wrong origin or coordinate system.</li>
+<li>Drawing hidden elements without labeling them as assumed.</li>
+</ul>
+<h2>QA versus QC</h2>
+<p>QA is process-oriented. It sets standards, workflows and training so errors do not occur. QC is product-oriented. It inspects the finished model and fixes defects. A project needs both.</p>
+<h2>Process at ViBIM</h2>
+<p>ViBIM applies a 36-point technical checklist and a two-layer review. The first layer is a self-check by the production team. The second is a specialist who is independent of the modeling team. The checklist covers geometric scope, naming and data structure, and model performance.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/scan-to-bim-quality-control/">https://vibimglobal.com/blog/scan-to-bim-quality-control/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2025/08/08/best-practices-and-standards-for-scan-to-bim-quality-control/">https://vibim.wordpress.com/2025/08/08/best-practices-and-standards-for-scan-to-bim-quality-control/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th Floor, CIT Building, No. 6, Alley 15, Duy Tan Street, Dich Vong Hau Ward, Cau Giay District, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
