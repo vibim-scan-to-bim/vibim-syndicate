@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Reference: Project 635.UK Supermarket Scan to BIM</title>
+<meta name="description" content="This reference summarizes the specification, workflow and quality controls of Project 635.UK, an as-built BIM model of a supermarket in the United Kingdom. Use ">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Technical Reference: Project 635.UK Supermarket Scan to BIM</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/09/revit-based-modeling-for-retail-supermarkets-in-the-uk.jpg" alt="Revit BIM modeling for a supermarket in the United Kingdom" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes the specification, workflow and quality controls of Project 635.UK, an as-built BIM model of a supermarket in the United Kingdom. Use it as a checklist for similar retail projects.</p>
+<h2>Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project code</td>
+<td>635.UK</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>United Kingdom</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>Supermarket / Retail</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>8,300 m²</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>Two months, April to June 2024</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, PDF</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>LOD</td>
+<td>400 (architecture, structure, topography); 200 (MEP)</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Client profile</td>
+<td>Confidential</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>As-built BIM model</strong>: a model that records the building as it exists, not as designed.</li>
+<li><strong>LOD (level of development)</strong>: how much detail and reliability model elements carry. Here it differs per discipline.</li>
+<li><strong>Workset</strong>: a Revit subdivision of a shared model that controls who edits which elements.</li>
+<li><strong>Toposolid</strong>: a Revit feature for site topography. Project 635.UK was the team's first use of it.</li>
+<li><strong>Federated model</strong>: separate models combined in Navisworks for checking.</li>
+</ul>
+<h2>Accuracy requirement</h2>
+<p>The model must not deviate more than ±15 mm from the source point cloud. Components must reflect true dimensions and technical specifications, and floor finishes and external topography must be mapped as distinct materials.</p>
+<h2>Workflow</h2>
+<ol>
+<li>Prepare the point cloud: register, clean and handle many separate scans.</li>
+<li>Define worksets (for example Architectural Shell, External Areas, MEP) and a protocol for assigning objects.</li>
+<li>Review the client-provided BIM families against the scan. Classify them by system (HVAC, plumbing, electrical, fire protection) and by component type (valves, pipes, FCUs, electrical panels, air conditioners). Adjust dimensions, geometry and connectors.</li>
+<li>Build the topography surface from the point cloud in smaller sections. Stitch the edges so no gaps or steps remain.</li>
+<li>Model the architecture, structure and MEP, tracking deviation with an in-house tool.</li>
+<li>Delineate material boundaries using the point cloud, TrueView and Google Map.</li>
+<li>Check clashes with Revit section views and Navisworks federated models, focusing on stairwells and workset interfaces.</li>
+<li>Before each milestone and final handover, run Revit filters to confirm that no object sits in the wrong workset.</li>
+</ol>
+<h2>Known risks</h2>
+<ul>
+<li>Weak starting MEP data (old PDFs, exterior photos) makes scope and cost hard to estimate.</li>
+<li>Dense MEP above ceilings is hard to visualize early.</li>
+<li>QA of thousands of MEP objects under a tight deadline needs an automated or repeatable check.</li>
+</ul>
+<h2>Outcome</h2>
+<p>The model supports renovation, upgrades and expansion, and gives the facility team detail on each MEP asset for maintenance planning, replacement scheduling and lifecycle cost control.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-supermarket-in-the-united-kingdom/">https://vibimglobal.com/projects/revit-modeling-for-supermarket-in-the-united-kingdom/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/11/revit-modeling-for-supermarket-in-the-united-kingdom/">https://vibim.wordpress.com/2026/10/11/revit-modeling-for-supermarket-in-the-united-kingdom/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th Floor, CIT Building, No. 6, Alley 15, Duy Tan Street, Dich Vong Hau Ward, Cau Giay District, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
