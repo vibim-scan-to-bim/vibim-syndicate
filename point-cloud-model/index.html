@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Point Cloud Model: Technical Reference</title>
+<meta name="description" content="This reference summarizes what a point cloud model contains, how it differs from a 3D model, and how the conversion pipeline is organized.  ## Definition  A poi">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Point Cloud Model: Technical Reference</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/point-cloud-model-1.jpg" alt="Point cloud model of a building converted into a 3D BIM model" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes what a point cloud model contains, how it differs from a 3D model, and how the conversion pipeline is organized.</p>
+<h2>Definition</h2>
+<p>A point cloud model is a dataset of 3D coordinates that records the surface of a real object or space. Every point holds an X, Y and Z position and often colour and intensity values. The data comes from laser scanning (LiDAR) or photogrammetry. It is measured, but it has no structure: software reads coordinates, not walls or pipes.</p>
+<h2>Point attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Records</th>
+<th>Use in conversion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XYZ coordinates</td>
+<td>Exact position in space</td>
+<td>Geometric skeleton for tracing</td>
+</tr>
+<tr>
+<td>RGB colour</td>
+<td>Photographic colour value</td>
+<td>Tells one surface from another</td>
+</tr>
+<tr>
+<td>Intensity</td>
+<td>Strength of the laser return</td>
+<td>Separates materials, such as metal duct and plaster</td>
+</tr>
+<tr>
+<td>Surface normal</td>
+<td>Direction the surface faces</td>
+<td>Helps detect planes and clean edges</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>When the point was recorded</td>
+<td>Aligns points from separate sessions</td>
+</tr>
+</tbody>
+</table>
+<h2>Point cloud vs 3D model</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Point cloud</th>
+<th>3D model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Form</td>
+<td>Disconnected measured points</td>
+<td>Organized geometry</td>
+</tr>
+<tr>
+<td>Content</td>
+<td>Coordinates only</td>
+<td>Defined objects such as walls and floors</td>
+</tr>
+<tr>
+<td>Actions</td>
+<td>View and measure</td>
+<td>Select, schedule, clash-check, edit</td>
+</tr>
+</tbody>
+</table>
+<p>A conversion produces either a mesh (a continuous surface, good for visualization, heritage shapes and VR) or a parametric model (objects that carry data, needed for engineering, coordination and quantities).</p>
+<h2>Pipeline</h2>
+<ol>
+<li>Capture: a scanner or photogrammetry rig records distances to surfaces.</li>
+<li>Registration: separate scans are aligned into one cloud in a shared coordinate system and cleaned of noise.</li>
+<li>Conversion: the cloud is imported into authoring software, traced and classified, then checked against the source cloud.</li>
+</ol>
+<h2>Input quality conditions</h2>
+<ul>
+<li>Point density must resolve the smallest required element.</li>
+<li>Coverage must reach every surface from enough angles.</li>
+<li>Registration accuracy must keep walls from doubling or ghosting.</li>
+<li>Noise must be filtered out so the true surface stays readable.</li>
+</ul>
+<h2>Level of Development</h2>
+<table>
+<thead>
+<tr>
+<th>LOD</th>
+<th>Carries</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Approximate geometry</td>
+<td>Early coordination and massing</td>
+</tr>
+<tr>
+<td>300</td>
+<td>Accurate geometry and dimensions</td>
+<td>As-built documentation and design</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Fabrication-level detail and data</td>
+<td>Fabrication and clash-free MEP</td>
+</tr>
+</tbody>
+</table>
+<h2>Tooling</h2>
+<p>Registration: Autodesk ReCap (RCP or RCS files) and Leica Cyclone. Authoring: Revit, ArchiCAD, Tekla Structures, plus plugins such as Undet that bring the cloud into Revit or SketchUp.</p>
+<h2>Applications</h2>
+<p>As-built documentation, renovation and retrofit design, construction verification (scan-vs-BIM), facility management, heritage preservation, earthworks and civil work, and structural, MEP and industrial plant modeling.</p>
+<h2>Terminology</h2>
+<p>LiDAR is a scanning technology. A point cloud is the dataset it produces. "Modeling" and "modelling" name the same process in American and British spelling.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/point-cloud-model/">https://vibimglobal.com/blog/point-cloud-model/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2025/08/08/point-cloud-generation-laser-scanning-vs-photogrammetry/">https://vibim.wordpress.com/2025/08/08/point-cloud-generation-laser-scanning-vs-photogrammetry/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th Floor, CIT Building, No. 6, Alley 15, Duy Tan Street, Dich Vong Hau Ward, Cau Giay District, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
