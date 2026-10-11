@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIM Level of Development (LOD): Technical Reference for Scan to BIM Scoping</title>
+<meta name="description" content="This reference summarizes how Level of Development is defined, how each level is used, and how to specify it on a Scan to BIM project.  ## Definitions  - **LOD ">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>BIM Level of Development (LOD): Technical Reference for Scan to BIM Scoping</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/06/lod-bim-levels.jpg" alt="BIM level of development LOD 100 to 500 illustrated on a building model" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes how Level of Development is defined, how each level is used, and how to specify it on a Scan to BIM project.</p>
+<h2>Definitions</h2>
+<ul>
+<li><strong>LOD (Level of Development):</strong> a scale that defines how much geometry and reliable information each BIM model element contains at a given project stage. It is an output: how much of the element's geometry and data you can rely on.</li>
+<li><strong>Level of Detail:</strong> an input. It describes how much geometry and graphical richness an element shows. It can rise without the element becoming more dependable.</li>
+<li><strong>LOI (Level of Information):</strong> the non-graphical data attached to an element, such as manufacturer, model number and maintenance record.</li>
+<li><strong>BIM maturity level:</strong> a rating of how advanced the whole project's BIM process is, from Level 0 to Level 3. It is unrelated to the LOD of a single element.</li>
+</ul>
+<h2>Standards</h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AIA E202-2008</td>
+<td>First set out five levels: 100, 200, 300, 400, 500</td>
+</tr>
+<tr>
+<td>AIA G202-2013</td>
+<td>Project BIM Protocol Form that defines the core levels</td>
+</tr>
+<tr>
+<td>BIMForum LOD Specification</td>
+<td>Adds LOD 350 and expands each level element by element, organized by CSI Uniformat</td>
+</tr>
+<tr>
+<td>ISO 19650 series</td>
+<td>Information-management framework for BIM projects</td>
+</tr>
+<tr>
+<td>ISO 7817-1:2024</td>
+<td>Level of information need: geometrical information, alphanumerical information, documentation</td>
+</tr>
+</tbody>
+</table>
+<h2>Level summary</h2>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>Reliable for</th>
+<th>Not reliable for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>Conceptual Design</td>
+<td>Massing, early area and volume studies</td>
+<td>Measurement, coordination</td>
+</tr>
+<tr>
+<td>200</td>
+<td>Schematic Design</td>
+<td>Schematic coordination, rough quantity take-off</td>
+<td>Exact dimensions</td>
+</tr>
+<tr>
+<td>300</td>
+<td>Detailed Design</td>
+<td>General coordination, accurate quantity take-off</td>
+<td>Fabrication</td>
+</tr>
+<tr>
+<td>350</td>
+<td>Construction Coordination</td>
+<td>Multi-trade coordination, installation layout</td>
+<td>Shop fabrication</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Fabrication and Assembly</td>
+<td>Shop drawings, bills of materials, spooling</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>500</td>
+<td>As-Built</td>
+<td>Field-verified record for facility management</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<h2>LOD 300 versus LOD 350</h2>
+<p>LOD 300 defines an element on its own. LOD 350 also defines how it connects to everything around it. An LOD 300 pipe has the correct size and route. The same pipe at LOD 350 also shows its hangers, supports and ties into nearby ducts.</p>
+<h2>Procedure: choosing LOD for a scanned building</h2>
+<ol>
+<li>List each element group and the decision it must support: coordination, quantity take-off, fabrication or facility handover.</li>
+<li>Assign a target level per element, not per project.</li>
+<li>Check scan coverage, point density, visibility and the agreed tolerance against each target.</li>
+<li>Where the scan cannot support the target, choose supplementary measurements, a denser rescan or a lower level.</li>
+<li>Record the result in the LOD matrix of the BIM Execution Plan. When modeling is outsourced, the same list becomes the provider's scope of work.</li>
+</ol>
+<h2>Procedure: modeling LOD in Revit</h2>
+<ol>
+<li>Develop and track the element with the system family, loadable family or fabrication part that carries the required geometry and information. If the BIM Execution Plan tracks LOD by parameter, add LOD as a shared parameter.</li>
+<li>Set the view's Detail Level (Coarse, Medium or Fine) for display only. It does not change the recorded LOD.</li>
+<li>Verify measurable geometry, information, interfaces and source accuracy against the LOD matrix, and stop at the agreed level.</li>
+</ol>
+<h2>Scan constraints</h2>
+<p>A registered terrestrial scan can support LOD 300 or higher where coverage, point density, visibility and tolerance are sufficient. Handheld and mobile scanners such as the Leica BLK2GO capture a sparser point cloud and cannot guarantee LOD 300 for every element. A Scan to BIM model is not automatically LOD 500, because a scan records only visible surfaces.</p>
+<h2>Tolerance options</h2>
+<p>Where a client sets a tolerance, typical values are 2 in (50 mm), 1.2 in (30 mm), 0.6 in (15 mm) or a custom value. Tighter tolerances add checking time and raise price.</p>
+<h2>Delivered examples</h2>
+<ul>
+<li>LOD 200, train station, Canada (72,000 sq ft / 6,700 m²).</li>
+<li>LOD 300, factory, US (40,900 sq ft / 3,800 m²), matched to the point cloud within 0.6 in (15 mm).</li>
+<li>LOD 350, aluminum extrusion press, US (16,150 sq ft / 1,500 m²), required accuracy ±0.25 in (6 mm).</li>
+</ul>
+<p>Reference: <a href="https://vibimglobal.com/blog/bim-level-of-development/">https://vibimglobal.com/blog/bim-level-of-development/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2025/08/21/fostering-clarity-and-collaboration-with-bim-level-of-development/">https://vibim.wordpress.com/2025/08/21/fostering-clarity-and-collaboration-with-bim-level-of-development/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th Floor, CIT Building, No. 6, Alley 15, Duy Tan Street, Dich Vong Hau Ward, Cau Giay District, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
