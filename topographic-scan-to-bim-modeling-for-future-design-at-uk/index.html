@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 380.UK: Technical Summary of a Topographic Scan-to-BIM Model</title>
+<meta name="description" content="This page records the specification, method and verification steps for Project 380.UK, a topographic Revit model of a single-level UK site.  ## Specification  |">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Project 380.UK: Technical Summary of a Topographic Scan-to-BIM Model</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/09/380_01-scaled.jpg" alt="Topographic site model for a 36,100 m² UK site built from point cloud data" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page records the specification, method and verification steps for Project 380.UK, a topographic Revit model of a single-level UK site.</p>
+<h2>Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project</td>
+<td>380.UK</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>United Kingdom</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>Topography</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>36,100 m²</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>1</td>
+</tr>
+<tr>
+<td>LOD</td>
+<td>LOD 400</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, 2D drawings</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>One month, June to July 2022</td>
+</tr>
+<tr>
+<td>Deviation tolerance</td>
+<td>±25 mm from the point cloud</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions used</h2>
+<ul>
+<li><strong>LOD 400:</strong> elements are modeled with accurate assembly information, and that detail must match real-world conditions captured in the scan.</li>
+<li><strong>Deviation analysis:</strong> a direct comparison between the BIM model and the source point cloud, used to confirm each element stays within tolerance.</li>
+<li><strong>As-built model:</strong> a model of existing conditions rather than proposed design.</li>
+</ul>
+<h2>Scope</h2>
+<p>The model covers the entire site terrain, including roads, sidewalks and landscape-related structures. The purpose is to provide a reliable information base for future design and development, plus archival 2D documentation produced from the 3D model.</p>
+<h2>Constraints</h2>
+<ol>
+<li>The LOD 400 requirement demands accurate assembly information that still agrees with the point cloud.</li>
+<li>Terrain and the transport network must form one continuous, seamless surface across a large area.</li>
+<li>Many unique site objects require custom Revit families, which can become a schedule bottleneck.</li>
+<li>Surface types need clearly separated materials to support quantity takeoffs and asset management.</li>
+</ol>
+<h2>Method</h2>
+<ol>
+<li>Segment the site into smaller topographic sections.</li>
+<li>Model each section independently to keep performance and precision.</li>
+<li>Join the sections into one complete as-built model.</li>
+<li>Batch-load custom families with a proprietary in-house tool.</li>
+<li>Identify materials by cross-checking client site photographs against satellite data such as Google Maps.</li>
+</ol>
+<h2>Verification</h2>
+<ol>
+<li>Run a deviation analysis between the model and the point cloud with specialized internal software.</li>
+<li>Inspect structure and composition with detailed Revit section views and component inspection software.</li>
+<li>Confirm every element sits within the ±25 mm tolerance.</li>
+</ol>
+<h2>Services covered</h2>
+<p>Topography Scan to BIM, MEP Scan to BIM, As-Built BIM Modeling, Scan to Revit Family Creation, Scan to 2D As-Built Drawings, Scan to BIM for Facility Management.</p>
+<h2>Result</h2>
+<p>A definitive 3D as-built model that replaces error-prone manual surveys and serves as the single source of truth for later work on the site.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/topographic-scan-to-bim-modeling-for-future-design-at-uk/">https://vibimglobal.com/projects/topographic-scan-to-bim-modeling-for-future-design-at-uk/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/12/topographic-scan-to-bim-modeling-for-future-design-at-uk/">https://vibim.wordpress.com/2026/10/12/topographic-scan-to-bim-modeling-for-future-design-at-uk/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
