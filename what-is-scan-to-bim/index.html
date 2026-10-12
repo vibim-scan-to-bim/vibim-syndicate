@@ -2,57 +2,131 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>What Is Scan to BIM? A Complete Overview</title>
-<meta name="description" content="Scan to BIM is the process of converting a physical building or space into a precise Building Information Model using 3D laser scanning technology.  ## How it w">
-
-<link rel="canonical" href="https://vibim-scan-to-bim.github.io/vibim-syndicate/what-is-scan-to-bim/">
-<link rel="stylesheet" href="/assets/site.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scan to BIM Technical Reference: Workflow, Deliverables and Tooling</title>
+<meta name="description" content="This reference summarizes how a scan to BIM project is structured, what the modeling stage consumes and produces, and which tools sit at each step. Scan to BIM ">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
 </head>
 <body>
-<header class="site-header"><div class="wrap bar"><a class="logo" href="/"><img src="https://vibimglobal.com/wp-content/uploads/2025/07/logo-vibim-3-300x94.png" alt="ViBIM logo" width="150" height="47"></a><nav aria-label="Main"><a href="/">Home</a><a href="/about-us/">About</a><a href="/our-team/">Team</a><a href="/services/point-cloud-to-bim-services/">Services</a><a href="/testimonials/">Testimonials</a><a href="/vibim-syndicate/" aria-current="page">Blog</a><a href="/contact-us/">Contact</a></nav></div></header>
-<main class="wrap">
-<article class="post">
-<h1>What Is Scan to BIM? A Complete Overview</h1>
-<p>Scan to BIM is the process of converting a physical building or space into a
-precise Building Information Model using 3D laser scanning technology.</p>
-<h2>How it works</h2>
-<p>A LiDAR scanner captures the site as a point cloud — a dataset containing
-millions of 3D coordinates representing every surface it can reach. Technicians
-register multiple scan positions into a unified point cloud, then model it in
-Autodesk Revit or similar BIM authoring tools to produce a structured,
-object-based as-built model.</p>
-<h2>Common applications</h2>
+<h1>Scan to BIM Technical Reference: Workflow, Deliverables and Tooling</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2026/10/what-is-scan-to-bim-featured.jpg" alt="Laser scan point cloud being converted into a Revit BIM model" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes how a scan to BIM project is structured, what the modeling stage consumes and produces, and which tools sit at each step. Scan to BIM converts 3D laser scan data (a point cloud) into an intelligent Building Information Model (BIM) of an existing building.</p>
+<h2>Definitions</h2>
 <ul>
-<li>Renovation and adaptive reuse</li>
-<li>MEP clash detection in existing buildings</li>
-<li>Historic preservation documentation</li>
-<li>Facilities management digital twins</li>
+<li><strong>Point cloud:</strong> scan data made of a dense field of measured X, Y, Z points.</li>
+<li><strong>Registration:</strong> aligning individual scans into a single unified point cloud, based on common targets or shared geometric features.</li>
+<li><strong>LOD (level of development):</strong> the detail level agreed for model elements, for example LOD 200 for broad planning or LOD 300 for detailed design.</li>
+<li><strong>LOI (level of information):</strong> the amount of data attached to model elements.</li>
+<li><strong>As-built BIM model:</strong> the model of the building as it currently stands.</li>
 </ul>
+<h2>Workflow stages</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Activity</th>
+<th>Typical owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Identify requirements: scope, LOD, LOI, tolerance, disciplines</td>
+<td>Project stakeholders</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Plan scanner positions, set point density, capture the site</td>
+<td>Scanning company</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Register scans, filter noise, produce a clean cloud</td>
+<td>Scanning company</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Model the registered cloud in Revit</td>
+<td>Modeling team</td>
+</tr>
+</tbody>
+</table>
+<h2>Inputs to the modeling stage</h2>
+<ul>
+<li>Indexed Autodesk ReCap files (.RCP or .RCS) are preferred for data integrity. E57 is also accepted.</li>
+<li>Large datasets move over a secure FTP server or cloud platforms such as Box, Google Drive and ACC.</li>
+<li>Individual RCS files stay under 5 GB, or the dataset is packed as a single compressed .zip.</li>
+</ul>
+<h2>Modeling steps</h2>
+<ol>
+<li>Data input and transfer.</li>
+<li>Bidding and planning: every element is checked against the required LOD, LOI and tolerance, and scope ambiguity is resolved before scheduling.</li>
+<li>Execution and modeling in Revit across Architecture, Structure, MEP and Topography.</li>
+<li>Quality assurance: a two-layer independent check of geometry and parameters, then a measurement of model deviation against the original point cloud.</li>
+<li>Deliverables.</li>
+</ol>
 <h2>Deliverables</h2>
-<p>A standard Scan to BIM project produces a native Revit model (or IFC export)
-with point cloud as reference, a QA deviation report, and scan data in
-.rcp / .e57 format. Typical accuracy is +/-6mm at LOD 200-350.</p>
-<p>ViBIM delivers Scan to BIM, Point Cloud to Revit, and BIM coordination
-for projects across the US, UK, Canada, and Australia.</p>
-
-<h1>scan-to-bim #point-cloud #revit-modeling #vibim</h1>
-<p>Reference: <a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+<ul>
+<li><code>.RVT</code> — editable Revit model.</li>
+<li><code>.IFC</code> — interchange file for other BIM platforms.</li>
+<li><code>.DWG</code> — AutoCAD 2D as-built drawings.</li>
+</ul>
+<h2>Toolchain</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autodesk Revit</td>
+<td>BIM authoring</td>
+</tr>
+<tr>
+<td>Autodesk ReCap Pro</td>
+<td>Opening and indexing the registered point cloud</td>
+</tr>
+<tr>
+<td>Navisworks Manage</td>
+<td>Quality control and clash detection</td>
+</tr>
+<tr>
+<td>Autodesk Construction Cloud</td>
+<td>Collaboration and data sharing</td>
+</tr>
+<tr>
+<td>AutoCAD</td>
+<td>2D drawings and documentation</td>
+</tr>
+</tbody>
+</table>
+<h2>Known constraints</h2>
+<ul>
+<li>Mobile scanners such as the Leica BLK2GO record at a lower density than terrestrial scanners, which limits the achievable level of detail.</li>
+<li>Registration error left in the cloud carries into every element modeled from it.</li>
+<li>Automation helps with registration, surface classification and repetitive family placement through Revit API and Dynamo scripts. Irregular, one-off geometry still needs a modeler.</li>
+</ul>
+<p>Reference: <a href="https://vibimglobal.com/blog/what-is-scan-to-bim/">https://vibimglobal.com/blog/what-is-scan-to-bim/</a></p>
 <p>See more:</p>
-<p><a href="https://vibim.tumblr.com/post/816516963617669120">https://vibim.tumblr.com/post/816516963617669120</a></p>
-<p><a href="https://vibim-scan-to-bim.blogspot.com/2026/05/what-is-scan-to-bim-complete-overview_01534755611.html">https://vibim-scan-to-bim.blogspot.com/2026/05/what-is-scan-to-bim-complete-overview_01534755611.html</a></p>
-<p><a href="https://vibim.wordpress.com/2026/05/13/what-is-scan-to-bim/">https://vibim.wordpress.com/2026/05/13/what-is-scan-to-bim/</a></p>
-</article>
-</main>
-<footer class="site-footer"><div class="wrap cols">
-<div class="nap" itemscope>
-<p class="nap-name"><strong>ViBIM</strong></p>
-<p>Address: 10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam</p>
-<p>Phone: <a href="tel:+84944798298">(+84) 944.798.298</a></p>
-<p>Email: <a href="mailto:info@vibim.com.vn">info@vibim.com.vn</a></p>
-<p>Website: <a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
-</div>
-<div><p class="fh">Company</p><ul><li><a href="/about-us/">About ViBIM</a></li><li><a href="/ceo-pham-thanh/">CEO Pham Thanh</a></li><li><a href="/our-team/">Our Team</a></li><li><a href="/testimonials/">Testimonials</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/contact-us/">Contact</a></li></ul></div>
-<div><p class="fh">Services</p><ul><li><a href="/services/point-cloud-to-bim-services/">Scan to BIM Services</a></li><li><a href="/services/architectural-scan-to-bim-services/">Architectural Scan to BIM</a></li><li><a href="/services/structural-bim-modeling/">Structural BIM Modeling</a></li><li><a href="/services/mep-bim-modeling/">MEP BIM Modeling</a></li><li><a href="/services/topography-bim-modeling/">Topography BIM Modeling</a></li><li><a href="/services/as-built-bim-modeling/">As-Built BIM Modeling</a></li></ul></div>
-</div><div class="wrap copy">&copy; 2026 ViBIM. Vietnam BIM Consultancy and Technology Application Company Limited.</div></footer>
+<ul>
+<li><a href="https://vibim.wordpress.com/2025/09/03/scan-to-bim-overcomes-traditional-surveying-limitations/">https://vibim.wordpress.com/2025/09/03/scan-to-bim-overcomes-traditional-surveying-limitations/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
 </body>
 </html>
