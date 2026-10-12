@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D BIM Model: Technical Reference</title>
+<meta name="description" content="## Definition  A 3D BIM model is a coordinated assembly of building objects that carry geometric and non-geometric information. It is produced during the 3D pha">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>3D BIM Model: Technical Reference</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/06/3d-bim-model.jpg" alt="3D BIM model of a building with coordinated architectural, structural and MEP objects" style="width:100%;max-height:420px;object-fit:cover;">
+<h2>Definition</h2>
+<p>A 3D BIM model is a coordinated assembly of building objects that carry geometric and non-geometric information. It is produced during the 3D phase of the Building Information Modeling process. Its elements store geometry, properties and relationships, unlike a surface model that records shape only.</p>
+<h2>Conventional 3D model compared with a 3D BIM model</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Conventional 3D model</th>
+<th>3D BIM model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic structure</td>
+<td>Surfaces, meshes or solids</td>
+<td>Walls, doors, ducts, equipment as objects</td>
+</tr>
+<tr>
+<td>Embedded information</td>
+<td>Optional metadata</td>
+<td>Structured parameters defined by the project scope</td>
+</tr>
+<tr>
+<td>Relationships</td>
+<td>Not required</td>
+<td>Links to levels, rooms, systems and other objects</td>
+</tr>
+<tr>
+<td>Change behavior</td>
+<td>Views may need separate updates</td>
+<td>Views and schedules update from the same object</td>
+</tr>
+<tr>
+<td>Typical output</td>
+<td>Visualization, geometric reference</td>
+<td>Coordination, documentation, quantities, model review</td>
+</tr>
+</tbody>
+</table>
+<h2>Information bound to objects</h2>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product identity</td>
+<td>Manufacturer, model reference, specification</td>
+</tr>
+<tr>
+<td>Performance values</td>
+<td>Fire rating, U value, acoustic rating, load capacity</td>
+</tr>
+<tr>
+<td>Spatial data</td>
+<td>Room areas, heights, volumes, containing space</td>
+</tr>
+<tr>
+<td>Classification and status</td>
+<td>Uniclass or Omniclass code, project phase, existing, new or demolition status</td>
+</tr>
+</tbody>
+</table>
+<h2>Creation procedure</h2>
+<ol>
+<li>Prepare the source. Confirm the design package for a new building, or register the survey data for an existing one.</li>
+<li>Set up the project. Define levels, grids, coordinates, naming conventions and required parameters.</li>
+<li>Model by discipline. Build architectural, structural and MEP objects in separate coordinated files.</li>
+<li>Federate and check. Combine the files, review alignment and data, resolve issues before delivery.</li>
+</ol>
+<p>Common point-cloud inputs for existing buildings are RCP, RCS and E57.</p>
+<h2>Level of detail by stage</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Sufficient detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concept and feasibility</td>
+<td>Massing, floor plates, approximate openings</td>
+</tr>
+<tr>
+<td>Design development</td>
+<td>Real element types, correct thicknesses, main services routed</td>
+</tr>
+<tr>
+<td>Construction documentation</td>
+<td>Accurate sizes, locations, interfaces, penetrations, clearances</td>
+</tr>
+<tr>
+<td>As-built record</td>
+<td>Verified against the survey</td>
+</tr>
+</tbody>
+</table>
+<p>Level of Development states how reliably an element supports a stated use. A BIM dimension states which extra information is attached. They are independent: a concept model and a construction-documentation model can both stay 3D.</p>
+<h2>Delivery package</h2>
+<ul>
+<li>Native authoring file, usually .rvt.</li>
+<li>Open exchange file, .ifc, with the schema named in the brief (IFC2x3, IFC4 or other).</li>
+<li>Drawings cut from the model, .dwg or PDF.</li>
+<li>Required object data, with an optional checked spreadsheet export.</li>
+</ul>
+<h2>Acceptance checks</h2>
+<ol>
+<li>Geometry: correct levels, coordinates, hosts, no duplicates.</li>
+<li>Parameters: mandatory fields populated in the agreed format.</li>
+<li>Deviation: existing-building model compared with the registered point cloud, within tolerance.</li>
+<li>Scope completeness: every required discipline and category covered, exclusions recorded.</li>
+<li>Data consistency: naming, classification, units and formats uniform across files.</li>
+</ol>
+<p>The signed project requirements remain the acceptance baseline. The ISO 19650 series frames information management, and the BIMForum LOD Specification helps define expected reliability. Neither replaces the agreed scope and tolerance.</p>
+<h2>Known limits</h2>
+<p>Source coverage, scope and LOD, parameter completeness, version control across discipline files, and IFC mapping differences between software can each reduce the reliability of a model for downstream use.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/what-is-3d-bim-model/">https://vibimglobal.com/blog/what-is-3d-bim-model/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2025/09/21/beyond-the-blueprint-how-3d-bim-supports-the-entire-project-lifecycle/">https://vibim.wordpress.com/2025/09/21/beyond-the-blueprint-how-3d-bim-supports-the-entire-project-lifecycle/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
