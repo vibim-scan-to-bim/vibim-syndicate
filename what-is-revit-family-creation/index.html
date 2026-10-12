@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revit Family Creation: Technical Reference</title>
+<meta name="description" content="This reference summarizes the building blocks of Revit family creation: definitions, family types, parameter scope, the six-step build and the standards used fo">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Revit Family Creation: Technical Reference</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/06/revit-family-creation-window-from-point-cloud.jpg" alt="Revit window family built from point cloud scan data" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes the building blocks of Revit family creation: definitions, family types, parameter scope, the six-step build and the standards used for review. It is written for modelers who need a quick lookup rather than a tutorial.</p>
+<h2>Definitions</h2>
+<ul>
+<li><strong>Family:</strong> a group of elements that share a set of parameters and one graphical representation. Changing the family updates every instance.</li>
+<li><strong>Category:</strong> a broad group fixed by Revit, such as Doors, Windows or Walls.</li>
+<li><strong>Type:</strong> a specific size or variant inside a family. One door family can hold a 36" by 84" (914 by 2134 mm) type and a 30" by 80" (762 by 2032 mm) type.</li>
+<li><strong>Hierarchy:</strong> Category, then Family, then Type.</li>
+<li><strong>Family Editor:</strong> the Revit environment where loadable families are built from a template.</li>
+<li><strong>.rfa and .rvt:</strong> an .rfa is a loadable family file. An .rvt is the full project that loads and arranges families.</li>
+</ul>
+<h2>Family types</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Where it is created</th>
+<th>Saved as</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System</td>
+<td>Inside the project; cannot be exported</td>
+<td>In the .rvt</td>
+<td>Walls, floors, roofs, MEP systems</td>
+</tr>
+<tr>
+<td>Loadable</td>
+<td>Family Editor, from an .rft template</td>
+<td>External .rfa</td>
+<td>Doors, windows, furniture, MEP equipment</td>
+</tr>
+<tr>
+<td>In-place</td>
+<td>Inside one project only</td>
+<td>In the .rvt</td>
+<td>One-off, site-specific element</td>
+</tr>
+</tbody>
+</table>
+<p>System families can be duplicated and adjusted but not built from scratch. In-place families suit a single unique condition, and overuse bloats the file and slows performance.</p>
+<h2>Parameter scope</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Instance</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scope</td>
+<td>Each placed element</td>
+<td>All elements of the type</td>
+</tr>
+<tr>
+<td>Edited in</td>
+<td>Properties palette</td>
+<td>Edit Type</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>Mounting height of one light fixture</td>
+<td>Door width, 36" (914 mm)</td>
+</tr>
+</tbody>
+</table>
+<p>Rule of thumb: if two placed copies may differ, use instance. If they must match, use type. Past six preset types, move them into a type catalog (.txt) to keep the file light.</p>
+<h2>Six-step build</h2>
+<ol>
+<li>Start from the correct template (Door.rft or Metric Door.rft). The template sets category and hosting.</li>
+<li>Draw a named reference-plane skeleton and set it equal with EQ.</li>
+<li>Model geometry (opening, leaf, frame) and lock every sketch line to a plane.</li>
+<li>Add parameters and formulas, for example Rough Width = Width + 2 x Frame_Thickness.</li>
+<li>Nest hardware as a sub-family and associate its parameters to the host.</li>
+<li>Load into a project, host it, flex it and check the swing.</li>
+</ol>
+<h2>Advanced techniques</h2>
+<ul>
+<li><strong>Nested and shared families:</strong> a shared nested family can schedule and tag on its own.</li>
+<li><strong>Formulas:</strong> for example if(Length &gt; 1500 mm, 3, 2) adds a third support leg past 1500 mm (59 in).</li>
+<li><strong>Visibility parameters:</strong> Yes/No parameters that switch parts on or off to control detail by view.</li>
+<li><strong>Dynamo and the Revit API:</strong> automate repetitive work when hundreds of families are needed.</li>
+</ul>
+<h2>Review checklist</h2>
+<ul>
+<li>Correct category and host.</li>
+<li>Geometry modeled only to the required level of development.</li>
+<li>Naming convention and a shared parameter file in use.</li>
+<li>No hard-coded dimensions.</li>
+<li>Flex test completed before delivery.</li>
+<li>Geometry checked against the original point cloud when the family comes from a scan.</li>
+</ul>
+<h2>Standards referenced</h2>
+<p>ISO 19650, PAS 1192, AIA E202/E203 and the BIMForum LOD Specification.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/what-is-revit-family-creation/">https://vibimglobal.com/blog/what-is-revit-family-creation/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2025/09/03/revit-families-explained-the-digital-lego-bricks-of-bim/">https://vibim.wordpress.com/2025/09/03/revit-families-explained-the-digital-lego-bricks-of-bim/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
