@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scan to BIM Automation: Technical Reference</title>
+<meta name="description" content="This reference summarizes how automated scan to BIM converts a point cloud into parametric BIM objects, which algorithms sit at each stage, and where manual wor">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Scan to BIM Automation: Technical Reference</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/06/scan-to-bim-automation-software.jpeg" alt="Scan to BIM automation workflow from point cloud to Revit model" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes how automated scan to BIM converts a point cloud into parametric BIM objects, which algorithms sit at each stage, and where manual work remains. It is a lookup document, not a tutorial.</p>
+<h2>Definition</h2>
+<p>Scan to BIM automation is the conversion of laser scan or photogrammetry point cloud data into BIM models using artificial intelligence, machine learning, and computer vision algorithms. In its current state it is a semi-automated process, not a one-click solution.</p>
+<h2>Five-stage pipeline</h2>
+<ol>
+<li><strong>Point cloud processing.</strong> Registration and cleaning of data from terrestrial laser scanners or mobile mapping systems.</li>
+<li><strong>Semantic segmentation.</strong> Deep learning labels each point as wall, floor, ceiling, window, and similar classes.</li>
+<li><strong>Feature extraction.</strong> Planes, cylinders, and edges are extracted and grouped into building components.</li>
+<li><strong>Parametric object generation.</strong> Extracted shapes are mapped to native BIM families rather than static meshes.</li>
+<li><strong>Human verification.</strong> Modelers check the automated output against the scan.</li>
+</ol>
+<h2>Algorithm reference</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Algorithm</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ICP (Iterative Closest Point)</td>
+<td>Registers overlapping scans by minimizing distance between them</td>
+</tr>
+<tr>
+<td>1</td>
+<td>SOR (Statistical Outlier Removal)</td>
+<td>Deletes points that are statistically too far from neighbors</td>
+</tr>
+<tr>
+<td>1</td>
+<td>SLAM</td>
+<td>Builds the map and tracks scanner position in mobile mapping</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PointNet++</td>
+<td>Neural network designed for unstructured 3D point clouds</td>
+</tr>
+<tr>
+<td>2</td>
+<td>RandLA-Net</td>
+<td>Segments one million points in a single pass</td>
+</tr>
+<tr>
+<td>3</td>
+<td>RANSAC</td>
+<td>Fits planes (walls) and cylinders (pipes) while ignoring outliers</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Hough Transform</td>
+<td>Picks out lines, circles, and cylinders, including long straight pipe runs</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Region Growing</td>
+<td>Expands from a seed point across points sharing a normal vector</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Template Matching</td>
+<td>Compares a cluster against a library of known shapes</td>
+</tr>
+<tr>
+<td>4</td>
+<td>NURBS</td>
+<td>Generates free-form surfaces for heritage or curved geometry</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Heatmap deviation</td>
+<td>Colors the distance between model and point cloud</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Clash detection logic</td>
+<td>Checks generated elements for interference</td>
+</tr>
+</tbody>
+</table>
+<h2>Tool types</h2>
+<ul>
+<li><strong>ClearEdge3D EdgeWise:</strong> standalone extractor with a Revit import plug-in.</li>
+<li><strong>Aurivus:</strong> Revit plug-in that detects walls, pipes, and beams.</li>
+<li><strong>BricsCAD BIM:</strong> authoring software with a workflow its maker calls semi-automatic.</li>
+</ul>
+<p>PointNet and KPConv are research architectures, not products.</p>
+<h2>Limitations</h2>
+<ul>
+<li>Occlusion: hidden elements cannot be reliably inferred.</li>
+<li>Non-standard geometry such as heritage moldings and custom joinery.</li>
+<li>MEP routing logic, for example slope on gravity pipes.</li>
+<li>Scarce labeled training data.</li>
+</ul>
+<h2>LOD guidance</h2>
+<p>Automation alone suits LOD 200. LOD 350 to 400 requires significant manual refinement.</p>
+<h2>Reference reading</h2>
+<p>Full article with the stage-by-stage walkthrough: scan to BIM automation on the ViBIM blog.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/scan-to-bim-automation/">https://vibimglobal.com/blog/scan-to-bim-automation/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2025/10/13/semi-automated-scan-to-bim-workflow/">https://vibim.wordpress.com/2025/10/13/semi-automated-scan-to-bim-workflow/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
