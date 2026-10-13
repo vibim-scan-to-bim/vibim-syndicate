@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Reference: Butterfly Valve Revit Family for Facility Management (LOD 400)</title>
+<meta name="description" content="This page records the specification and build method of a Revit family delivered in a ViBIM sub-project for a US supermarket. It is written as a reference for B">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Technical Reference: Butterfly Valve Revit Family for Facility Management (LOD 400)</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/09/291.FM_02.jpg" alt="Butterfly valve Revit family for facility management at a US supermarket" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page records the specification and build method of a Revit family delivered in a ViBIM sub-project for a US supermarket. It is written as a reference for BIM modelers who need data-rich MEP components for facility management.</p>
+<h2>Project specification</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Program</td>
+<td>291.US, facility management sub-project</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>United States</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>Retail, supermarket</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>14,501 m²</td>
+</tr>
+<tr>
+<td>Number of floors</td>
+<td>1</td>
+</tr>
+<tr>
+<td>LOD</td>
+<td>LOD 400</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, 2D drawings</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navis, internal tools</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>Revit family:</strong> a parametric component that carries geometry and data.</li>
+<li><strong>Nested family:</strong> a family placed inside a host family to control parts separately.</li>
+<li><strong>Lookup table:</strong> a table that returns dimensions and data from an input value such as nominal diameter.</li>
+<li><strong>MEP connector:</strong> the connection point that links a component to a piping system.</li>
+<li><strong>Type vs. instance parameter:</strong> a type parameter is shared by all elements of a type; an instance parameter changes per placed element.</li>
+</ul>
+<h2>Requirements</h2>
+<ol>
+<li>Comply with industry standards (flange dimensions, clearance requirements, installation spacing) and the project BIM Execution Plan.</li>
+<li>Embed dimensions, material information, pressure ratings, flow rates, manufacturer data and product codes.</li>
+<li>Stay lightweight so the main project file keeps its performance.</li>
+</ol>
+<h2>Build procedure</h2>
+<ol>
+<li>Scope geometry, parameters, connection points and use case.</li>
+<li>Create reference planes and constraints to drive core dimensions.</li>
+<li>Model handle, body and flange as separate families and nest them in one host.</li>
+<li>Group parameters: Dimensions, Technical Data, Materials, Visibility.</li>
+<li>Apply void forms only where needed and add visibility parameters for secondary parts such as the handle, hidden at Coarse and Medium.</li>
+<li>Add lookup tables for standard sizes.</li>
+<li>Configure MEP connectors with system classification, flow direction and pressure.</li>
+<li>Test in a sample project: resizing, pipe connection, level-of-detail display, parameter output.</li>
+<li>Write documentation covering intended use, key parameters and limitations.</li>
+</ol>
+<h2>Known difficulties</h2>
+<p>Moving parts need accurate geometry. Parameter sets can grow hard to manage. LOD 400 detail competes with file size. Connectors must be exact for analysis to work.</p>
+<h2>Outcome</h2>
+<p>The family supports model reliability, coordination between disciplines, performance analysis, and facility management tasks such as asset tracking and preventative maintenance scheduling.</p>
+<p>Services: MEP Scan to BIM, Scan to BIM for FM, Scan to Revit family creation, as-built BIM modeling.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-facility-management-at-us-supermarket/">https://vibimglobal.com/projects/revit-modeling-for-facility-management-at-us-supermarket/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/13/revit-modeling-for-facility-management-at-us-supermarket/">https://vibim.wordpress.com/2026/10/13/revit-modeling-for-facility-management-at-us-supermarket/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
