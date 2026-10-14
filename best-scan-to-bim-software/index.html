@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scan to BIM Software Reference: Categories, Formats and Selection Criteria</title>
+<meta name="description" content="## Scope  This reference lists the software categories used to turn laser scan data into a parametric BIM model, the tools commonly placed in each category, and">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Scan to BIM Software Reference: Categories, Formats and Selection Criteria</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/scan-to-bim-software-2.jpg" alt="Scan to BIM software workflow from point cloud registration to Revit modeling" style="width:100%;max-height:420px;object-fit:cover;">
+<h2>Scope</h2>
+<p>This reference lists the software categories used to turn laser scan data into a parametric BIM model, the tools commonly placed in each category, and the formats that move between them. It is a lookup sheet, not a ranking.</p>
+<h2>Definitions</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Point cloud</td>
+<td>A large set of measured points captured by a laser scanner</td>
+</tr>
+<tr>
+<td>Registration</td>
+<td>Aligning separate scans into one shared coordinate system</td>
+</tr>
+<tr>
+<td>Indexed format</td>
+<td>A point cloud file structured for fast display, such as RCP or RCS</td>
+</tr>
+<tr>
+<td>Tolerance</td>
+<td>The allowed deviation between a modeled element and the scan</td>
+</tr>
+<tr>
+<td>LOD</td>
+<td>Level of Development, the required detail of model elements</td>
+</tr>
+</tbody>
+</table>
+<h2>Software by workflow stage</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Tool</th>
+<th>Typical use</th>
+<th>Notable capability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registration</td>
+<td>Leica Cyclone REGISTER 360</td>
+<td>Survey-grade projects</td>
+<td>Bundle adjustment</td>
+</tr>
+<tr>
+<td>Registration</td>
+<td>Autodesk ReCap Pro</td>
+<td>Autodesk workflows</td>
+<td>RCP and RCS indexing</td>
+</tr>
+<tr>
+<td>Registration</td>
+<td>FARO SCENE</td>
+<td>On-site registration</td>
+<td>Real-time checks, VR review</td>
+</tr>
+<tr>
+<td>Registration</td>
+<td>CloudCompare</td>
+<td>Forensic analysis</td>
+<td>Open source, M3C2 distance</td>
+</tr>
+<tr>
+<td>Modeling</td>
+<td>Autodesk Revit</td>
+<td>Commercial and MEP</td>
+<td>Multi-discipline coordination</td>
+</tr>
+<tr>
+<td>Modeling</td>
+<td>Graphisoft ArchiCAD</td>
+<td>Heritage and architecture</td>
+<td>GDL objects</td>
+</tr>
+<tr>
+<td>Modeling</td>
+<td>Tekla Structures</td>
+<td>Industrial steel</td>
+<td>Fabrication-level detailing, LOD 500</td>
+</tr>
+<tr>
+<td>Modeling</td>
+<td>Bentley MicroStation</td>
+<td>Civil infrastructure</td>
+<td>Very large datasets</td>
+</tr>
+<tr>
+<td>Automation</td>
+<td>Leica CloudWorx, FARO As-Built, Undet for Revit, ClearEdge3D EdgeWise</td>
+<td>Plugins inside the modeling tool</td>
+<td>Faster extraction of walls, floors, pipes</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>Autodesk Navisworks</td>
+<td>Clash detection</td>
+<td>Hard clash identification</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>Solibri Model Checker</td>
+<td>Data compliance</td>
+<td>IFC rule checking</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>Verity by ClearEdge3D</td>
+<td>Construction verification</td>
+<td>Tolerance heatmaps</td>
+</tr>
+</tbody>
+</table>
+<h2>Format handoffs</h2>
+<ol>
+<li>Native scanner data (Leica BLK or RTC360, FARO FLS) enters the registration tool.</li>
+<li>The registration tool exports E57, or RCP and RCS for Autodesk tools.</li>
+<li>The modeling tool links the indexed point cloud and builds parametric elements.</li>
+<li>The model goes to Navisworks as NWC, or to Solibri as IFC, for checking.</li>
+<li>Verity compares modeled elements against the point cloud inside Navisworks.</li>
+</ol>
+<h2>Selection criteria</h2>
+<ol>
+<li>Hardware and data origin: the registration tool should read the scanner's native format to keep metadata intact.</li>
+<li>Discipline and deliverable: pick the modeling platform for the asset type and required LOD.</li>
+<li>Interoperability: test each handoff before committing to a stack.</li>
+<li>Cost against frequency: licensing and workstation costs weigh heavily when Scan to BIM is not a daily task. Occasional users may do better with an outsourcing partner.</li>
+</ol>
+<h2>Known limitations of the approach</h2>
+<p>Verity can take a long time on very large facilities. Solibri checks data, not dense point clouds. Cyclone carries a high licence cost and a steep learning curve.</p>
+<h2>Practice note</h2>
+<p>ViBIM has completed more than 2,000 Scan to BIM projects over 11+ years. Its production workflow standardizes inputs in ReCap Pro, models in Revit with selected plugins, and checks results in Navisworks Manage.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/best-scan-to-bim-software/">https://vibimglobal.com/blog/best-scan-to-bim-software/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2025/10/30/choosing-the-right-technology-stack-for-scan-to-bim-projects/">https://vibim.wordpress.com/2025/10/30/choosing-the-right-technology-stack-for-scan-to-bim-projects/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
