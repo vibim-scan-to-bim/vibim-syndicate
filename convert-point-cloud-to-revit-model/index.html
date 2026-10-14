@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Point Cloud to Revit: Technical Reference</title>
+<meta name="description" content="This page is a compact reference for converting a laser-scan point cloud into a parametric Revit model. It lists formats, settings, the modeling sequence and th">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Point Cloud to Revit: Technical Reference</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/point-cloud-to-revit-model-hero.jpg" alt="Laser-scanned building rebuilt as a parametric Revit model" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page is a compact reference for converting a laser-scan point cloud into a parametric Revit model. It lists formats, settings, the modeling sequence and the validation steps in the order a team uses them.</p>
+<h2>Definition</h2>
+<p>Point cloud to Revit modeling is the reconstruction of an existing building from scanned points into parametric Revit elements. A point cloud in Revit is a linked set of millions of points. It is purely geometric. The conversion adds type, dimension, material and phase data through Revit families.</p>
+<h2>Supported formats</h2>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Origin</th>
+<th>Links directly in Revit</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RCP / RCS</td>
+<td>Autodesk ReCap output</td>
+<td>Yes</td>
+<td>Link as delivered; an RCP file points to several RCS scans</td>
+</tr>
+<tr>
+<td>E57</td>
+<td>Open standard (ASTM E2807)</td>
+<td>No</td>
+<td>Index in ReCap Pro to RCP or RCS first</td>
+</tr>
+<tr>
+<td>PTS, PTX, LAS, FLS, ZFS</td>
+<td>Scanner-native or legacy</td>
+<td>No</td>
+<td>Convert via ReCap Pro first</td>
+</tr>
+</tbody>
+</table>
+<p>Transfer rule of thumb from the source guide: keep each RCS file under 5 GB, or zip the dataset into one archive per transfer.</p>
+<h2>Positioning methods</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto - Origin to Origin</td>
+<td>Default for scans on a local coordinate system</td>
+</tr>
+<tr>
+<td>Auto - Center to Center</td>
+<td>Quick look only; no coordinate accuracy</td>
+</tr>
+<tr>
+<td>Auto - By Shared Coordinates</td>
+<td>Georeferenced data with survey control points</td>
+</tr>
+<tr>
+<td>Auto - Origin to Last Placed</td>
+<td>Stacking several files from one site, available from the second scan</td>
+</tr>
+</tbody>
+</table>
+<h2>Procedure</h2>
+<ol>
+<li>Confirm the scan is registered, cleaned and saved as RCP or RCS.</li>
+<li>Insert tab, Link panel, Point Cloud. Pick the file and a positioning method.</li>
+<li>Verify position and scale in a 3D view by measuring one known dimension.</li>
+<li>Create levels by snapping to floor and ceiling surfaces, then place grids on the column lines the scan shows.</li>
+<li>Trace architecture, then structure, then MEP, using plan and section views.</li>
+<li>Use Model In-Place or massing only for leaning or curved elements. Overuse makes the file heavier.</li>
+<li>Validate against the source scan before delivery.</li>
+</ol>
+<h2>Display controls</h2>
+<p>Open Visibility/Graphics (VG), Point Clouds category. Available color modes are True Color (RGB), Elevation, Intensity and Normals. Point size can be set per view. Use a section box in 3D, and the crop region plus View Range in plan and section views.</p>
+<h2>Validation</h2>
+<ul>
+<li>Section checks in Revit: paired cuts through model and cloud, measured with Measure Between References.</li>
+<li>Deviation and clash checks in Navisworks: catches small objects such as valves, minor equipment and lighting.</li>
+<li>File health: consistent naming, correct levels, worksets and phases, resolved warnings, purged unused content.</li>
+</ul>
+<p>Tolerance follows the project specification and the scan quality. It is not one fixed figure.</p>
+<h2>Performance tactics</h2>
+<p>Limit the points drawn at once. Use section boxes, lower point density per view, work in plan and section, close unused views, and keep the cloud on its own workset. For extremely large datasets, decimate through ReCap, or split the data per level or zone.</p>
+<h2>Automation status</h2>
+<p>No production-ready tool converts a point cloud into a deliverable Revit model automatically. Mesh converters output mesh or NWC with no parameters or families. AI-assisted tools give partial detection that still needs manual verification. Manual tracing over a linked cloud remains the production standard.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/convert-point-cloud-to-revit-model/">https://vibimglobal.com/blog/convert-point-cloud-to-revit-model/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2025/10/30/point-cloud-to-revit-workflows-for-accurate-bim-models/">https://vibim.wordpress.com/2025/10/30/point-cloud-to-revit-workflows-for-accurate-bim-models/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
