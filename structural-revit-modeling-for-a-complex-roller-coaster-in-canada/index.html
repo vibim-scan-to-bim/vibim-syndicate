@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Reference: Structural As-Built Model of a Non-Linear Roller Coaster (Project 605.Canada)</title>
+<meta name="description" content="This page documents the technical parameters and method of a structural Scan to BIM project completed for a roller coaster in Canada.  ## Project parameters  | ">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Technical Reference: Structural As-Built Model of a Non-Linear Roller Coaster (Project 605.Canada)</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/09/bim-structural-design-for-a-complex-canadian-roller-coaster.jpg" alt="Structural Revit model of a complex roller coaster track in Canada" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page documents the technical parameters and method of a structural Scan to BIM project completed for a roller coaster in Canada.</p>
+<h2>Project parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project code</td>
+<td>605.Canada</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>Two months, February to March 2024</td>
+</tr>
+<tr>
+<td>Sector</td>
+<td>Recreation / Entertainment</td>
+</tr>
+<tr>
+<td>Client profile</td>
+<td>Confidential reality capture specialist</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>2,300 m²</td>
+</tr>
+<tr>
+<td>Number of floors</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Level of detail</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>Point cloud</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Discipline</td>
+<td>Structure only</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>As-built model:</strong> a model that represents the structure as it exists, based on measured data rather than design intent.</li>
+<li><strong>LOD 300:</strong> a level of detail at which elements are modeled as specific, correctly defined components with accurate size, shape and position.</li>
+<li><strong>Massing:</strong> Revit forms used here as placeholders to fix node geometry.</li>
+<li><strong>Pick Path:</strong> a Revit method that makes a structural element follow a pre-defined path.</li>
+</ul>
+<h2>Requirements</h2>
+<ol>
+<li>Build a high-fidelity 3D structural model from the point cloud, usable as a reference for re-engineering and analysis in other platforms.</li>
+<li>Represent beams, columns and connections accurately, matching the real construction.</li>
+<li>Model the full track length, support columns and lateral bracing.</li>
+</ol>
+<h2>Procedure</h2>
+<ol>
+<li>Identify the intersection nodes between track segments and supports in the point cloud.</li>
+<li>Create Massing forms at each node to lock coordinates.</li>
+<li>Connect the nodes into a complete 3D path that acts as the centerline.</li>
+<li>Load custom structural framing families built to match the track profile.</li>
+<li>Apply Pick Path so each family instance conforms to the path.</li>
+<li>Check the result against the point cloud and keep structural parameters attached to each element.</li>
+</ol>
+<h2>Constraints</h2>
+<p>Standard beam and column placement was impractical because the track has continuous, non-uniform curves in both horizontal and vertical directions. A surface model was rejected because an element-based BIM model was required.</p>
+<h2>Intended use</h2>
+<p>Asset management, structural integrity analysis, renovation planning and maintenance.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/structural-revit-modeling-for-a-complex-roller-coaster-in-canada/">https://vibimglobal.com/projects/structural-revit-modeling-for-a-complex-roller-coaster-in-canada/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/14/structural-revit-modeling-for-a-complex-roller-coaster-in-canada/">https://vibim.wordpress.com/2026/10/14/structural-revit-modeling-for-a-complex-roller-coaster-in-canada/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
