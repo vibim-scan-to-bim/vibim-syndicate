@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4D BIM Technical Reference: Definitions, Workflow and Tooling</title>
+<meta name="description" content="## Scope  This reference describes 4D BIM as used in construction planning. It covers terminology, the linking workflow, common software, constraints and expect">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>4D BIM Technical Reference: Definitions, Workflow and Tooling</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/what-is-4d-building-information-modeling.jpg" alt="4D BIM adds time to a 3D model to simulate the construction sequence" style="width:100%;max-height:420px;object-fit:cover;">
+<h2>Scope</h2>
+<p>This reference describes 4D BIM as used in construction planning. It covers terminology, the linking workflow, common software, constraints and expected developments.</p>
+<h2>Definition</h2>
+<p><strong>4D BIM</strong> is a 3D building information model whose elements are linked to time data from a construction schedule. The three spatial dimensions are length, width and height. The fourth dimension is time. The result is a simulation that shows the state of the building and site on any chosen date.</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning in this context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3D model</td>
+<td>Spatial representation of what is built and where</td>
+</tr>
+<tr>
+<td>Schedule</td>
+<td>Tasks with durations, start and end dates, and dependencies</td>
+</tr>
+<tr>
+<td>Link</td>
+<td>Association between a model element and a schedule task</td>
+</tr>
+<tr>
+<td>4D simulation</td>
+<td>Animation generated from the links, playable forward and backward</td>
+</tr>
+<tr>
+<td>Time-based clash</td>
+<td>Conflict between elements, temporary works or equipment that occurs only at certain dates</td>
+</tr>
+</tbody>
+</table>
+<h2>Workflow</h2>
+<ol>
+<li><strong>Prepare the 3D model.</strong> Use a level of detail that fits the sequence. Elements modelled as one object by designers, such as a large concrete slab, may need splitting into smaller components such as individual pours.</li>
+<li><strong>Develop the schedule.</strong> Create tasks, durations, dates and logical dependencies in planning software such as Primavera P6 or Microsoft Project. Simulation quality depends directly on schedule accuracy.</li>
+<li><strong>Link elements to tasks.</strong> In 4D software, connect each component group to its task. Example: foundation footing elements to the task for pouring footings.</li>
+<li><strong>Generate the simulation.</strong> Play, pause on dates and inspect from any viewpoint.</li>
+<li><strong>Analyze and refine.</strong> Look for spatial-temporal clashes, logistics problems and safety hazards, then revise the plan before site work begins.</li>
+</ol>
+<h2>Software</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Notes from the source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autodesk Navisworks Manage</td>
+<td>Combines multi-discipline models; TimeLiner links geometry to schedules</td>
+</tr>
+<tr>
+<td>Bentley Synchro 4D</td>
+<td>Dedicated 4D planning platform for complex logistics</td>
+</tr>
+<tr>
+<td>Trimble Vico Office</td>
+<td>Integrates 4D scheduling with 5D cost estimation</td>
+</tr>
+<tr>
+<td>Powerproject BIM</td>
+<td>Extends Powerproject scheduling with model links</td>
+</tr>
+<tr>
+<td>Fuzor</td>
+<td>Real-time rendering and VR, with 4D simulation</td>
+</tr>
+</tbody>
+</table>
+<h2>Constraints</h2>
+<ul>
+<li><strong>Contracts:</strong> data ownership, copyright and liability for a shared model need explicit language.</li>
+<li><strong>Interoperability:</strong> poor exchange between platforms causes data loss and manual rework.</li>
+<li><strong>Cost:</strong> software, hardware, training and early productivity loss.</li>
+<li><strong>Data integrity:</strong> the model, schedule and every party's input must stay consistent with the plan.</li>
+<li><strong>Skills:</strong> few staff are fluent in both BIM tools and construction process.</li>
+<li><strong>Level of detail:</strong> contractors may need extra modeling to reflect the real sequence.</li>
+</ul>
+<h2>Developments</h2>
+<ul>
+<li>AI-assisted generation and optimization of construction sequences</li>
+<li>IoT sensor data and cloud platforms feeding the model with live site information</li>
+<li>VR and AR review of sequences, logistics and safety plans</li>
+<li>Digital twins that combine the 4D plan with periodic point cloud scans, enabling comparison of as-built conditions against the planned schedule</li>
+</ul>
+<h2>Summary</h2>
+<p>4D BIM adds schedule time to a 3D model so that a team can test a construction sequence virtually. Treat the schedule and the model as controlled inputs, because errors in either carry straight into the simulation.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/what-is-4d-bim/">https://vibimglobal.com/blog/what-is-4d-bim/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2025/11/07/4d-bim/">https://vibim.wordpress.com/2025/11/07/4d-bim/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
