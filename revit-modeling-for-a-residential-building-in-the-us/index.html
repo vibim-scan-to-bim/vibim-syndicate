@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Reference: LOD 400 Scan to BIM for a Four-Story Residence (Project 768.US)</title>
+<meta name="description" content="This note records the specification and modeling methods used on Project 768.US, an as-built Revit model of a residential building in the United States.  ## Spe">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Technical Reference: LOD 400 Scan to BIM for a Four-Story Residence (Project 768.US)</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2026/09/stair-hall-lod400-revit-model.jpg" alt="Stair hall of a US residence modeled to LOD 400 in Revit" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This note records the specification and modeling methods used on Project 768.US, an as-built Revit model of a residential building in the United States.</p>
+<h2>Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project</td>
+<td>768.US</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>United States</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>Residential</td>
+</tr>
+<tr>
+<td>Period</td>
+<td>May to June 2025</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>1,400 m² (about 15,070 sq ft)</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>4</td>
+</tr>
+<tr>
+<td>LOD</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>Point cloud</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Services</td>
+<td>Architecture, structure and MEP scan to BIM; as-built BIM modeling</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>Point cloud:</strong> a set of measured points from a laser scan that records visible surfaces only.</li>
+<li><strong>Occlusion:</strong> an area the scanner could not see, such as behind furniture.</li>
+<li><strong>LOD 400:</strong> a level of detail where elements match the real building closely enough to order replacement parts from the model.</li>
+<li><strong>Sweep:</strong> a Revit operation that moves a 2D profile along a path to form a 3D element.</li>
+</ul>
+<h2>Element-by-element method</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cornices and wall moldings</td>
+<td>Cut a 2D section where the scan is cleanest, export as a polyline, sweep along the path</td>
+</tr>
+<tr>
+<td>Door and window frames</td>
+<td>Cut a section of about 1-2 mm across the frame, then sweep and extrude</td>
+</tr>
+<tr>
+<td>Handles, hinges, latches</td>
+<td>Separate LOD 400 families nested into the door family</td>
+</tr>
+<tr>
+<td>Stair railings</td>
+<td>Set out from path, handrail profile, baluster size and spacing; alignment tools fix slope and gaps</td>
+</tr>
+<tr>
+<td>Kitchen cabinets and similar units</td>
+<td>Many sections at several positions, tools combined</td>
+</tr>
+<tr>
+<td>Lights, switches, outlets</td>
+<td>Typed from site photos, placed with ready LOD 400 MEP families</td>
+</tr>
+</tbody>
+</table>
+<h2>Verification steps</h2>
+<ol>
+<li>Slice the model against the point cloud often while building.</li>
+<li>Run clash detection so small components do not sink into walls or floors.</li>
+<li>Check that each object holds its real size, shape and position.</li>
+</ol>
+<h2>Known constraints</h2>
+<p>The scan has occluded areas and noise. Decorative moldings near corners and noisy surfaces were the hardest to resolve, and exact depth of small fixtures was difficult to fix.</p>
+<h2>Intended use</h2>
+<p>Each object can store manufacturer, install date and warranty details, so the model supports repair planning, renovation and maintenance without re-scanning.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-a-residential-building-in-the-us/">https://vibimglobal.com/projects/revit-modeling-for-a-residential-building-in-the-us/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/15/revit-modeling-for-a-residential-building-in-the-us/">https://vibim.wordpress.com/2026/10/15/revit-modeling-for-a-residential-building-in-the-us/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
