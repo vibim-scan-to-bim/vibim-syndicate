@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COBie Technical Reference for BIM Handover</title>
+<meta name="description" content="This reference summarizes the COBie data standard as it applies to BIM-based asset handover. It covers the definition, the three core principles, the worksheet ">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>COBie Technical Reference for BIM Handover</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/cobie-in-bim.jpg" alt="COBie in BIM asset data handover" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes the COBie data standard as it applies to BIM-based asset handover. It covers the definition, the three core principles, the worksheet structure and the points where COBie differs from a full BIM model.</p>
+<h2>Definition</h2>
+<p><strong>COBie (Construction Operations Building Information Exchange)</strong> is a non-proprietary data format for publishing and exchanging a subset of building information focused on assets rather than geometry. Its purpose is to standardize the handover of operational data from the construction team to the owner and facility management team.</p>
+<h2>Core principles</h2>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classification system</td>
+<td>Data follows a pre-defined scheme such as OmniClass, UniFormat or MasterFormat, so naming and categorizing stay consistent.</td>
+</tr>
+<tr>
+<td>Data model</td>
+<td>A relational model aligned with the buildingSMART Data Model (IFC). It links a pump to a room, the room to a floor, and the pump to a system.</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>A spreadsheet file (.xlsx), so the data is not locked into one software ecosystem.</td>
+</tr>
+</tbody>
+</table>
+<h2>Worksheet structure</h2>
+<p>A COBie workbook is split into tabs. Grouped by role:</p>
+<ol>
+<li><strong>Context:</strong> Instruction, Contact, Facility.</li>
+<li><strong>Spatial:</strong> Floor, Zone, Space.</li>
+<li><strong>Assets:</strong> Type (product catalogue with manufacturer, model number and warranty data) and Component (one row per installed instance, with serial number, installation date and space).</li>
+<li><strong>Relationships:</strong> System, Assembly, Connection.</li>
+<li><strong>Maintenance:</strong> Spare, Resource, Job.</li>
+<li><strong>Supporting data:</strong> Impact, Document, Attribute, Coordinate, Issue.</li>
+</ol>
+<p>Type and Component have a parent-child relationship. A Type such as one air handling unit model can have many Component rows, one per unit installed.</p>
+<h2>COBie versus the full BIM model</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Full BIM model</th>
+<th>COBie deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scope</td>
+<td>Geometry plus engineering data</td>
+<td>Asset data subset</td>
+</tr>
+<tr>
+<td>Typical format</td>
+<td>Native authoring files</td>
+<td>Spreadsheet (.xlsx)</td>
+</tr>
+<tr>
+<td>Main reader</td>
+<td>Design and construction teams</td>
+<td>Owner and facility team</td>
+</tr>
+</tbody>
+</table>
+<p>COBie does not replace the model. It acts as a filter that specifies which data points facility management needs and gives them a schema.</p>
+<h2>Adoption milestones</h2>
+<ul>
+<li>2007: first version published, initiated by the U.S. Army Corps of Engineers.</li>
+<li>2011: adopted into NBIMS-US Version 2 by the National Institute of Building Sciences.</li>
+<li>April 2016: UK BIM Level 2 mandate fully in effect, requiring COBie for centrally procured public sector projects.</li>
+</ul>
+<h2>Practical checks</h2>
+<ul>
+<li>Confirm the BIM execution plan lists COBie requirements before modeling starts.</li>
+<li>Confirm the source model carries asset attributes and classifications.</li>
+<li>After handover, plan who updates the data in the CAFM or CMMS, because the delivered file is a snapshot of the as-built state.</li>
+</ul>
+<p>Reference: <a href="https://vibimglobal.com/blog/cobie-in-bim/">https://vibimglobal.com/blog/cobie-in-bim/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2025/11/07/cobie-in-modern-construction-projects/">https://vibim.wordpress.com/2025/11/07/cobie-in-modern-construction-projects/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
