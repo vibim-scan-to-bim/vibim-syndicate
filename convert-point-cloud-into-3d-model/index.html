@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Point Cloud to 3D Model: Technical Reference</title>
+<meta name="description" content="This reference summarizes the main routes for turning a point cloud into a 3D model, the order of operations for a mesh, and the failure modes to watch for.  ##">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Point Cloud to 3D Model: Technical Reference</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2026/01/convert-point-cloud-into-3d-model.jpg" alt="Raw point cloud of an arched hall converted into a clean 3D mesh model" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes the main routes for turning a point cloud into a 3D model, the order of operations for a mesh, and the failure modes to watch for.</p>
+<h2>Definitions</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Point cloud</td>
+<td>A set of 3D coordinate points captured by laser scanning, LiDAR or photogrammetry</td>
+</tr>
+<tr>
+<td>Mesh</td>
+<td>A surface skin of triangles, stored as OBJ, STL, FBX or PLY</td>
+</tr>
+<tr>
+<td>Parametric BIM model</td>
+<td>Typed objects such as walls, ducts and columns with material data, stored as RVT or IFC</td>
+</tr>
+<tr>
+<td>Normals</td>
+<td>Vectors perpendicular to the surface, used to orient each polygon</td>
+</tr>
+<tr>
+<td>Poisson reconstruction</td>
+<td>An algorithm that fits a smooth, watertight surface to oriented points</td>
+</tr>
+<tr>
+<td>LOD</td>
+<td>Level of Development, the detail a model commits to</td>
+</tr>
+</tbody>
+</table>
+<h2>Three conversion routes</h2>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Input</th>
+<th>Output</th>
+<th>Typical tools</th>
+<th>Effort</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Automated surface reconstruction</td>
+<td>Clean, subsampled cloud with normals</td>
+<td>Polygon mesh</td>
+<td>CloudCompare, MeshLab, Blender</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Manual tracing in CAD or BIM</td>
+<td>Registered, indexed cloud (RCP/RCS)</td>
+<td>RVT, IFC or DWG</td>
+<td>ReCap, Revit, AutoCAD</td>
+<td>High</td>
+</tr>
+<tr>
+<td>AI-assisted conversion</td>
+<td>Raw or pre-segmented cloud</td>
+<td>Simplified geometry</td>
+<td>Prevu3D</td>
+<td>Low to medium</td>
+</tr>
+</tbody>
+</table>
+<h2>Mesh workflow</h2>
+<ol>
+<li>Import the scan and apply a global shift if the coordinates are large.</li>
+<li>Remove outliers and noise, then delete stray regions by hand.</li>
+<li>Subsample the cloud to a manageable count.</li>
+<li>Register multiple scans, confirm a low RMS error, then merge.</li>
+<li>Compute normals with a consistent orientation.</li>
+<li>Run Poisson reconstruction and output density as a scalar field.</li>
+<li>Trim low-density regions using that field.</li>
+<li>Export to PLY, STL or OBJ for the next tool.</li>
+</ol>
+<h2>Failure modes</h2>
+<ul>
+<li><strong>Noisy data:</strong> stray points warp the surface; filter before meshing.</li>
+<li><strong>Oversized files:</strong> unthinned clouds can exhaust memory; subsample first.</li>
+<li><strong>Misaligned scans:</strong> doubled walls appear; register before merging.</li>
+<li><strong>Holes:</strong> unscanned areas get invented surface; trim by density.</li>
+<li><strong>Flipped normals:</strong> patchy shading; recompute with consistent orientation.</li>
+</ul>
+<h2>Choosing mesh or BIM</h2>
+<p>Use a mesh for visualization, games, web viewers and 3D printing. Use a parametric model when the geometry must carry type and asset data for as-built documentation, renovation or facility management. A scan-based BIM model usually lands at LOD 200 to 300 for as-built work.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/convert-point-cloud-into-3d-model/">https://vibimglobal.com/blog/convert-point-cloud-into-3d-model/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/04/14/convert-point-cloud-into-3d-model/">https://vibim.wordpress.com/2026/04/14/convert-point-cloud-into-3d-model/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
