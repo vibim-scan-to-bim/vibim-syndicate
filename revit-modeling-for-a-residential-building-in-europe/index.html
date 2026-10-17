@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Reference: Project 561.EU Residential As-Built Model</title>
+<meta name="description" content="This page records the technical parameters and procedures of Project 561.EU, an as-built Revit model of an apartment building in the European Union. Work ran fr">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Technical Reference: Project 561.EU Residential As-Built Model</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2026/09/revit-model-of-the-apartment-kitchen-and-bathroom-interior.jpg" alt="Revit model of an apartment kitchen and bathroom interior" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page records the technical parameters and procedures of Project 561.EU, an as-built Revit model of an apartment building in the European Union. Work ran from October to November 2023.</p>
+<h2>Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Building type</td>
+<td>Residential apartment building</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>European Union</td>
+</tr>
+<tr>
+<td>Gross area</td>
+<td>About 8,600 m² (92,570 sq ft)</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>6 (5 above ground, 1 basement)</td>
+</tr>
+<tr>
+<td>Disciplines</td>
+<td>Architecture, structure, MEP</td>
+</tr>
+<tr>
+<td>Level of detail</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>Tolerance</td>
+<td>±15 mm (±0.6 in)</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, PDF drawings</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>Registration:</strong> the process of aligning separate scans into one coordinate system. Poor registration between floors causes vertical elements to tilt.</li>
+<li><strong>Project North:</strong> the orientation of the model's plan view axes in Revit. Rotating it changes how every view reads.</li>
+<li><strong>Base point:</strong> the reference origin of the project coordinates. Moving it shifts how objects relate to the coordinate base.</li>
+<li><strong>LOD 300:</strong> a level of detail where elements are modeled with accurate size, shape, location and orientation.</li>
+</ul>
+<h2>Procedure: floor alignment</h2>
+<ol>
+<li>Request the registration report from the scanning firm.</li>
+<li>Request re-registration where the reported error is large.</li>
+<li>Cut section views across the main axes.</li>
+<li>Align vertical elements through those sections rather than through the floor plan.</li>
+<li>Pick the floor with the best data and build one standard grid from it.</li>
+<li>Apply the grid to all six floors and adjust each floor's point cloud to it.</li>
+</ol>
+<h2>Procedure: rotation and base point change</h2>
+<ol>
+<li>Split the model by discipline, because it cannot be rotated in one pass.</li>
+<li>Rotate each part, with MEP handled separately.</li>
+<li>Cross-check between floors and against the point cloud.</li>
+<li>Recheck every plan, elevation and section.</li>
+<li>Realign all MEP links.</li>
+</ol>
+<h2>MEP handling</h2>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client families did not match the scan</td>
+<td>Redesigned from the originals to ±15 mm with client approval</td>
+</tr>
+<tr>
+<td>Dense, varied lighting</td>
+<td>Modeled in place by one engineer, then placed using sections and 3D views</td>
+</tr>
+<tr>
+<td>Inconsistent family parameters</td>
+<td>Internal tool rounds values automatically</td>
+</tr>
+<tr>
+<td>Naming</td>
+<td>Classification table plus an auto-rename tool</td>
+</tr>
+<tr>
+<td>Vertical and wall-mounted cable trays</td>
+<td>Custom family</td>
+</tr>
+<tr>
+<td>Long runs across many rooms</td>
+<td>Techniques from earlier projects to avoid missed segments</td>
+</tr>
+</tbody>
+</table>
+<h2>Quality control</h2>
+<p>The model was divided into smaller parts and checked room by room, moving sections through each room. Modelers compared the model with Matterport views during production.</p>
+<h2>Result</h2>
+<p>A coordinated as-built model that agrees with the 2D drawings, follows the project's BIM standard and is suitable for renovation, repairs and asset management.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-a-residential-building-in-europe/">https://vibimglobal.com/projects/revit-modeling-for-a-residential-building-in-europe/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/17/revit-modeling-for-a-residential-building-in-europe/">https://vibim.wordpress.com/2026/10/17/revit-modeling-for-a-residential-building-in-europe/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
