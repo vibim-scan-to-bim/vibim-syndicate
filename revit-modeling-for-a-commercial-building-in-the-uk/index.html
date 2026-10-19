@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 314.UK: Technical Reference for an LOD 300 As-Built Revit Model</title>
+<meta name="description" content="This reference summarizes the specification, constraints and method of Project 314.UK, an as-built BIM model of a commercial building in the United Kingdom.  ##">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Project 314.UK: Technical Reference for an LOD 300 As-Built Revit Model</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2026/09/revit-model-of-the-rooftop-with-plant-units-and-ductwork.jpg" alt="Revit model of a commercial building rooftop with plant units and ductwork" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes the specification, constraints and method of Project 314.UK, an as-built BIM model of a commercial building in the United Kingdom.</p>
+<h2>Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client profile</td>
+<td>Confidential</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>United Kingdom</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>Commercial building</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>6,250 m² (67,270 sq ft)</td>
+</tr>
+<tr>
+<td>Number of floors</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Level of development</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>Point cloud</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Geometric tolerance</td>
+<td>±15 mm (±0.6 in)</td>
+</tr>
+<tr>
+<td>Period</td>
+<td>December 2021 to January 2022</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>As-built model:</strong> a BIM model that records the building as it exists, not as originally drawn.</li>
+<li><strong>LOD 300:</strong> a level of development where elements are modeled with defined geometry, size, shape and location.</li>
+<li><strong>Point cloud:</strong> a large set of measured 3D points captured by scanning, used as the reference for modeling.</li>
+<li><strong>Non-geometric data:</strong> information attached to an element, such as material, capacity and technical specification.</li>
+<li><strong>Deviation analysis:</strong> a check that compares a modeled element with the point cloud.</li>
+</ul>
+<h2>Constraints</h2>
+<ol>
+<li>A curved roof that does not follow standard parametric shapes.</li>
+<li>Slanted, non-perpendicular walls that prevent reuse of floors.</li>
+<li>Dense HVAC ductwork in large technical rooms, branching through the lower ground and basement.</li>
+<li>Small-diameter sprinkler pipes that appear blurred in the point cloud.</li>
+<li>Scattered electrical panels and cable trays.</li>
+<li>Every family matched to its real object in material, size, weight and capacity.</li>
+</ol>
+<h2>Method</h2>
+<h3>Roof</h3>
+<ol>
+<li>Read key horizontal and vertical sections from the point cloud.</li>
+<li>Extract 3D reference curves from those sections.</li>
+<li>Build a mass and a surface that match the scan.</li>
+<li>Apply thickness and material with Revit's Roof by Face function.</li>
+<li>Run deviation analysis against the point cloud.</li>
+</ol>
+<h3>Walls and floors</h3>
+<ol>
+<li>Measure each wall's real angle against the main grid.</li>
+<li>Model each level from point cloud data cropped to that level.</li>
+<li>Check junctions with the floors above and below, especially columns and cores.</li>
+<li>Use a live 3D view with the point cloud as background and a 3D section box for complex areas.</li>
+</ol>
+<h3>MEP</h3>
+<ol>
+<li>One engineer owns HVAC from the main plant rooms along the technical risers.</li>
+<li>One specialist handles fire protection.</li>
+<li>One member sweeps ceiling-mounted equipment using 2D sections and the 3D model.</li>
+<li>Plumbing, panels and cable trays are divided into bounded zones, each with one modeler.</li>
+</ol>
+<h3>Quality control</h3>
+<p>Cross-check the Revit model, Navisworks and detailed sections in parallel while modeling.</p>
+<h2>Result</h2>
+<p>A single model covering architecture, structure and MEP, suited to renovation design, spatial planning and facility management.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-a-commercial-building-in-the-uk/">https://vibimglobal.com/projects/revit-modeling-for-a-commercial-building-in-the-uk/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/19/revit-modeling-for-a-commercial-building-in-the-uk/">https://vibim.wordpress.com/2026/10/19/revit-modeling-for-a-commercial-building-in-the-uk/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
