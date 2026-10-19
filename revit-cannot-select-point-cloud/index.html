@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revit Point Cloud Selection Reference: Settings, Causes and Steps</title>
+<meta name="description" content="This reference covers one narrow problem: a point cloud linked into a Revit project that does not respond to a mouse click. The point cloud files in question ar">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Revit Point Cloud Selection Reference: Settings, Causes and Steps</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2026/01/why-cant-i-select-something-in-revit.jpg" alt="Revit Select Links toggle used to select a point cloud" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference covers one narrow problem: a point cloud linked into a Revit project that does not respond to a mouse click. The point cloud files in question are RCP and RCS data. The behavior looks like a frozen model, but it is a property of the selection settings and not a sign of damaged data.</p>
+<h2>Definitions</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning in this context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selection Control</td>
+<td>The set of filters Revit uses to decide which element types accept a click. When a filter is off, the viewport ignores the cursor for that type.</td>
+</tr>
+<tr>
+<td>Select Links</td>
+<td>The toggle that allows clicking linked data, including a linked point cloud.</td>
+</tr>
+<tr>
+<td>Select Pinned Elements</td>
+<td>The toggle that allows clicking elements that have been pinned in place.</td>
+</tr>
+<tr>
+<td>RCP / RCS</td>
+<td>Point cloud file formats that Revit can reference as background survey data.</td>
+</tr>
+</tbody>
+</table>
+<h2>Why Revit blocks the click</h2>
+<p>Revit disables selection of linked references on purpose. The restriction protects referenced survey data from accidental movement, because a stray drag on a point cloud could shift its coordinates relative to the model. So a point cloud that "cannot be selected" is usually protected, not broken.</p>
+<h2>Fix, step by step</h2>
+<ol>
+<li>Open the Modify tab on the main ribbon.</li>
+<li>Find the Select drop-down menu at the far left of the panel.</li>
+<li>Turn on Select Links.</li>
+<li>Turn on Select Pinned Elements.</li>
+<li>Click the point cloud in the viewport to confirm it now responds.</li>
+</ol>
+<p>A faster route exists. The Status Bar at the bottom right of the window carries a chain-link icon. That icon opens the same filters, so you can change them without going back to the ribbon.</p>
+<h2>What to check before assuming a selection problem</h2>
+<p>Confirm the point cloud file formats you linked are ones Revit supports. Treat the selection settings as the cause only after the file format is ruled out.</p>
+<h2>Selection is not modelling</h2>
+<p>Being able to click a scan does not produce a model. Converting point cloud data into Revit elements is a separate workflow with its own accuracy targets. When the scan data has to support an as-built deliverable, a Scan to BIM service provider can validate the imported survey data and build the Revit model to the required scope.</p>
+<h2>Quick checklist</h2>
+<ul>
+<li>Point cloud does not respond to clicks: check Select Links first.</li>
+<li>Pinned items also ignore clicks: check Select Pinned Elements.</li>
+<li>Toggles are quicker from the Status Bar chain-link icon.</li>
+<li>File format unsupported: fix that before touching selection settings.</li>
+<li>The restriction is a safeguard that keeps referenced coordinates stable, so switch it on only when you need to select the data and consider switching it off afterwards.</li>
+</ul>
+<p>Keeping these toggles in mind saves time on any project that links scan data, because the same two settings explain most cases where a viewport appears unresponsive to a click on referenced content.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/revit-cannot-select-point-cloud/">https://vibimglobal.com/blog/revit-cannot-select-point-cloud/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/04/14/revit-cannot-select-point-cloud/">https://vibim.wordpress.com/2026/04/14/revit-cannot-select-point-cloud/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
