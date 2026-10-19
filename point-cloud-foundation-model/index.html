@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Point Cloud Foundation Models: Technical Reference for Scan to BIM</title>
+<meta name="description" content="This reference summarizes how point cloud foundation models work, how they differ from earlier point cloud networks, and where they stand against Scan to BIM pr">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Point Cloud Foundation Models: Technical Reference for Scan to BIM</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2026/01/point-cloud-foundation-model.jpg" alt="Point cloud foundation model for Scan to BIM workflows" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes how point cloud foundation models work, how they differ from earlier point cloud networks, and where they stand against Scan to BIM production needs. It is a lookup document, not a tutorial.</p>
+<h2>Definition</h2>
+<p>A point cloud foundation model is a large AI model trained on very large volumes of 3D point data. It learns general spatial representations through self-supervised learning on unlabeled data, then adapts to a specific task with little additional training. Typical downstream tasks include classification, segmentation and scene reconstruction.</p>
+<h2>Core components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3D point cloud encoder</td>
+<td>Extracts geometric features from raw point coordinates. Modern encoders use Transformer attention to model relationships between points.</td>
+</tr>
+<tr>
+<td>Pre-training mechanism</td>
+<td>Self-supervised learning on unlabeled scans. Masked Point Modeling hides part of a cloud and trains the model to rebuild it.</td>
+</tr>
+<tr>
+<td>Multi-modal integration</td>
+<td>Links 3D geometry with text and image embeddings, which allows natural language queries.</td>
+</tr>
+</tbody>
+</table>
+<h2>Comparison with traditional point cloud AI</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Traditional (for example PointNet)</th>
+<th>Foundation model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training data</td>
+<td>Task-specific labeled sets</td>
+<td>Large unlabeled sets plus fine-tuning</td>
+</tr>
+<tr>
+<td>Adaptation</td>
+<td>Retrain for each new task</td>
+<td>Fine-tune or prompt</td>
+</tr>
+<tr>
+<td>Local context</td>
+<td>Limited</td>
+<td>Attention-based</td>
+</tr>
+<tr>
+<td>Input types</td>
+<td>Geometry only</td>
+<td>Geometry, text, image</td>
+</tr>
+<tr>
+<td>Generalization</td>
+<td>Narrow distribution</td>
+<td>Broader in benchmarks, unvalidated for construction</td>
+</tr>
+</tbody>
+</table>
+<h2>Reference models</h2>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Point-BERT</td>
+<td>Applied BERT-style pre-training with Masked Point Modeling</td>
+</tr>
+<tr>
+<td>Point-MAE</td>
+<td>Simpler Transformer autoencoder for self-supervised pre-training</td>
+</tr>
+<tr>
+<td>Uni3D</td>
+<td>Aligns 3D features with CLIP embeddings for zero-shot classification</td>
+</tr>
+<tr>
+<td>PointLLM</td>
+<td>Connects point cloud encoders with large language models</td>
+</tr>
+</tbody>
+</table>
+<h2>Possible Scan to BIM uses</h2>
+<ol>
+<li>Element classification driven by natural language queries.</li>
+<li>Scene completion behind occlusions.</li>
+<li>Instance segmentation in cluttered scans.</li>
+<li>Semantic search through dense clouds.</li>
+</ol>
+<h2>Known limits</h2>
+<ol>
+<li>Computational cost for training and for inference on dense building scans.</li>
+<li>Mismatch between research datasets and construction geometry.</li>
+<li>Benchmark accuracy that does not carry over to as-built requirements.</li>
+<li>Black-box behavior that makes errors hard to diagnose.</li>
+<li>Research code with no production plugin for Revit or Navisworks.</li>
+<li>Hallucinated geometry, which forces human verification.</li>
+</ol>
+<h2>Current practice</h2>
+<p>The source analysis concludes that these models are not ready for production Scan to BIM work. Established practice stays in place: manual modeling in Revit with semi-automated QA/QC. Any future tool should show accuracy validated on construction data, a clear verification workflow, integration with existing software and transparent edge-case results.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/point-cloud-foundation-model/">https://vibimglobal.com/blog/point-cloud-foundation-model/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/04/15/point-cloud-foundation-model/">https://vibim.wordpress.com/2026/04/15/point-cloud-foundation-model/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
