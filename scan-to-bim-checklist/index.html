@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scan to BIM Checklist: A Technical Lookup for Scoping, Capture, Modeling and Handover</title>
+<meta name="description" content="A Scan to BIM checklist turns a vague request ('model this building from scans') into a list of decisions that can be agreed, checked and signed off. This page ">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Scan to BIM Checklist: A Technical Lookup for Scoping, Capture, Modeling and Handover</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/10/3d-scanning-to-bim-best-practices.jpeg" alt="Scan to BIM checklist workflow from laser scanning to BIM handover" style="width:100%;max-height:420px;object-fit:cover;">
+<p>A Scan to BIM checklist turns a vague request ("model this building from scans") into a list of decisions that can be agreed, checked and signed off. This page works as a lookup sheet. It sets out what each phase takes in, what it produces, and which check closes it.</p>
+<h2>Definition</h2>
+<p><strong>A Scan to BIM checklist is a structured list of tasks and requirements covering the work from laser scanning and point cloud processing to the validated Building Information Model.</strong> It also records the scope, deliverables and acceptance criteria the client has agreed to.</p>
+<h2>Phase lookup</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Input</th>
+<th>Output</th>
+<th>Closing check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Scoping</td>
+<td>Client brief, intended use</td>
+<td>Scope of work, target LOD, file formats, QC plan</td>
+<td>Client confirms scope in writing</td>
+</tr>
+<tr>
+<td>2. Site preparation</td>
+<td>Site access details</td>
+<td>Scanner choice, station plan, permits</td>
+<td>Coverage plan covers obstructions and access</td>
+</tr>
+<tr>
+<td>3. Capture</td>
+<td>Scanning plan</td>
+<td>Raw scans</td>
+<td>Every planned area has overlapping scans</td>
+</tr>
+<tr>
+<td>4. Processing</td>
+<td>Raw scans</td>
+<td>One registered point cloud in .rcp, .e57, .pts or .las</td>
+<td>Alignment checked against control points</td>
+</tr>
+<tr>
+<td>5. Modeling</td>
+<td>Registered cloud, LOD, naming rules</td>
+<td>As-built model with metadata</td>
+<td>Elements follow the agreed LOD</td>
+</tr>
+<tr>
+<td>6. QA</td>
+<td>Model plus cloud</td>
+<td>Validated, purged model</td>
+<td>Deviations resolved, clashes cleared</td>
+</tr>
+<tr>
+<td>7. Handover</td>
+<td>Validated model</td>
+<td>RVT, IFC, DWG, sheets, schedules, report</td>
+<td>Client review meeting held</td>
+</tr>
+</tbody>
+</table>
+<h2>Choosing the capture method</h2>
+<ol>
+<li>Use a terrestrial scanner when accuracy matters most and time allows several setups.</li>
+<li>Use a mobile or handheld scanner when speed matters and geometry is tight or complex. Expect lower accuracy.</li>
+<li>Use drone LiDAR for large outdoor areas or places people cannot reach.</li>
+</ol>
+<h2>Definitions used in the checks</h2>
+<ul>
+<li><strong>Registration:</strong> aligning separate scans into a single coordinate system.</li>
+<li><strong>LOD (Level of Development):</strong> how much geometry and data each element carries. It is fixed in phase 1 and tested again in phase 6.</li>
+<li><strong>Purge:</strong> removing unused families, views and elements so the file stays light.</li>
+</ul>
+<h2>Discipline add-ons</h2>
+<p>The seven phases stay the same. Only the focus changes.</p>
+<ul>
+<li><strong>Architectural:</strong> walls, openings, floors, ceilings, stairs and roofs. Confirm room dimensions and ceiling heights. State in the scope whether movable items such as office cubicles are excluded.</li>
+<li><strong>Structural:</strong> columns, beams, slabs and foundations. Verify member sizes and levels against the cloud.</li>
+<li><strong>MEP:</strong> ducts, pipes and equipment. Check routing and clearances, then run clash detection.</li>
+</ul>
+<h2>Practical notes</h2>
+<p>Teams working with new clients tend to use the full checklist to align expectations. Long-term clients often send only key requirements by email, so the supplier must read the project needs and define the scope itself. In both cases, the closing checks above stay the same, because they are what protect the model from rework.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/scan-to-bim-checklist/">https://vibimglobal.com/blog/scan-to-bim-checklist/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/04/16/scan-to-bim-checklist/">https://vibim.wordpress.com/2026/04/16/scan-to-bim-checklist/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
