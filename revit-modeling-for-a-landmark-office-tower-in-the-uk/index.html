@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 556.UK: Technical Reference for a Multi-Volume As-Built BIM</title>
+<meta name="description" content="This page records the technical parameters of Project 556.UK, an as-built BIM model of a landmark office tower complex in central London, delivered between Sept">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Project 556.UK: Technical Reference for a Multi-Volume As-Built BIM</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2026/09/full-revit-model-of-the-landmark-office-tower-complex.jpg" alt="Full Revit model of a landmark office tower complex in the UK" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page records the technical parameters of Project 556.UK, an as-built BIM model of a landmark office tower complex in central London, delivered between September and December 2023.</p>
+<h2>Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location</td>
+<td>United Kingdom (central London)</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>Commercial and office</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>18,000 m² (193,750 sq ft)</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>24</td>
+</tr>
+<tr>
+<td>LOD, architecture</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>LOD, topography</td>
+<td>LOD 400</td>
+</tr>
+<tr>
+<td>LOD, MEP</td>
+<td>LOD 200</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, TruView</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit files</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Tolerance</td>
+<td>±15 mm (±0.6 in) against the source scan</td>
+</tr>
+<tr>
+<td>Model split</td>
+<td>7 linked Revit volumes</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li>As-built BIM: a model of a building as it exists, built from survey data rather than design drawings.</li>
+<li>LOD (level of development): how much detail and reliability model elements carry. Here it varies by discipline.</li>
+<li>Point cloud: a set of 3D points captured by laser scanning.</li>
+<li>TruView: a browser view of scan data used alongside the point cloud.</li>
+<li>Linked volume: a separate Revit model referenced by others so a large building can be split into manageable parts.</li>
+</ul>
+<h2>Composition of the estate</h2>
+<ol>
+<li>Podium: about 9,000 m², one basement and two upper levels.</li>
+<li>Main tower: 19 floors, about 2,080 m² per floor.</li>
+<li>Secondary tower: five floors, about 1,150 m² per floor.</li>
+<li>Surrounding topography.</li>
+</ol>
+<h2>Scope of services</h2>
+<p>Architecture, structural, topography and MEP scan to BIM, under as-built BIM modeling.</p>
+<h2>Workflow</h2>
+<ol>
+<li>Internal kickoff to fix scope and quality targets.</li>
+<li>Assign one coordinator per volume.</li>
+<li>Model key podium exterior and interior objects first.</li>
+<li>Match topography to those objects and run a clash check.</li>
+<li>Build external and interior models in parallel, shared elements such as walls first.</li>
+<li>Manage the point cloud by region, showing only the scan data in hand, often unlinked from the model.</li>
+</ol>
+<h2>Known constraints</h2>
+<p>Heavy scan data slows files and raises crash risk. Alignment of topography, podium exterior and podium interior is the critical coordination point, since pavements must meet external walls and basement objects.</p>
+<h2>Result</h2>
+<p>A coordinated existing-asset record usable for renovation, spatial planning and cross-disciplinary coordination.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-a-landmark-office-tower-in-the-uk/">https://vibimglobal.com/projects/revit-modeling-for-a-landmark-office-tower-in-the-uk/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/21/revit-modeling-for-a-landmark-office-tower-in-the-uk/">https://vibim.wordpress.com/2026/10/21/revit-modeling-for-a-landmark-office-tower-in-the-uk/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
