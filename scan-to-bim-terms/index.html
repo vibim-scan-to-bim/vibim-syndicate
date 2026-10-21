@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scan to BIM Terms: Technical Glossary and Reference Tables</title>
+<meta name="description" content="This page is a compact reference for the vocabulary used when a laser scan becomes a Building Information Model. Terms are grouped by the stage of the workflow ">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Scan to BIM Terms: Technical Glossary and Reference Tables</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/10/laser-scanning-to-bim-terminology.jpeg" alt="Scan to BIM terminology illustrated with laser scanning" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page is a compact reference for the vocabulary used when a laser scan becomes a Building Information Model. Terms are grouped by the stage of the workflow where they first matter, so a team can look up a word at the moment it appears in a brief, a scope or a QA report.</p>
+<h2>Definition</h2>
+<p>Scan to BIM is the process of capturing the as-built conditions of a physical space with 3D laser scanners and converting that data into a BIM. The vocabulary below describes what is captured, how it is aligned, how it is modeled and how the result is checked.</p>
+<h2>Capture terms</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reality capture</td>
+<td>Generating digital representations of physical environments through laser scanning or photogrammetry</td>
+</tr>
+<tr>
+<td>Point cloud</td>
+<td>Data points in a 3D coordinate system; each point can carry attributes such as color or intensity</td>
+</tr>
+<tr>
+<td>3D laser scanning</td>
+<td>Laser pulses measure the time of reflection to calculate distance; several scan positions avoid gaps and shadows</td>
+</tr>
+<tr>
+<td>LiDAR</td>
+<td>Distance measurement by emitted laser pulses; the core technology inside most terrestrial laser scanners</td>
+</tr>
+<tr>
+<td>Photogrammetry</td>
+<td>3D models from overlapping photographs; often cheaper and colorful, with lower geometric accuracy</td>
+</tr>
+</tbody>
+</table>
+<h2>Alignment terms</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scan registration</td>
+<td>Aligning several scans into one coordinate system through reference points shared between them</td>
+</tr>
+<tr>
+<td>Mis-alignment</td>
+<td>Registration error that shows up as ghosting or distortion; also the gap between model and point cloud beyond tolerance</td>
+</tr>
+<tr>
+<td>Coordinate</td>
+<td>The X, Y, Z reference that places points and objects in the model or on site</td>
+</tr>
+<tr>
+<td>Project Base Point</td>
+<td>The reference point of the Revit project's internal coordinate system</td>
+</tr>
+<tr>
+<td>Survey Point</td>
+<td>The real-world location, used for shared coordinates</td>
+</tr>
+<tr>
+<td>Origin to Origin</td>
+<td>Placement that matches the internal (0,0,0) of a linked file to the Revit model origin</td>
+</tr>
+</tbody>
+</table>
+<h2>Modeling and specification terms</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>As-built model</td>
+<td>A BIM that reflects the building as constructed, including deviations from the design plans</td>
+</tr>
+<tr>
+<td>Parametric modeling</td>
+<td>Geometry driven by parameters and constraints, so the model updates when values change</td>
+</tr>
+<tr>
+<td>LOD</td>
+<td>Level of Development: completeness and reliability of an element, from 100 to 500</td>
+</tr>
+<tr>
+<td>LOA</td>
+<td>Level of Accuracy: acceptable deviation between model and reality; LOA 10 allows 5 to 15 cm, LOA 50 allows 0 to 1 mm</td>
+</tr>
+<tr>
+<td>LOI</td>
+<td>Level of Information: the non-graphical data on an element, such as material, manufacturer or maintenance schedule</td>
+</tr>
+<tr>
+<td>Tolerance</td>
+<td>The permissible variation; for example +/- 5 mm between a modeled surface and the scanned points</td>
+</tr>
+<tr>
+<td>Setup file</td>
+<td>The record of scanner positions and orientations, or the adjusted starting Revit file with coordinates, levels and families</td>
+</tr>
+</tbody>
+</table>
+<h2>Downstream terms</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clash detection</td>
+<td>Software finds interference between elements, such as a new duct crossing an existing beam</td>
+</tr>
+<tr>
+<td>Digital twin</td>
+<td>A virtual replica that reflects its physical counterpart; an as-built model is often its foundation</td>
+</tr>
+<tr>
+<td>TrueView</td>
+<td>Leica Geosystems web viewer that overlays panoramic photos on scan data for browser-based review</td>
+</tr>
+</tbody>
+</table>
+<h2>Checking order</h2>
+<ol>
+<li>Register the scans and confirm the alignment.</li>
+<li>Fix the coordinate system and the setup file.</li>
+<li>Agree LOD, LOA, LOI and tolerance in writing.</li>
+<li>Model the elements and compare the model with the point cloud against the tolerance.</li>
+<li>Run clash detection against proposed designs.</li>
+</ol>
+<p>Each step depends on the one before it: a modeling tolerance means little when registration already drifted.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/scan-to-bim-terms/">https://vibimglobal.com/blog/scan-to-bim-terms/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/04/16/scan-to-bim-terms/">https://vibim.wordpress.com/2026/04/16/scan-to-bim-terms/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
