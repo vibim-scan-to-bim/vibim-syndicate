@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navisworks Reference: Editions, File Formats, and Core Tools</title>
+<meta name="description" content="This reference sheet summarizes what Autodesk Navisworks does, which edition covers which task, and how the main tools fit together in a coordination workflow. ">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Navisworks Reference: Editions, File Formats, and Core Tools</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/what-is-navisworks-software.jpg" alt="Navisworks federated 3D model review for BIM coordination" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference sheet summarizes what Autodesk Navisworks does, which edition covers which task, and how the main tools fit together in a coordination workflow. It is written for BIM coordinators and project teams who need a quick lookup rather than a long tutorial.</p>
+<h2>Definition</h2>
+<p>Navisworks is a project review application from Autodesk. It does not author design geometry. Its job is model aggregation: it merges 3D models from different disciplines and software into one federated model that the team can inspect, simulate, and mark up. Autodesk acquired it in 2007 from the UK-based company NavisWorks Ltd.</p>
+<h2>Edition comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Edition</th>
+<th>Clash detection</th>
+<th>4D/5D simulation and quantification</th>
+<th>Editing or analysis</th>
+<th>Best fit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manage</td>
+<td>Yes (Clash Detective)</td>
+<td>Yes</td>
+<td>Full toolset</td>
+<td>BIM managers, coordinators</td>
+</tr>
+<tr>
+<td>Simulate</td>
+<td>No</td>
+<td>Yes</td>
+<td>Review features</td>
+<td>Estimators, schedulers, project managers</td>
+</tr>
+<tr>
+<td>Freedom</td>
+<td>No</td>
+<td>No</td>
+<td>Viewer only (NWD and DWF)</td>
+<td>Clients and stakeholders without a license</td>
+</tr>
+</tbody>
+</table>
+<h2>Core tools and what each one does</h2>
+<table>
+<thead>
+<tr>
+<th>Tool or feature</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model aggregation</td>
+<td>Combines data from over 60 file formats into a single model</td>
+</tr>
+<tr>
+<td>Clash Detective</td>
+<td>Finds, inspects, and reports geometric interferences between disciplines</td>
+</tr>
+<tr>
+<td>TimeLiner</td>
+<td>Links model geometry to schedule data for 4D and to cost data for 5D</td>
+</tr>
+<tr>
+<td>Quantification</td>
+<td>Produces material quantities and measurements from 3D models or 2D sheets</td>
+</tr>
+<tr>
+<td>Rendering</td>
+<td>Creates photorealistic images and animations, locally or in the cloud</td>
+</tr>
+<tr>
+<td>Walk-through navigation</td>
+<td>Lets reviewers move through the aggregated model in real time</td>
+</tr>
+<tr>
+<td>Markup</td>
+<td>Adds measurements, redlines, and comments to saved viewpoints</td>
+</tr>
+</tbody>
+</table>
+<h2>Native file formats</h2>
+<ul>
+<li>NWC: one of the three native formats.</li>
+<li>NWF: supports real-time model updates.</li>
+<li>NWD: supports secure, milestone-specific snapshots.</li>
+</ul>
+<p>Choosing between live references (NWF) and fixed snapshots (NWD) lets a team decide whether reviewers see real-time updates or a stable milestone state.</p>
+<h2>Typical workflow steps</h2>
+<ol>
+<li>Collect models from each discipline, such as architectural, structural, and MEP, in their native formats.</li>
+<li>Append them into one Navisworks session to build the federated model.</li>
+<li>Run clash tests in Manage and review each interference with the responsible discipline.</li>
+<li>Link the model to the project schedule in TimeLiner to check the construction sequence.</li>
+<li>Export quantities for takeoffs and share an NWD snapshot with stakeholders who use Freedom.</li>
+</ol>
+<h2>Relationship to Revit</h2>
+<p>Revit and Navisworks are complementary. Revit creates parametric models and construction documents. Navisworks reviews and coordinates models that were already created elsewhere. A clash report is only as reliable as the models behind it, so input quality decides how useful the review will be.</p>
+<h2>Cloud connection</h2>
+<p>Navisworks connects with Autodesk Construction Cloud and BIM 360, so teams can open and review models hosted in a shared data environment.</p>
+<h2>Quick answers</h2>
+<ul>
+<li>Can Navisworks open IFC? Yes, along with RVT, DWG, and its own NWF, NWD, and NWC formats.</li>
+<li>Is it a BIM tool? Yes, but its role is review, analysis, and coordination rather than design authoring.</li>
+</ul>
+<p>Reference: <a href="https://vibimglobal.com/blog/what-is-navisworks-software/">https://vibimglobal.com/blog/what-is-navisworks-software/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/04/23/what-is-navisworks-software/">https://vibim.wordpress.com/2026/04/23/what-is-navisworks-software/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
