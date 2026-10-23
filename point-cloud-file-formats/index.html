@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Point Cloud File Formats: Technical Reference for Scan to BIM</title>
+<meta name="description" content="This reference summarizes the five point cloud file formats most often met in scan-based building projects: RCP/RCS, LAS/LAZ, E57, PTS and PTX. It is written as">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Point Cloud File Formats: Technical Reference for Scan to BIM</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/common-point-cloud-file-types.jpeg" alt="Common point cloud file types used in Scan to BIM" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes the five point cloud file formats most often met in scan-based building projects: RCP/RCS, LAS/LAZ, E57, PTS and PTX. It is written as a lookup sheet, so each entry lists what the format is, how it stores data, and where it fits in a modeling workflow.</p>
+<h2>Definitions</h2>
+<ul>
+<li><strong>Point cloud file format:</strong> a standardized structure for storing the three-dimensional coordinates captured by a scanner such as a LiDAR unit.</li>
+<li><strong>Proprietary format:</strong> a format created by one software vendor and tuned for that vendor's tools.</li>
+<li><strong>Open or vendor-neutral format:</strong> a format with a published specification that many programs can read.</li>
+<li><strong>Registration:</strong> the alignment of separate scans into one shared coordinate system.</li>
+</ul>
+<h2>Format summary</h2>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Structure</th>
+<th>Strength</th>
+<th>Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RCS / RCP</td>
+<td>Indexed proprietary binary; RCS is one scan, RCP is a project of many RCS files</td>
+<td>Fast display and handling in Revit, AutoCAD and Navisworks</td>
+<td>Intended for Autodesk software</td>
+</tr>
+<tr>
+<td>LAS / LAZ</td>
+<td>Structured binary with a metadata header; LAZ is lossless compressed</td>
+<td>Classification codes, GPS time, intensity, color, coordinate system</td>
+<td>Large files for wide survey areas</td>
+</tr>
+<tr>
+<td>E57</td>
+<td>Binary data with an XML hierarchy, standardized by ASTM (E2807)</td>
+<td>Bundles points, panoramic images and scanner metadata in one file</td>
+<td>Heavier to produce than a bare point list</td>
+</tr>
+<tr>
+<td>PTS</td>
+<td>ASCII text; a header with the point count, then one line per point</td>
+<td>Simple and widely readable</td>
+<td>Very large files, slower to process</td>
+</tr>
+<tr>
+<td>PTX</td>
+<td>ASCII text organized by scan, with the scanner transformation matrix</td>
+<td>Keeps each scanner position, helpful for registration</td>
+<td>Large files, slower than binary formats</td>
+</tr>
+</tbody>
+</table>
+<h2>Reading the table</h2>
+<ol>
+<li>RCS and RCP exist for performance. The spatial index lets software load only the points needed for the current view.</li>
+<li>LAS is the usual delivery format for airborne and drone LiDAR. Each point can carry a class code, for example ground, high vegetation or building.</li>
+<li>E57 is the format to pick when data moves between unknown software or has to be archived.</li>
+<li>PTS suits basic exchange when only the coordinates matter, with an optional intensity or color column.</li>
+<li>PTX is common as an export from terrestrial scanners, and it keeps every setup separate until registration.</li>
+</ol>
+<h2>Selection steps</h2>
+<ol>
+<li>Identify the main application: survey data points to LAS or LAZ, while as-built modeling from terrestrial scans points to E57 or RCP/RCS.</li>
+<li>Identify the software: an Autodesk workflow benefits from RCP/RCS, and open-source tools such as CloudCompare or PDAL work best with LAS, LAZ or E57.</li>
+<li>Decide how the data will be shared: E57 is the safest choice when the recipient's software is unknown.</li>
+<li>Decide whether the dataset must be archived: E57 preserves the complete record.</li>
+</ol>
+<h2>Conversion notes</h2>
+<p>Converting between formats is routine, and CloudCompare handles most pairs. Going from a rich format to a simpler one can lose data. An E57 file converted to LAS loses its panoramic images, since LAS does not store them. Keep the richest original and derive the others from it.</p>
+<h2>Practical rule</h2>
+<p>Use PTX or the scanner's native format during registration, keep an E57 master, and prepare RCP or RCS for modeling. Confirm the formats with the receiving team before the scan starts.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/point-cloud-file-formats/">https://vibimglobal.com/blog/point-cloud-file-formats/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/05/01/point-cloud-file-formats/">https://vibim.wordpress.com/2026/05/01/point-cloud-file-formats/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
