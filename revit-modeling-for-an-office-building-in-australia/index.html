@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Reference: Project 309.AUS Scan-to-BIM Specification and Method</title>
+<meta name="description" content="## Project parameters  | Parameter | Value | |---|---| | Project code | 309.AUS | | Location | Australia | | Building type | Commercial and office | | Delivery ">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Technical Reference: Project 309.AUS Scan-to-BIM Specification and Method</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2026/09/revit-model-of-the-office-atrium-with-feature-stair-and-escalators.jpg" alt="Revit model of an office atrium with feature stair and escalators" style="width:100%;max-height:420px;object-fit:cover;">
+<h2>Project parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project code</td>
+<td>309.AUS</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>Australia</td>
+</tr>
+<tr>
+<td>Building type</td>
+<td>Commercial and office</td>
+</tr>
+<tr>
+<td>Delivery window</td>
+<td>November 2021 to January 2022</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>7,400 m² (79,650 sq ft)</td>
+</tr>
+<tr>
+<td>Levels</td>
+<td>8 (4 below ground)</td>
+</tr>
+<tr>
+<td>Level of Development</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, site images</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Disciplines</td>
+<td>Architecture and structure</td>
+</tr>
+<tr>
+<td>Tolerance to scan</td>
+<td>±15 mm (±0.6 in)</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>Point cloud to Revit conversion:</strong> building native Revit elements that follow measured scan points.</li>
+<li><strong>LOD 300:</strong> elements are modeled with accurate size, shape, location and orientation.</li>
+<li><strong>Registration error:</strong> misalignment between scan positions that can shift elements sideways from one floor to the next.</li>
+<li><strong>Split-level floor:</strong> a slab that steps in height within one level, so each change needs its own measured section.</li>
+</ul>
+<h2>Method: curved facade</h2>
+<ol>
+<li>Slice the point cloud into thin horizontal bands at several heights.</li>
+<li>Fit a reference circle to each band.</li>
+<li>Average the center and radius over three or four bands to cancel scan noise.</li>
+<li>Model the wall from that single arc instead of short straight segments.</li>
+<li>Build a custom window family with adjustable radius and rotation, then set it flush against the wall curve.</li>
+</ol>
+<h2>Method: basements and structure</h2>
+<ol>
+<li>Cut detailed sections through stepped and split-level areas and read each height from the cloud.</li>
+<li>Model floor slabs first as reference masses.</li>
+<li>Split the work by basement level and smaller zones.</li>
+<li>Isolate each column-to-beam and wall-to-beam junction with 3D section views and site photos.</li>
+<li>Model real openings and gaps, then check that vertical elements align floor to floor.</li>
+</ol>
+<h2>Known difficulties</h2>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Effect</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Curved facade</td>
+<td>True edge levels and wall curve are hard to read</td>
+<td>Banded circle fitting</td>
+</tr>
+<tr>
+<td>Curved windows</td>
+<td>Standard families do not match wall lean</td>
+<td>Custom parametric window</td>
+</tr>
+<tr>
+<td>Dense junctions</td>
+<td>Real connections are hard to read</td>
+<td>Section views plus photos</td>
+</tr>
+<tr>
+<td>Wide basements</td>
+<td>Floor points are hard to match over a large area</td>
+<td>Work by level and zone</td>
+</tr>
+</tbody>
+</table>
+<h2>Outcome</h2>
+<p>The model gives design teams measured existing conditions and gives facility teams a record of structure and curved elements for maintenance planning. Services covered: architecture scan to BIM, structural scan to BIM and as-built BIM modeling.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-an-office-building-in-australia/">https://vibimglobal.com/projects/revit-modeling-for-an-office-building-in-australia/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/23/revit-modeling-for-an-office-building-in-australia/">https://vibim.wordpress.com/2026/10/23/revit-modeling-for-an-office-building-in-australia/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
