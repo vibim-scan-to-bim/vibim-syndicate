@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 302.EU Technical Reference: Curved Walls and Double-Skin Glass in a Scan to BIM Model</title>
+<meta name="description" content="This page is a technical reference for how a curved commercial building in the European Union was modeled in Revit from a laser scan point cloud. It records the">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Project 302.EU Technical Reference: Curved Walls and Double-Skin Glass in a Scan to BIM Model</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2026/09/revit-model-of-the-curved-commercial-building-exterior-corner-with-balustrades-and-glazing.jpg" alt="Revit model of the curved commercial building exterior corner with balustrades and glazing" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page is a technical reference for how a curved commercial building in the European Union was modeled in Revit from a laser scan point cloud. It records the project parameters, the three geometry problems and the method used for each.</p>
+<h2>Project Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project code</td>
+<td>302.EU</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>European Union</td>
+</tr>
+<tr>
+<td>Client profile</td>
+<td>Confidential</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>Commercial and office</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>15,000 m² (161,460 sq ft)</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Level of detail</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, images</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Period</td>
+<td>November to December 2021</td>
+</tr>
+<tr>
+<td>Disciplines</td>
+<td>Architecture, structure, lighting</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li>As-built BIM model: a Revit model that records a building as it stands, rather than as originally designed.</li>
+<li>LOD 300: a level of detail where elements are modeled with accurate geometry, size and position.</li>
+<li>Point cloud: a set of 3D points captured by laser scanning.</li>
+<li>Heat map: a color comparison of a model against the point cloud, green for a match and red for drift.</li>
+<li>Workset: a Revit mechanism for dividing a model so parts can be opened or closed independently.</li>
+</ul>
+<h2>Problem and Method Table</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Why it is hard</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Curved walls</td>
+<td>The true radius and center must be derived from a noisy cloud</td>
+<td>Several thin sections at different heights, a reference circle on each, averaged over three or four sections</td>
+</tr>
+<tr>
+<td>Double-skin glass</td>
+<td>Reflective glass gives a noisy or missing scan</td>
+<td>Outer face from the cloud, thickness and gap from drawings and manual measurement, custom curtain wall type with a second curtain wall nested in the panel family at a fixed offset</td>
+</tr>
+<tr>
+<td>Heavy file</td>
+<td>Large footprint and complex geometry</td>
+<td>Point cloud and linked objects in a separate workset, closed when not in use</td>
+</tr>
+<tr>
+<td>Quality control</td>
+<td>Hundreds of curved walls</td>
+<td>Heat map against the point cloud, review limited to red areas</td>
+</tr>
+</tbody>
+</table>
+<h2>Procedure for the Curved Walls</h2>
+<ol>
+<li>Cut a thin horizontal section through the point cloud.</li>
+<li>Draw a reference circle that fits the points on that section.</li>
+<li>Repeat at different heights, three or four sections in total.</li>
+<li>Compare the center and radius across the sections.</li>
+<li>Take the average center line and radius, which filters out scan noise.</li>
+<li>Build each wall as one continuous curve, not a chain of short segments.</li>
+</ol>
+<h2>Quality Control Result</h2>
+<p>Using the heat map so that reviewers only work the red areas cut quality-control time by roughly 80 to 90 percent, as stated in the project write-up.</p>
+<h2>Deliverable Use</h2>
+<p>The model carries LOD information from the supplied technical drawings on each object. That supports renovation, repair, asset management and a feed into a facility management system.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-a-curved-commercial-building-in-europe/">https://vibimglobal.com/projects/revit-modeling-for-a-curved-commercial-building-in-europe/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/23/revit-modeling-for-a-curved-commercial-building-in-europe/">https://vibim.wordpress.com/2026/10/23/revit-modeling-for-a-curved-commercial-building-in-europe/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
