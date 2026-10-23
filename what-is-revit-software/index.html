@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revit Software: Technical Reference for Existing-Building Projects</title>
+<meta name="description" content="This reference summarises the parts of Revit that matter most when a model is built from survey data of a building that already stands.  ## Definition  Revit is">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Revit Software: Technical Reference for Existing-Building Projects</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/what-is-revit-software.jpg" alt="Revit software model of a building created from a point cloud" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarises the parts of Revit that matter most when a model is built from survey data of a building that already stands.</p>
+<h2>Definition</h2>
+<p>Revit is Autodesk's Building Information Modeling (BIM) authoring software for the architecture, engineering, and construction industry. A project is a single database of parametric objects. A wall is placed as an object that carries its own height, material, and room relationships, and edits propagate to every plan, section, and schedule that references it. The name is a contraction of "Revise-Instantly". The software began at Charles River Software, founded in 1997, and Autodesk acquired the company in 2002.</p>
+<h2>Object hierarchy</h2>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>The broad kind of element, such as Doors or Walls</td>
+</tr>
+<tr>
+<td>Family</td>
+<td>A specific model within a category</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>A size or variant of a family</td>
+</tr>
+<tr>
+<td>Instance</td>
+<td>One element placed in the building</td>
+</tr>
+</tbody>
+</table>
+<p>Classifying an element at the wrong level lets the error travel downstream, where schedules count the wrong thing.</p>
+<h2>File formats</h2>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.rvt</td>
+<td>Complete project model: geometry, data, views, schedules, sheets</td>
+</tr>
+<tr>
+<td>.rfa</td>
+<td>Single loadable component, built in the Family Editor</td>
+</tr>
+<tr>
+<td>.rte</td>
+<td>Project template with units, standards, views, and preloaded families</td>
+</tr>
+<tr>
+<td>.rft</td>
+<td>Family template with reference planes and parameters</td>
+</tr>
+<tr>
+<td>IFC</td>
+<td>Open exchange format; specify IFC2x3 or IFC4 for the receiving team</td>
+</tr>
+<tr>
+<td>DWG</td>
+<td>2D sheets for CAD users</td>
+</tr>
+<tr>
+<td>RCP / RCS</td>
+<td>Point cloud input</td>
+</tr>
+</tbody>
+</table>
+<p>An IFC file keeps geometry and attributes, while the parametric behaviour lives only in the .rvt. If the model must still be edited downstream, deliver .rvt. If it only needs to be read, IFC may do.</p>
+<h2>Procedure for an existing building</h2>
+<ol>
+<li>Inspect the point cloud for duplicated points, misaligned setups, and unscanned areas.</li>
+<li>Agree the Revit version, units, and coordinate system, or use the client template.</li>
+<li>Link the cloud with origin-to-origin or shared coordinates, as the client decides.</li>
+<li>Create starting views: usually two vertical sections, one horizontal section, and a 3D view.</li>
+<li>Model the dense main runs first, then the sparser secondary areas.</li>
+<li>Run a section check and a Navisworks check, then a final pass over naming, levels, worksets, warnings, and phases.</li>
+</ol>
+<h2>Practical constraints</h2>
+<ul>
+<li>Keep each RCS file at or below 5 GB, or send one zipped dataset per transfer.</li>
+<li>Autodesk recommends a multi-core processor at 3.0 GHz or faster, 32 GB to 64 GB of RAM, and a dedicated graphics card with 8 GB or more supporting DirectX 12.</li>
+<li>Revit is sold by subscription, monthly or annual, or inside the Autodesk AEC Collection. There is no one-time purchase.</li>
+<li>A mobile scanner limits the achievable level of development. LOD 300 on every element generally needs a terrestrial scan.</li>
+</ul>
+<h2>Typical turnaround</h2>
+<table>
+<thead>
+<tr>
+<th>Project size (hours)</th>
+<th>Business days</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100 to 200</td>
+<td>4 to 7</td>
+</tr>
+<tr>
+<td>200 to 300</td>
+<td>7 to 8</td>
+</tr>
+<tr>
+<td>300 to 500</td>
+<td>8 to 12</td>
+</tr>
+</tbody>
+</table>
+<p>The accuracy of the model is capped by the survey behind it, so the data and the modeling skill decide the result, not the licence.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/what-is-revit-software/">https://vibimglobal.com/blog/what-is-revit-software/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/05/03/what-is-revit-software/">https://vibim.wordpress.com/2026/05/03/what-is-revit-software/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
