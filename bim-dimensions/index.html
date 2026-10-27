@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIM Dimensions: Technical Reference From 2D to 10D</title>
+<meta name="description" content="This page is a compact reference for the data layers, called dimensions, that can be attached to a building information model. Each entry gives the definition, ">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>BIM Dimensions: Technical Reference From 2D to 10D</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/08/bim-dimensions-explained.jpg" alt="BIM dimensions explained from 2D to 10D" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page is a compact reference for the data layers, called dimensions, that can be attached to a building information model. Each entry gives the definition, the data added and the usual benefit.</p>
+<h2>Definition</h2>
+<p>A BIM dimension is a category of information, such as time, cost or energy, attached to one coordinated 3D model instead of kept in separate documents. Because every layer sits on the same model, a change in one place is reflected everywhere at once.</p>
+<h2>Reference table</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Name</th>
+<th>Data added</th>
+<th>Usual benefit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2D</td>
+<td>Documentation</td>
+<td>Flat X and Y drawings, plans, sections</td>
+<td>Baseline documentation</td>
+</tr>
+<tr>
+<td>3D</td>
+<td>Geometry</td>
+<td>Information-rich model on x, y, z axes</td>
+<td>Visualization, clash detection, coordination</td>
+</tr>
+<tr>
+<td>4D</td>
+<td>Time</td>
+<td>Construction schedule linked to elements</td>
+<td>Sequencing, phasing, fewer delays</td>
+</tr>
+<tr>
+<td>5D</td>
+<td>Cost</td>
+<td>Cost data and quantity takeoffs</td>
+<td>Real-time budget control</td>
+</tr>
+<tr>
+<td>6D</td>
+<td>Sustainability</td>
+<td>Energy and lifecycle-performance data</td>
+<td>Energy efficiency, green compliance</td>
+</tr>
+<tr>
+<td>7D</td>
+<td>Facility management</td>
+<td>Asset, warranty and maintenance data</td>
+<td>Efficient operation after handover</td>
+</tr>
+<tr>
+<td>8D</td>
+<td>Safety</td>
+<td>Hazard, risk and safe-sequence data</td>
+<td>Fewer on-site incidents</td>
+</tr>
+<tr>
+<td>9D</td>
+<td>Lean construction</td>
+<td>Workflow and resource-optimization data</td>
+<td>Less waste, higher productivity</td>
+</tr>
+<tr>
+<td>10D</td>
+<td>Industrialization</td>
+<td>Prefabrication, modular and off-site data</td>
+<td>Faster, standardized delivery</td>
+</tr>
+</tbody>
+</table>
+<h2>Key relationships</h2>
+<ul>
+<li>4D equals 3D plus time.</li>
+<li>5D equals 4D plus cost.</li>
+<li>3D, 4D and 5D are agreed worldwide; 6D and above vary by source.</li>
+<li>5D quantity takeoffs assume elements developed to LOD 300 or above.</li>
+</ul>
+<h2>Dimensions, LOD and maturity levels</h2>
+<p>These are three independent measures of the same project.</p>
+<ol>
+<li>Dimensions classify the type of data in the model.</li>
+<li>Level of Development (LOD) classifies how detailed and reliable that data is.</li>
+<li>BIM maturity levels (0 to 3) classify how collaboratively data is shared.</li>
+</ol>
+<p>A single project can sit at maturity level 2, hold LOD 350 elements and use several dimensions at once. A 5D estimate at LOD 100 is a rough area-based figure, while at LOD 300 it is built from specific, manufacturer-defined components.</p>
+<h2>Why numbers above 5D are ambiguous</h2>
+<p>No single international body has standardized the higher dimensions. The National Building Specification (NBS) notes that consensus is limited past 5D, and buildingSMART favors plain-language use cases such as sustainability analysis or facility management data. Some sources reserve 10D for the digital twin instead of industrialization.</p>
+<h2>Practical steps</h2>
+<ol>
+<li>List the decisions the model must support.</li>
+<li>Choose only the dimensions that answer those decisions.</li>
+<li>Write the required data, its timing and its format into the project standards, not just a dimension number.</li>
+<li>Confirm the underlying 3D geometry is accurate, since every layer depends on it.</li>
+</ol>
+<h2>Further reading</h2>
+<p>The full guide with benefits and examples for each layer is at the ViBIM article on BIM dimensions, linked in the reference line below.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/bim-dimensions/">https://vibimglobal.com/blog/bim-dimensions/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/05/04/bim-dimensions/">https://vibim.wordpress.com/2026/05/04/bim-dimensions/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
