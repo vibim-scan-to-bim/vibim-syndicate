@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 498.UK: Technical Reference for the Revit Office Building Model</title>
+<meta name="description" content="This page records the technical parameters, definitions and workflow of Project 498.UK, a Revit modeling job for an office building in the United Kingdom.  ## S">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Project 498.UK: Technical Reference for the Revit Office Building Model</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/revit-as-built-modelling-for-office-blocks-uk.jpg" alt="Revit model of a classical UK office building" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page records the technical parameters, definitions and workflow of Project 498.UK, a Revit modeling job for an office building in the United Kingdom.</p>
+<h2>Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project</td>
+<td>498.UK</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>United Kingdom</td>
+</tr>
+<tr>
+<td>Building type</td>
+<td>Office building</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>13,000 m²</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>1 base level, 5 upper floors</td>
+</tr>
+<tr>
+<td>Level of development</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, TrueView</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Team</td>
+<td>16 specialists</td>
+</tr>
+<tr>
+<td>Period</td>
+<td>April to June 2023</td>
+</tr>
+<tr>
+<td>MEP tolerance</td>
+<td>±15 mm</td>
+</tr>
+</tbody>
+</table>
+<h2>Scope</h2>
+<ul>
+<li>Architecture, structure, topography and MEP modeling.</li>
+<li>Exterior and part of the interior of the main building.</li>
+<li>Surrounding topography.</li>
+<li>Two facades of two adjacent buildings.</li>
+</ul>
+<h2>Definitions</h2>
+<ul>
+<li><strong>LOD 300:</strong> a level of development where model elements have defined shape, size, location and quantity.</li>
+<li><strong>Point cloud:</strong> a set of measured points from a site scan, used as the geometry reference.</li>
+<li><strong>TrueView:</strong> panoramic imagery used to read the scanned space and verify objects.</li>
+<li><strong>Paint tool:</strong> the Revit function that applies a material appearance to a surface without changing geometry. The client required it so the model shows real exterior finishes.</li>
+<li><strong>Parametric family:</strong> a Revit object whose size and properties change through parameters. Here, families served MEP objects with similar shapes and sizes.</li>
+<li><strong>Registration:</strong> the alignment of scan data in a shared coordinate system.</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Review inputs: point cloud, TrueView, PDF documents, exterior photographs.</li>
+<li>Estimate hours per MEP system from area, project type and past similar projects.</li>
+<li>Assign staff by system and zone, with daily supervision of new staff.</li>
+<li>Model architecture from the point cloud, photographs and reference documents; assign materials with Paint using Google Maps, photos, TrueView and existing data.</li>
+<li>Model MEP with two workstreams: vertical technical shafts and horizontal HVAC and MEP routes.</li>
+<li>Work in Revit and Navisworks in parallel.</li>
+<li>Run QA-QC: section checks, Navisworks validation, internal software checks.</li>
+<li>Correct errors found by QC, including client-identified and latent defects.</li>
+</ol>
+<h2>Known risk: registration error</h2>
+<p>At 80% completion, the client reported errors in point cloud registration. Comparison with the updated point cloud showed deviations in elevation, tilt angle and X-Y axis. Late changes to elevation and tilt can cause broken links, missing objects, position shifts and longer processing time. The response was a senior QA review of root causes, selection of correction methods and extra qualified staff.</p>
+<h2>Constraints on the input data</h2>
+<p>MEP inputs were limited to PDF documents and exterior photographs. This made estimates harder for false-ceiling access, object density and number of shafts. The point cloud also had overlapping points and coordinate misalignments, which required repeated adjustment in the basement, rooftop and shafts.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-office-building-at-uk/">https://vibimglobal.com/projects/revit-modeling-for-office-building-at-uk/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/27/revit-modeling-for-office-building-at-uk/">https://vibim.wordpress.com/2026/10/27/revit-modeling-for-office-building-at-uk/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
