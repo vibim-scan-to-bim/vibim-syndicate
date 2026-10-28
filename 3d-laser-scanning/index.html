@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D Laser Scanning: Technical Reference for Survey and BIM Teams</title>
+<meta name="description" content="This page is a compact reference for the main terms, scanner types, quality factors and handover formats used when laser scan data feeds a BIM workflow. It is w">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>3D Laser Scanning: Technical Reference for Survey and BIM Teams</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/10/how-does-3d-laser-scanning-work.jpg" alt="Tripod-mounted terrestrial 3D laser scanner capturing a building interior" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page is a compact reference for the main terms, scanner types, quality factors and handover formats used when laser scan data feeds a BIM workflow. It is written for quick lookup before a capture is commissioned.</p>
+<h2>Definition</h2>
+<p>3D laser scanning is a non-contact measurement method. A laser measures the distance to every surface it can see and records each return as an X, Y, Z coordinate. The output of a scan session is a point cloud. It is not a drawing and not a model, so as-built drawings and Revit models are produced from the cloud in a separate step.</p>
+<h2>Workflow stages</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Where</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set-up</td>
+<td>Field</td>
+<td>The scanner is placed with clear line of sight to the surfaces that matter.</td>
+</tr>
+<tr>
+<td>Capture</td>
+<td>Field</td>
+<td>The head sweeps the beam and logs returns; the scanner moves to several positions.</td>
+</tr>
+<tr>
+<td>Registration</td>
+<td>Office</td>
+<td>Separate scans are aligned into one coordinate system using the overlap between positions.</td>
+</tr>
+<tr>
+<td>Processing</td>
+<td>Office</td>
+<td>Noise from moving people, reflective glass and dust is filtered out.</td>
+</tr>
+</tbody>
+</table>
+<h2>Scanner technologies</h2>
+<table>
+<thead>
+<tr>
+<th>Technology</th>
+<th>Working range (datasheet examples)</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time-of-flight</td>
+<td>0.3 m to 130 m (Leica RTC360); up to 1,000 m (Leica ScanStation P50)</td>
+<td>Open sites, exteriors, infrastructure</td>
+</tr>
+<tr>
+<td>Phase-shift</td>
+<td>0.3 m to 365 m (Z+F IMAGER 5016)</td>
+<td>Interiors, plant rooms, dense MEP</td>
+</tr>
+<tr>
+<td>Triangulation</td>
+<td>0.5 m to 2 m</td>
+<td>Individual objects and components</td>
+</tr>
+</tbody>
+</table>
+<p>Range belongs to the scanner model, not to the ranging method. A phase-shift unit can out-reach a time-of-flight unit, so specifying by technology alone can mislead.</p>
+<h2>Quality factors that limit LOD</h2>
+<ol>
+<li>Point density sets the smallest feature that survives in the data.</li>
+<li>Coverage determines whether hidden elements such as risers exist at all.</li>
+<li>Registration accuracy decides whether geometry stays aligned across a whole building.</li>
+</ol>
+<p>Mobile or handheld capture has lower density and supports roughly LOD 300 across a model. A registered terrestrial scan supports higher LOD and tighter tolerance.</p>
+<h2>Handover formats</h2>
+<ul>
+<li>Point clouds: RCP and RCS preferred for the Autodesk toolchain; E57 as the vendor-neutral option, usually converted first.</li>
+<li>Transfer: RCS files at 5 GB or under, or one zip per transfer.</li>
+<li>Models: RVT, IFC with the schema version stated, DWG for 2D sheets.</li>
+</ul>
+<h2>Common reasons a cloud is unusable</h2>
+<ul>
+<li>Geometry was never captured because of blocked line of sight.</li>
+<li>Positions did not register cleanly, so one wall appears twice.</li>
+<li>Data arrived incomplete and elements cannot be classified.</li>
+<li>The cloud deviates from the drawings and the difference is unresolved.</li>
+</ul>
+<p>Reference: <a href="https://vibimglobal.com/blog/3d-laser-scanning/">https://vibimglobal.com/blog/3d-laser-scanning/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/05/07/3d-laser-scanning/">https://vibim.wordpress.com/2026/05/07/3d-laser-scanning/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
