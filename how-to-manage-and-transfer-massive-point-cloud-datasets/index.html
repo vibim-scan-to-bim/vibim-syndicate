@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Massive Point Cloud Datasets: Technical Notes</title>
+<meta name="description" content="Working notes for handling very large laser-scan and photogrammetry datasets in AEC projects. A single scan of a large building or infrastructure asset can reac">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Massive Point Cloud Datasets: Technical Notes</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/10/point-cloud-processing-workflow-for-large-datasets.jpeg" alt="Point cloud processing workflow for large datasets" style="width:100%;max-height:420px;object-fit:cover;">
+<p>Working notes for handling very large laser-scan and photogrammetry datasets in AEC projects. A single scan of a large building or infrastructure asset can reach terabytes of raw data.</p>
+<h2>Core challenges</h2>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Effect</th>
+<th>Typical mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data volume</td>
+<td>Storage and transfer bottlenecks, transfers of hours or days on standard connections</td>
+<td>Compression, segmentation, hybrid storage</td>
+</tr>
+<tr>
+<td>Data integrity</td>
+<td>Corrupted files, outdated versions, rework</td>
+<td>Versioning, access control, quality checks</td>
+</tr>
+<tr>
+<td>Compute demand</td>
+<td>Slow performance, crashes, forced use of decimated data</td>
+<td>High-RAM workstations, GPUs, fast storage</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>Registration:</strong> aligning scans captured from different positions or devices into one unified dataset.</li>
+<li><strong>Cleaning:</strong> removing noise, redundant points and outliers before modeling.</li>
+<li><strong>Classification:</strong> tagging points as floor, wall, pipe or conduit so a single system can be isolated.</li>
+<li><strong>Segmentation:</strong> splitting a dataset by floor, zone, discipline or construction phase.</li>
+<li><strong>CDE:</strong> a Common Data Environment, for example Autodesk Docs or Trimble Connect.</li>
+</ul>
+<h2>Formats</h2>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RCP / RCS</td>
+<td>Autodesk indexed formats, optimized for Revit and Navisworks</td>
+</tr>
+<tr>
+<td>LAS</td>
+<td>Standard for LiDAR data</td>
+</tr>
+<tr>
+<td>LAZ</td>
+<td>Compressed, lossless version of LAS</td>
+</tr>
+<tr>
+<td>E57</td>
+<td>Vendor-neutral, stores point data and metadata</td>
+</tr>
+</tbody>
+</table>
+<h2>Processing steps</h2>
+<ol>
+<li>Register all scans into one coordinate space.</li>
+<li>Denoise and filter outliers.</li>
+<li>Index the cloud in ReCap, RealWorks or Cyclone.</li>
+<li>Segment by floor, zone or discipline and classify points.</li>
+<li>Compress to LAZ or E57 for archive and hand-off.</li>
+<li>If the source format must be kept, split or archive the file (ZIP or RAR).</li>
+</ol>
+<h2>Exchange methods</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Strength</th>
+<th>Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cloud or CDE</td>
+<td>Worldwide access, versioning, comments</td>
+<td>Bandwidth, recurring cost, restarts after an interrupted upload</td>
+</tr>
+<tr>
+<td>Physical drive</td>
+<td>Independent of internet speed</td>
+<td>Loss, theft, damage in transit</td>
+</tr>
+<tr>
+<td>FTP</td>
+<td>Low cost, resumable transfers</td>
+<td>No end-to-end encryption in standard FTP, no collaboration features</td>
+</tr>
+<tr>
+<td>Local NAS</td>
+<td>Fast access on a local network</td>
+<td>Single location, upfront hardware and IT cost</td>
+</tr>
+<tr>
+<td>Hybrid</td>
+<td>Local SSD for active work, cloud archive for finished data</td>
+<td>Needs automated sync and backup routines</td>
+</tr>
+</tbody>
+</table>
+<h2>Checks before modeling</h2>
+<p>Check registration quality and coverage first. Review the cloud for duplicate points, misaligned patches and gaps, since modeling on a flawed cloud only moves the error into the model. Keep the cloud segmented so each discipline loads only what it needs, and keep one agreed tolerance that follows the project specification and the scan quality.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/how-to-manage-and-transfer-massive-point-cloud-datasets/">https://vibimglobal.com/blog/how-to-manage-and-transfer-massive-point-cloud-datasets/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/05/05/how-to-manage-and-transfer-massive-point-cloud-datasets/">https://vibim.wordpress.com/2026/05/05/how-to-manage-and-transfer-massive-point-cloud-datasets/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
