@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIM Clash Detection Technical Reference: Definitions, Types and Process</title>
+<meta name="description" content="This reference sheet collects the working vocabulary of BIM clash detection. It is meant for coordinators who need a quick lookup rather than a narrative.  ## D">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>BIM Clash Detection Technical Reference: Definitions, Types and Process</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/10/how-does-bim-clash-detection-work.jpg" alt="BIM clash detection reviewing a federated 3D model" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference sheet collects the working vocabulary of BIM clash detection. It is meant for coordinators who need a quick lookup rather than a narrative.</p>
+<h2>Definition</h2>
+<p>Clash detection is the process of finding and resolving geometric interferences and spatial conflicts between components in a 3D building model. A clash occurs when an element from one model intersects with an element from another model, or violates its required buffer zone. Disciplines such as architecture, structure and MEP usually model separately, so overlaps appear when the models are combined into one federated, or master, model. Specialized software then analyzes that model and flags every instance where two objects improperly intersect or break predefined spatial rules.</p>
+<h2>Clash types</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Also called</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hard clash</td>
+<td>Physical clash</td>
+<td>Two components occupy the same space</td>
+<td>A duct running through a concrete column</td>
+</tr>
+<tr>
+<td>Soft clash</td>
+<td>Clearance clash</td>
+<td>A component lacks the buffer space needed to operate, be maintained or stay safe</td>
+<td>An air conditioning unit with no room for service access</td>
+</tr>
+<tr>
+<td>Workflow clash</td>
+<td>4D clash</td>
+<td>A conflict in schedule, delivery or site logistics</td>
+<td>Conduit work planned at the same time as a slab pour in the same area</td>
+</tr>
+</tbody>
+</table>
+<p>A second soft-clash example from the source involves a high-voltage wire placed too close to a plumbing line, which creates an electrocution risk if the pipe leaks.</p>
+<h2>Traditional versus BIM-based detection</h2>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Traditional</th>
+<th>BIM-based</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Timing</td>
+<td>Found manually onsite during construction</td>
+<td>Found digitally before construction</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>High rework, material waste and budget overruns</td>
+<td>Lower rework, fewer RFIs and change orders</td>
+</tr>
+<tr>
+<td>Coordination</td>
+<td>Isolated teams working from 2D drawings</td>
+<td>Shared 3D model across disciplines</td>
+</tr>
+<tr>
+<td>Decisions</td>
+<td>Reactive</td>
+<td>Proactive</td>
+</tr>
+</tbody>
+</table>
+<h2>Process reference</h2>
+<ol>
+<li>Model preparation and aggregation. Collect the latest models, federate them in a coordination tool, set the required level of development and a common coordinate system.</li>
+<li>Preliminary checks. Inspect the federated model visually. Incomplete or poorly modeled elements cause false positives or missed clashes.</li>
+<li>Automated tests. Choose the models to compare, define clash type and tolerance, then run the analysis to produce a conflict list.</li>
+<li>Review and prioritize. Group results by status, location or system, rank them by severity and export a report with screenshots, element IDs and grid locations.</li>
+<li>Assign and track. Send each conflict to the responsible discipline and follow its status.</li>
+<li>Re-run. Update the native models, re-export, repeat the tests and continue until no interference remains.</li>
+</ol>
+<h2>Tool categories named in the source</h2>
+<ul>
+<li>Coordination and clash analysis: Autodesk Navisworks Manage, which merges many file formats and also supports 4D simulation and 5D cost estimation.</li>
+<li>Authoring: Autodesk Revit with its built-in Interference Check, suited to preliminary checks only.</li>
+<li>Cloud coordination: Autodesk Construction Cloud with its Model Coordination module, plus BIMcollab Cloud, Revizto and Trimble Connect.</li>
+<li>Rule-based checking: Solibri Model Checker, which covers code compliance, model quality and accessibility rules.</li>
+</ul>
+<h2>Benefits at a glance</h2>
+<p>More accurate construction drawings, fewer onsite iterations, stronger interdisciplinary coordination, a more efficient project, more precise BOQs and BOMs, and reduced onsite risk through 3D visualization.</p>
+<p>Reference: <a href="https://vibimglobal.com/blog/what-is-clash-detection-in-bim/">https://vibimglobal.com/blog/what-is-clash-detection-in-bim/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/05/13/what-is-clash-detection-in-bim/">https://vibim.wordpress.com/2026/05/13/what-is-clash-detection-in-bim/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
