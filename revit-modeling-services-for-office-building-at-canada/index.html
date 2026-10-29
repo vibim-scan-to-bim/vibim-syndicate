@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 368.CAN: Technical Reference</title>
+<meta name="description" content="Reference notes for a Revit modeling project on an office complex in Canada.  ## Specification  | Item | Value | |---|---| | Project code | 368.CAN | | Location">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Project 368.CAN: Technical Reference</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/bim-modelling-services-for-commercial-buildings-canada.jpg" alt="Revit modeling services for a large office building in Canada" style="width:100%;max-height:420px;object-fit:cover;">
+<p>Reference notes for a Revit modeling project on an office complex in Canada.</p>
+<h2>Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project code</td>
+<td>368.CAN</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>Canada</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>Office building</td>
+</tr>
+<tr>
+<td>Client profile</td>
+<td>Confidential</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>10,000 m²</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>4 basement levels, 9 upper floors</td>
+</tr>
+<tr>
+<td>Level of development</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, 2D CAD, TrueView</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+</tbody>
+</table>
+<h2>Disciplines modeled</h2>
+<ul>
+<li>Architecture, including interior and exterior of the main building</li>
+<li>Structure</li>
+<li>Topography, on the right side of the building</li>
+<li>MEP: ventilation, electrical, plumbing, fire protection, cable trays</li>
+</ul>
+<p>The model also covers adjacent buildings on the left side and an extensive basement area. The purpose is to support future management, planning and renovation design.</p>
+<h2>Definitions used on this project</h2>
+<ul>
+<li><strong>Point cloud</strong>: a set of scanned points describing existing geometry. It was the primary reference for existing architecture and structure.</li>
+<li><strong>Workset</strong>: a Revit subdivision of the model that lets teams own and update areas separately. New worksets were created for newly scanned zones.</li>
+<li><strong>Parametric Family</strong>: a reusable Revit component whose size and properties are controlled by parameters. ViBIM used them for repetitive MEP objects.</li>
+<li><strong>LOD 300</strong>: the level of development targeted for all elements.</li>
+</ul>
+<h2>Workflow steps</h2>
+<ol>
+<li>Set up Levels and Grids from the scan data.</li>
+<li>Link point cloud and CAD/PDF sources and place them in the project coordinate system.</li>
+<li>Split modeling by basement floor or smaller zone.</li>
+<li>Create a new workset for each newly scanned zone and assign an owner.</li>
+<li>Compare new and existing models in Navisworks to confirm workset allocation.</li>
+<li>Model MEP directly from the point cloud, cross-checking shop drawings and technical documentation.</li>
+<li>Run Navisworks clash detection together with the Revit modeling.</li>
+<li>Review through section reviews, Navisworks and point cloud analysis tools before handover.</li>
+</ol>
+<h2>Tolerance</h2>
+<p>The MEP model was built with a maximum deviation of ±15mm. It covers equipment, ductwork, piping and cable trays.</p>
+<h2>Known data limits</h2>
+<ul>
+<li>Basement point cloud quality was poor, which made existing ventilation hard to identify.</li>
+<li>Coverage was incomplete in some areas, so component dimensions, material types and connections were hard to confirm.</li>
+<li>Chiller plant rooms hold large duct shafts in confined technical boxes, which limited scan quality.</li>
+<li>Dense cable trays and conduits in basements, rooftop and technical shafts complicated complete modeling.</li>
+</ul>
+<h2>Hardware</h2>
+<p>High-performance workstations and servers with high-speed SSDs and 64GB of RAM handled the large scan data volume.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-services-for-office-building-at-canada/">https://vibimglobal.com/projects/revit-modeling-services-for-office-building-at-canada/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/29/revit-modeling-services-for-office-building-at-canada/">https://vibim.wordpress.com/2026/10/29/revit-modeling-services-for-office-building-at-canada/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
