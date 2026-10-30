@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Reference: LOD 400 As-Built Revit Model of a UK Historic Church</title>
+<meta name="description" content="This page records the specification, inputs, constraints, and modeling methods for a UK church project delivered by ViBIM. It is written as a reference, so each">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Technical Reference: LOD 400 As-Built Revit Model of a UK Historic Church</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/point-cloud-to-revit-for-heritage-sites.jpg" alt="Point cloud to Revit modeling of a historic UK church" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This page records the specification, inputs, constraints, and modeling methods for a UK church project delivered by ViBIM. It is written as a reference, so each item can be looked up on its own.</p>
+<h2>Project specification</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location</td>
+<td>United Kingdom</td>
+</tr>
+<tr>
+<td>Building type</td>
+<td>Historic church (classical)</td>
+</tr>
+<tr>
+<td>Modeled area</td>
+<td>About 2,000 m²</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>2</td>
+</tr>
+<tr>
+<td>LOD, exterior, interior, topography</td>
+<td>LOD 400</td>
+</tr>
+<tr>
+<td>LOD, facades</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, TruView</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, TruView, internal tools</td>
+</tr>
+</tbody>
+</table>
+<h2>Scope</h2>
+<ul>
+<li>The entire church building.</li>
+<li>The surrounding topography.</li>
+<li>Selected facades of adjacent structures.</li>
+</ul>
+<h2>Definitions</h2>
+<p><strong>LOD 400.</strong> A level of development where elements are modeled with the detail and accuracy needed for fabrication-level or highly precise documentation. Here it applies to the main building and the topography.</p>
+<p><strong>Point cloud.</strong> A set of measured points from laser scanning that records the surface geometry of an existing structure.</p>
+<p><strong>TruView.</strong> A viewer for scan data. The team used it to find locations and identify material types.</p>
+<p><strong>Model In-Place.</strong> A Revit tool for building a one-off element directly in the project when no loadable or system family fits.</p>
+<h2>Method</h2>
+<ol>
+<li>Receive the registered point cloud and TruView data.</li>
+<li>Build a sample model for one small representative area.</li>
+<li>Submit the sample to the client to validate the modeling method.</li>
+<li>Model the exterior using layered walls: split a primary wall into walls of different thicknesses, attach thin material walls to a core wall, and apply the join tool.</li>
+<li>Model the interior and mark material transitions with model lines, using TruView to confirm location and material.</li>
+<li>Model curved ceilings and the vaulted dome with system families first. Use Model In-Place for components that system families cannot represent.</li>
+<li>Check alignment to the point cloud, structural composition, and category assignment for each element.</li>
+<li>Run phased internal quality control and cross-check with specialised software.</li>
+</ol>
+<h2>Known constraint</h2>
+<p>Revit has limits when walls are layered and joined. Join management needs close attention to keep the structure accurate.</p>
+<h2>Outcomes listed for the project</h2>
+<ul>
+<li>A millimeter-accurate as-built model.</li>
+<li>Support for renovation and repair planning, including identifying repair zones and estimating material quantities.</li>
+<li>A basis for heritage conservation, research, and digital archiving.</li>
+<li>A model that can feed asset management systems.</li>
+</ul>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-historical-churches-at-uk/">https://vibimglobal.com/projects/revit-modeling-for-historical-churches-at-uk/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/30/revit-modeling-for-historical-churches-at-uk/">https://vibim.wordpress.com/2026/10/30/revit-modeling-for-historical-churches-at-uk/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
