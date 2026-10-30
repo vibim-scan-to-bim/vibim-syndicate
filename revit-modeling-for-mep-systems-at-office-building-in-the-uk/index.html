@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 600.UK: Technical Reference for an MEP-Only Revit Model</title>
+<meta name="description" content="## Summary  Project 600.UK is an MEP modeling engagement for an office building in the United Kingdom. This page records the specification, the constraints and ">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Project 600.UK: Technical Reference for an MEP-Only Revit Model</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/outsource-mep-revit-modelling-for-uk-offices.jpg" alt="Revit MEP model of a UK office building" style="width:100%;max-height:420px;object-fit:cover;">
+<h2>Summary</h2>
+<p>Project 600.UK is an MEP modeling engagement for an office building in the United Kingdom. This page records the specification, the constraints and the working method in reference form.</p>
+<h2>Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location</td>
+<td>UK</td>
+</tr>
+<tr>
+<td>Building type</td>
+<td>Office building</td>
+</tr>
+<tr>
+<td>Modeled area</td>
+<td>4,700 m²</td>
+</tr>
+<tr>
+<td>Levels</td>
+<td>4 basements, 13 upper floors (17 stories)</td>
+</tr>
+<tr>
+<td>Discipline</td>
+<td>MEP only</td>
+</tr>
+<tr>
+<td>Level of development</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, PDF drawings</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Target tolerance</td>
+<td>±15 mm</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>MEP:</strong> Mechanical, Electrical and Plumbing systems. Here this covers mechanical, piping, ducting and lighting elements.</li>
+<li><strong>LOD 300:</strong> a level of development in which elements are modeled with specific geometry, size and location, based on actual construction details.</li>
+<li><strong>Point cloud:</strong> a set of scan points that records the existing building geometry and serves as the modeling reference.</li>
+<li><strong>Parametric family:</strong> a reusable Revit object whose size and properties are driven by parameters, used here for similar repeated objects.</li>
+</ul>
+<h2>Input constraints</h2>
+<ol>
+<li>Architectural and structural elements were supplied, so no shell modeling was needed.</li>
+<li>At estimating time, only PDFs and exterior images were available.</li>
+<li>Basement point cloud quality was poor, which hindered identification of ventilation, plumbing and cable tray systems.</li>
+<li>Rooftop machine rooms and oversized shafts link to the basements through narrow technical ducts.</li>
+</ol>
+<h2>Method</h2>
+<ol>
+<li><strong>Estimate.</strong> Benchmark against similar projects. Analyse area, building type and MEP density. Estimate time per system (HVAC, electrical, plumbing).</li>
+<li><strong>Split.</strong> Break the project into individual systems and give each system a distinct color.</li>
+<li><strong>Model.</strong> Use parametric families for repeated objects. Assign shafts and linear systems to dedicated modelers who use internal tools.</li>
+<li><strong>Coordinate.</strong> Integrate Navisworks clash detection with the Revit workflow.</li>
+<li><strong>Review.</strong> Check with sectional views, Navisworks inspection and internal platform checks.</li>
+<li><strong>Correct.</strong> Resolve every issue found in client QC, then run a final internal check before handover.</li>
+</ol>
+<h2>Verification checklist</h2>
+<ul>
+<li>Dimensional accuracy within ±15 mm</li>
+<li>All components at LOD 300</li>
+<li>Systems separated and color-coded</li>
+<li>Clash detection run in Navisworks</li>
+<li>QC findings closed before delivery</li>
+</ul>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-mep-systems-at-office-building-in-the-uk/">https://vibimglobal.com/projects/revit-modeling-for-mep-systems-at-office-building-in-the-uk/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/30/revit-modeling-for-mep-systems-at-office-building-in-the-uk/">https://vibim.wordpress.com/2026/10/30/revit-modeling-for-mep-systems-at-office-building-in-the-uk/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
