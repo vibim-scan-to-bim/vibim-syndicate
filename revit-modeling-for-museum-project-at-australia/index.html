@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Reference: Museum Existing-Conditions Model (Australia, LOD 300)</title>
+<meta name="description" content="This reference summarizes the specification, inputs and method of an existing-conditions Revit model for an Australian museum site.  ## Project specification  |">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Technical Reference: Museum Existing-Conditions Model (Australia, LOD 300)</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/scan-to-bim-for-heritage-museum-renovation-australia-scaled.jpg" alt="Australian museum building modeled in Revit from point cloud at LOD 300" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference summarizes the specification, inputs and method of an existing-conditions Revit model for an Australian museum site.</p>
+<h2>Project specification</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client profile</td>
+<td>303.AUS, described as the largest museum group in Australia</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>Australia</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>Museum</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>22,000 m²</td>
+</tr>
+<tr>
+<td>Number of floors</td>
+<td>2 basements, 5 floors</td>
+</tr>
+<tr>
+<td>Level of development</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, TrueView</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, TrueView, internal tools</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>Point cloud:</strong> a set of measured 3D points captured by scanning, used as the geometric reference for modeling.</li>
+<li><strong>TrueView:</strong> a viewer for scan data, used here to inspect scans and check dimensions.</li>
+<li><strong>LOD 300:</strong> a level of development in which elements are modeled with defined geometry and are accurate enough for coordinated documentation.</li>
+<li><strong>Family:</strong> a reusable Revit component. Here, families were built for museum-specific elements.</li>
+</ul>
+<h2>Scope of modeling</h2>
+<ul>
+<li>Architectural and structural elements, including columns, beams and frames</li>
+<li>Internal and external conditions of the two museum buildings</li>
+<li>Outdoor features: plazas, pedestrian bridges, shade structures</li>
+</ul>
+<h2>Constraints</h2>
+<ol>
+<li>Large site area with significant level differences between zones.</li>
+<li>Complex details: domes, railings, decorative columns, glass doors, intricate façades.</li>
+<li>Multiple modelers within one project, which raises coordination and quality-control demands.</li>
+</ol>
+<h2>Method</h2>
+<ol>
+<li>Segment the project into zones by elevation, architectural features and complexity.</li>
+<li>Prioritize modeling order by schedule and complexity.</li>
+<li>Verify accuracy with several Revit sections, Navisworks and TrueView where elevations differ.</li>
+<li>Create a family library for repeating museum elements.</li>
+<li>Define roles, responsibilities, quality-control steps and communication procedures.</li>
+<li>Review and validate models regularly to detect and correct errors.</li>
+</ol>
+<h2>Downstream use</h2>
+<p>The model gives a precise, visual information source for operation, maintenance, repair and upgrade stages. It was exported to Lumion, Twinmotion and Enscape for perspective renderings and fly-through videos used in marketing, education or fundraising and restoration work.</p>
+<h2>Checklist for similar projects</h2>
+<ul>
+<li>Confirm the LOD and deliverable before modeling starts.</li>
+<li>Zone the site before assigning people.</li>
+<li>Build custom families early.</li>
+<li>Validate against the scan at each elevation change.</li>
+</ul>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-museum-project-at-australia/">https://vibimglobal.com/projects/revit-modeling-for-museum-project-at-australia/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/10/31/revit-modeling-for-museum-project-at-australia/">https://vibim.wordpress.com/2026/10/31/revit-modeling-for-museum-project-at-australia/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
