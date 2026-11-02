@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 491.US: Technical Reference for a US Factory Scan-to-BIM Model</title>
+<meta name="description" content="## Summary  | Item | Value | |---|---| | Project code | 491.US | | Location | United States | | Industry | Industrial / factory | | Total area | 1,900 m² | | Fl">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Project 491.US: Technical Reference for a US Factory Scan-to-BIM Model</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/09/491_04-scaled.jpg" alt="Revit model of a US factory with dense MEP systems" style="width:100%;max-height:420px;object-fit:cover;">
+<h2>Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project code</td>
+<td>491.US</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>United States</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>Industrial / factory</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>1,900 m²</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>1</td>
+</tr>
+<tr>
+<td>LOD</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, images</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>March to April 2023 (two months)</td>
+</tr>
+<tr>
+<td>Client profile</td>
+<td>Confidential</td>
+</tr>
+</tbody>
+</table>
+<p>Note: one section of the source page quotes about 1,800 m². This reference uses the 1,900 m² figure from the specification block.</p>
+<h2>Definitions</h2>
+<ul>
+<li><strong>Point cloud:</strong> a set of measured 3D points captured from the existing building, used as the reference for modeling.</li>
+<li><strong>LOD 300:</strong> a level of development where elements have accurate geometry, size and location.</li>
+<li><strong>MEP:</strong> mechanical, electrical and plumbing systems.</li>
+<li><strong>As-built model:</strong> a model that records the existing condition of a facility, not its design intent.</li>
+</ul>
+<h2>Disciplines modeled</h2>
+<ol>
+<li>Architecture</li>
+<li>Structure</li>
+<li>Topography</li>
+<li>MEP, including equipment, water pipes, cable trays and electrical conduits</li>
+</ol>
+<h2>Constraints in the data</h2>
+<ul>
+<li><strong>Density:</strong> machine rooms, technical areas and transformer stations contained very high concentrations of equipment, pipes and cables.</li>
+<li><strong>Occlusion and noise:</strong> overlapping objects hid surfaces in the scan.</li>
+<li><strong>Connection accuracy:</strong> pipe fittings, valve connections, electrical terminations and control links had to be represented exactly.</li>
+</ul>
+<h2>Procedure</h2>
+<ol>
+<li>Divide the plant into smaller zones and apply quality control per zone.</li>
+<li>Model large, well-defined MEP elements first, such as main pipelines and primary equipment.</li>
+<li>Add smaller components progressively around that backbone.</li>
+<li>Use sectioning, layering and element isolation to reach hidden objects.</li>
+<li>Switch the point cloud to RGB display and raise contrast to separate pipes, cables and equipment from clutter.</li>
+<li>Identify elements from characteristic shapes (circular, square, rectangular) where data is partial.</li>
+<li>Model every flange, valve and junction with the highest accuracy.</li>
+</ol>
+<h2>Intended uses of the model</h2>
+<ul>
+<li>Baseline for renovation and retrofit planning.</li>
+<li>Coordination between architectural, structural and MEP teams.</li>
+<li>Maintenance planning and asset records.</li>
+<li>Safety review of gas, chemical and high-power electrical routes.</li>
+</ul>
+<h2>Result</h2>
+<p>The model gives the client a centralized digital database of MEP components. Technicians can locate equipment and connection points faster, which helps reduce downtime during troubleshooting and repair.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-factory-in-us/">https://vibimglobal.com/projects/revit-modeling-for-factory-in-us/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/11/02/revit-modeling-for-factory-in-us/">https://vibim.wordpress.com/2026/11/02/revit-modeling-for-factory-in-us/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
