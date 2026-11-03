@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 758.US: Technical Reference for a Factory Revit Model</title>
+<meta name="description" content="## Summary  Project 758.US is an as-built Revit modeling job for an industrial factory in the United States. This page records the technical parameters, the pro">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Project 758.US: Technical Reference for a Factory Revit Model</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/09/structural-revit-modeling-for-a-factory-in-the-usa.jpg" alt="Industrial factory interior in the United States modeled in Revit" style="width:100%;max-height:420px;object-fit:cover;">
+<h2>Summary</h2>
+<p>Project 758.US is an as-built Revit modeling job for an industrial factory in the United States. This page records the technical parameters, the problems met and the controls applied.</p>
+<h2>Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project code</td>
+<td>758.US</td>
+</tr>
+<tr>
+<td>Facility type</td>
+<td>Factory / industrial</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>United States</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>1,500 m²</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>April to June 2025 (two months)</td>
+</tr>
+<tr>
+<td>Disciplines</td>
+<td>Architecture, structure, MEP</td>
+</tr>
+<tr>
+<td>LOD</td>
+<td>LOD 400</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, images</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li>As-built model: a model that records existing conditions of a facility rather than a design proposal.</li>
+<li>MEP: mechanical, electrical and plumbing systems.</li>
+<li>LOD 400: a level of development suited to detailed modeling used for fabrication and assembly.</li>
+<li>Point cloud: a set of scanned 3D points used as the geometric reference.</li>
+</ul>
+<h2>Scope boundary</h2>
+<p>The client wanted the aluminum extrusion press and its conveyor system. Surrounding structures and unrelated equipment were excluded.</p>
+<h2>Problems and responses</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MEP estimate based on exterior images only</td>
+<td>Compare with similar completed projects, weigh MEP density, ask the client for more object information</td>
+</tr>
+<tr>
+<td>Poor point cloud quality in dense machinery areas</td>
+<td>Use client images next to the scan data</td>
+</tr>
+<tr>
+<td>One family for the full machine gave large, slow files</td>
+<td>Split into blocks: pulling motor, conveyor belt, stamping machine block</td>
+</tr>
+<tr>
+<td>Export to another software format risked lost or distorted objects</td>
+<td>Research the export path and check display and appearance</td>
+</tr>
+<tr>
+<td>Limited time for QA-QC on many MEP objects</td>
+<td>Multi-step inspection</td>
+</tr>
+</tbody>
+</table>
+<h2>QA-QC procedure</h2>
+<ol>
+<li>Section checks.</li>
+<li>Navisworks checks.</li>
+<li>Analysis with a proprietary point cloud solution.</li>
+<li>Correction of every error the client reports.</li>
+<li>Final point cloud analysis before handover.</li>
+</ol>
+<h2>Notes</h2>
+<p>The source page gives more than one accuracy figure, so none is repeated here. The specification block states LOD 400, and this reference uses that value.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-factory-in-the-us/">https://vibimglobal.com/projects/revit-modeling-for-factory-in-the-us/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/11/03/revit-modeling-for-factory-in-the-us/">https://vibim.wordpress.com/2026/11/03/revit-modeling-for-factory-in-the-us/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
