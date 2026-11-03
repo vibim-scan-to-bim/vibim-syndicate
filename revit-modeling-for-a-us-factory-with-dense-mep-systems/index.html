@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 508.US: Technical Reference for a Dense-MEP Factory Revit Model</title>
+<meta name="description" content="## Summary  Project 508.US is an as-built Revit modeling job for an industrial factory in the United States. This page lists the parameters, the constraints met">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Project 508.US: Technical Reference for a Dense-MEP Factory Revit Model</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/09/bim-revit-modeling-for-a-us-factory-with-complex-mep-systems.jpg" alt="Revit model of a US factory with dense MEP systems from point cloud" style="width:100%;max-height:420px;object-fit:cover;">
+<h2>Summary</h2>
+<p>Project 508.US is an as-built Revit modeling job for an industrial factory in the United States. This page lists the parameters, the constraints met in the machine room and the controls applied.</p>
+<h2>Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project code</td>
+<td>508.US</td>
+</tr>
+<tr>
+<td>Facility type</td>
+<td>Factory / industrial</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>United States</td>
+</tr>
+<tr>
+<td>Floors</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>800 m²</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>May to June 2023 (two months)</td>
+</tr>
+<tr>
+<td>Disciplines</td>
+<td>Architecture, structure, MEP</td>
+</tr>
+<tr>
+<td>LOD</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>Point cloud</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Client</td>
+<td>Confidential</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>As-built model:</strong> a model of existing conditions, not a design proposal.</li>
+<li><strong>MEP:</strong> mechanical, electrical and plumbing systems.</li>
+<li><strong>LOD 300:</strong> a level of development with accurate geometry for size, shape, location and orientation.</li>
+<li><strong>Clash detection:</strong> an automated check for elements that occupy the same space.</li>
+<li><strong>Point cloud:</strong> a set of scanned 3D points used as the geometric reference.</li>
+</ul>
+<h2>MEP systems in scope</h2>
+<ol>
+<li>HVAC</li>
+<li>Plumbing</li>
+<li>Fire fighting</li>
+<li>Electrical</li>
+<li>Communication networks</li>
+</ol>
+<h2>Constraints observed</h2>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Effect on the model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dense pipes, valves, pumps and sensors</td>
+<td>Overlapping points, hard to isolate single components</td>
+</tr>
+<tr>
+<td>Humidity, low light, reflective metal</td>
+<td>Noise and occlusions in the scan</td>
+</tr>
+<tr>
+<td>Similar-looking elements</td>
+<td>Pipes and conduits, or valve types, hard to tell apart</td>
+</tr>
+<tr>
+<td>LOD 300 accuracy</td>
+<td>Small position errors can cause clashes later</td>
+</tr>
+<tr>
+<td>Geometry-only input</td>
+<td>Equipment data must be added from other sources</td>
+</tr>
+<tr>
+<td>Large data volume</td>
+<td>Needs strong hardware and data management</td>
+</tr>
+</tbody>
+</table>
+<h2>Procedure</h2>
+<ol>
+<li>Split the machine room into modular zones.</li>
+<li>Clean the point cloud for each zone.</li>
+<li>Model each zone on its own, then merge it into the master model.</li>
+<li>Run Navisworks clash checks during the work, not only at the end.</li>
+<li>Classify major M&amp;E equipment and attach its technical data.</li>
+<li>Overlay the final model on the point cloud and review the deviation.</li>
+</ol>
+<h2>Outcome</h2>
+<p>The client received a connected as-built model in which all systems are linked and reflect site conditions. The model supports clash resolution before renovation and acts as an asset database for operations and maintenance.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-a-us-factory-with-dense-mep-systems/">https://vibimglobal.com/projects/revit-modeling-for-a-us-factory-with-dense-mep-systems/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/11/03/revit-modeling-for-a-us-factory-with-dense-mep-systems/">https://vibim.wordpress.com/2026/11/03/revit-modeling-for-a-us-factory-with-dense-mep-systems/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
