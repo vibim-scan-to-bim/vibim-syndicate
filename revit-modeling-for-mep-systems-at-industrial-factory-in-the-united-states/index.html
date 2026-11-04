@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Reference: MEP-Only Revit Model of a US Industrial Building (Project 486.US)</title>
+<meta name="description" content="This note records the technical parameters and workflow of an MEP-only modeling project for an industrial facility in the United States.  ## Project parameters ">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Technical Reference: MEP-Only Revit Model of a US Industrial Building (Project 486.US)</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/07/mep-bim-services-for-industrial-facilities-usa-1.jpg" alt="MEP BIM services for an industrial facility in the USA" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This note records the technical parameters and workflow of an MEP-only modeling project for an industrial facility in the United States.</p>
+<h2>Project parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project code</td>
+<td>486.US</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>United States</td>
+</tr>
+<tr>
+<td>Building type</td>
+<td>Industrial building</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>3,800 m²</td>
+</tr>
+<tr>
+<td>Levels</td>
+<td>1 ground, 5 upper floors</td>
+</tr>
+<tr>
+<td>Level of development</td>
+<td>LOD 300</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, PDF, images</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+<tr>
+<td>Dimensional tolerance</td>
+<td>±15 mm</td>
+</tr>
+</tbody>
+</table>
+<h2>Definitions</h2>
+<ul>
+<li><strong>MEP-only scope:</strong> only mechanical, piping, ductwork, electrical and plumbing objects are modeled. Architectural and structural elements are excluded.</li>
+<li><strong>LOD 300:</strong> model elements with defined size, shape, location and orientation, suitable for coordination and maintenance use.</li>
+<li><strong>Show Disconnect:</strong> a Revit tool that flags open connectors in piping and duct networks.</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Estimate effort by benchmarking against similar projects and the traits of this plant.</li>
+<li>Split the model by floor and area.</li>
+<li>Model main pipes and risers, then secondary branches.</li>
+<li>Build complex machinery as subassemblies and assemble them in Revit.</li>
+<li>Identify pipe systems from the point cloud, endpoints and equipment connections.</li>
+<li>Assign material colors and filters per system.</li>
+<li>Test connectivity with Show Disconnect.</li>
+<li>Detect clashes in Navisworks and resolve them.</li>
+<li>Correct all QC findings before handover.</li>
+</ol>
+<h2>Known constraints</h2>
+<ul>
+<li>Input data was limited for MEP disciplines, with PDFs and exterior images only for interior context.</li>
+<li>Point cloud quality was limited in dense areas.</li>
+<li>Cable trays crossed shafts, electrical rooms and machine areas.</li>
+</ul>
+<h2>Output use</h2>
+<p>The model supports maintenance, asset management, renovation and future design work on the plant.</p>
+<h2>Verification checklist</h2>
+<ul>
+<li>[ ] All six levels modeled for mechanical, piping, ductwork, electrical and plumbing objects</li>
+<li>[ ] Each pipe system carries its own material color and filter</li>
+<li>[ ] No open connectors reported by Show Disconnect</li>
+<li>[ ] Navisworks clash report reviewed and conflicts resolved</li>
+<li>[ ] Dimensional tolerance of ±15 mm confirmed against the available reference data</li>
+<li>[ ] QC findings corrected and the model reflects the as-built state</li>
+</ul>
+<h2>Modeling priorities</h2>
+<p>Main pipes and risers carry the most dependencies, so they come first. Secondary branches follow once the main routes are stable. Machinery with complex geometry, such as conveyors and production equipment, is split into subassemblies so each part can be checked on its own before assembly.</p>
+<h2>Estimating note</h2>
+<p>With only PDFs and exterior images for MEP context, interior density and the number of technical shafts could not be measured directly. The estimate relied on benchmarking against similar projects and on the characteristics of this plant.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/revit-modeling-for-mep-systems-at-industrial-factory-in-the-united-states/">https://vibimglobal.com/projects/revit-modeling-for-mep-systems-at-industrial-factory-in-the-united-states/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/11/04/revit-modeling-for-mep-systems-at-industrial-factory-in-the-united-states/">https://vibim.wordpress.com/2026/11/04/revit-modeling-for-mep-systems-at-industrial-factory-in-the-united-states/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
