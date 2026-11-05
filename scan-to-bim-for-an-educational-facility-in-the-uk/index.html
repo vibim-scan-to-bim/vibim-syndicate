@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Reference: Revit Model Specification for UK School Project 678.UK</title>
+<meta name="description" content="This reference records the specification, inputs, constraints and modeling rules of Project 678.UK, a school in the United Kingdom modeled in Revit.  ## Project">
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 740px; margin: 2.5rem auto; padding: 0 1.25rem; line-height: 1.75; color: #1a1a1a; background: #fff; }
+  h1 { font-family: system-ui, -apple-system, sans-serif; font-size: 2rem; line-height: 1.25; margin-bottom: 1.5rem; color: #111; }
+  h2, h3 { font-family: system-ui, -apple-system, sans-serif; color: #222; margin-top: 2rem; }
+  a { color: #0057b8; text-decoration: underline; }
+  a:hover { color: #003d82; }
+  img { max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border-radius: 4px; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+  p { margin: 1rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+  li { margin: 0.4rem 0; }
+  blockquote { border-left: 3px solid #0057b8; margin: 1.5rem 0; padding: 0.5rem 1rem; color: #555; font-style: italic; }
+  strong { color: #111; }
+</style>
+</head>
+<body>
+<h1>Technical Reference: Revit Model Specification for UK School Project 678.UK</h1>
+<img src="https://vibimglobal.com/wp-content/uploads/2025/09/scan-to-bim-services-for-schools-uk.jpg" alt="Scan to BIM model of a UK school campus with a main building and two arc-shaped wings" style="width:100%;max-height:420px;object-fit:cover;">
+<p>This reference records the specification, inputs, constraints and modeling rules of Project 678.UK, a school in the United Kingdom modeled in Revit.</p>
+<h2>Project specification</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project code</td>
+<td>678.UK</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>United Kingdom</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>Education</td>
+</tr>
+<tr>
+<td>Client profile</td>
+<td>Confidential</td>
+</tr>
+<tr>
+<td>Total area</td>
+<td>4,900 m²</td>
+</tr>
+<tr>
+<td>Number of floors</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Structures</td>
+<td>3 (one central main building, two arc-shaped wing buildings)</td>
+</tr>
+<tr>
+<td>Level of detail</td>
+<td>LOD 400</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>One month, August to September 2024</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Point cloud, images, 2D drawings</td>
+</tr>
+<tr>
+<td>Deliverable</td>
+<td>Revit file</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Revit, Navisworks, internal tools</td>
+</tr>
+</tbody>
+</table>
+<h2>Disciplines in scope</h2>
+<ol>
+<li>Architecture, interior and exterior elements.</li>
+<li>Structure.</li>
+<li>MEP (Mechanical, Electrical, Plumbing).</li>
+</ol>
+<h2>Definitions used in this project</h2>
+<ul>
+<li><strong>LOD 400</strong>: a level of development at which elements are modeled with enough detail and information for fabrication and assembly. Here it applied to the architectural and structural components of the campus.</li>
+<li><strong>Revit category</strong>: the built-in classification that groups elements such as walls, floors and doors.</li>
+<li><strong>Family type</strong>: a defined variant within a Revit family that sets an element's parameters.</li>
+<li><strong>Material asset</strong>: a named material definition in Revit that is assigned to elements.</li>
+<li><strong>TrueView</strong>: panoramic imagery used alongside the point cloud to read surfaces.</li>
+</ul>
+<h2>Client requirements</h2>
+<ol>
+<li>Name components accurately.</li>
+<li>Separate material types and create accurate material types inside the model.</li>
+<li>Classify each object under the correct category, with the correct family type and the exact material.</li>
+</ol>
+<h2>Priority rule</h2>
+<p>Systematic organization was ranked above the tightest geometric deviation (tolerance) against the point cloud. Where the two conflicted, the organization of categories, family types and materials took precedence, so the model keeps its informational value, interoperability and usability in later phases.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Read the shape of each surface from the point cloud.</li>
+<li>Cross-check finish and condition against high-resolution site photographs.</li>
+<li>Confirm the surface in context using TrueView imagery.</li>
+<li>Assign the material and verify naming.</li>
+<li>Build with Revit's native system families and categories wherever possible.</li>
+<li>Embed complete material information in any custom component.</li>
+</ol>
+<h2>Outputs and use</h2>
+<p>The model is a baseline for renovations, upgrades and maintenance planning. Material information, schedules and quantities can be extracted for any component, which feeds procurement, cost estimation and asset management.</p>
+<p>Reference: <a href="https://vibimglobal.com/projects/scan-to-bim-for-an-educational-facility-in-the-uk/">https://vibimglobal.com/projects/scan-to-bim-for-an-educational-facility-in-the-uk/</a></p>
+<p>See more:</p>
+<ul>
+<li><a href="https://vibim.wordpress.com/2026/11/05/scan-to-bim-for-an-educational-facility-in-the-uk/">https://vibim.wordpress.com/2026/11/05/scan-to-bim-for-an-educational-facility-in-the-uk/</a></li>
+</ul>
+<hr>
+<p><strong>ViBIM</strong><br>10th floor, CIT Building, No 6, Valley 15, Duy Tan street, Cau Giay ward, Hanoi, Vietnam<br>(+84) 944.798.298<br><a href="https://vibimglobal.com/">https://vibimglobal.com/</a></p>
+</body>
+</html>
